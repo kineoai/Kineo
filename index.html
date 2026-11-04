@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kineo - AI Text-to-Cartoon Video Maker</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: #F8F9FA;
+            color: #1D1D1F;
+            padding-bottom: 110px;
+            line-height: 1.5;
+        }
+
+        /* iOS-Style Glass Header */
+        .top-navbar {
+            background-color: rgba(255, 204, 0, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 14px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-box img {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .logo-box span {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #000000;
+            letter-spacing: -0.5px;
+        }
+
+        /* Hero Banner with Soft Gradient */
+        .hero-banner {
+            background: linear-gradient(180deg, #FFCC00 0%, #FFD633 100%);
+            color: #000000;
+            text-align: center;
+            padding: 40px 20px 60px 20px;
+            border-bottom-left-radius: 36px;
+            border-bottom-right-radius: 36px;
+            box-shadow: 0 10px 30px rgba(255, 204, 0, 0.25);
+        }
+
+        .hero-banner h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            margin-bottom: 12px;
+            line-height: 1.25;
+            color: #000000;
+        }
+
+        .hero-banner p {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #2C2C2E;
+            max-width: 580px;
+            margin: 0 auto 35px auto;
+        }
+
+        /* iOS Mockup Container */
+        .app-mockup-wrapper {
+            max-width: 290px;
+            margin: 0 auto;
+            background-color: #000000;
+            padding: 10px;
+            border-radius: 44px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+            border: 4px solid #FFFFFF;
+            position: relative;
+        }
+
+        .app-mockup-wrapper img {
+            width: 100%;
+            display: block;
+            border-radius: 34px;
+        }
+
+        /* Main Content Container (iOS Rounded Cards) */
+        .content-container {
+            max-width: 760px;
+            margin: -20px auto 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .card {
+            background: #FFFFFF;
+            border-radius: 24px;
+            padding: 28px 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #1D1D1F;
+            margin-bottom: 12px;
+            letter-spacing: -0.4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-desc {
+            font-size: 0.98rem;
+            color: #48484A;
+            line-height: 1.6;
+        }
+
+        /* iOS-Style List Items */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .feature-list li {
+            background-color: #F2F2F7;
+            padding: 14px 18px;
+            margin-bottom: 10px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #1D1D1F;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-number {
+            background: #FFCC00;
+            color: #000000;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #8E8E93;
+            font-size: 0.88rem;
+        }
+
+        footer a {
+            color: #000000;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        /* Ultra Premium Animated Sticky Download Bar */
+        .sticky-footer-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 14px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #FFCC00 0%, #FFA800 100%);
+            color: #000000;
+            font-size: 1.1rem;
+            font-weight: 800;
+            padding: 16px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 420px;
+            letter-spacing: 0.3px;
+            box-shadow: 0 8px 25px rgba(255, 168, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Shiny Light Sweep Animation */
+        .download-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(
+                60deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.6) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(25deg);
+            animation: shine-sweep 3s infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 8px 25px rgba(255, 168, 0, 0.4);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 12px 35px rgba(255, 168, 0, 0.7);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 8px 25px rgba(255, 168, 0, 0.4);
+            }
+        }
+
+        @keyframes shine-sweep {
+            0% {
+                left: -60%;
+            }
+            20% {
+                left: 140%;
+            }
+            100% {
+                left: 140%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-banner h1 {
+                font-size: 1.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- iOS Top Navigation -->
+    <div class="top-navbar">
+        <a href="#" class="logo-box">
+            <img src="logo.png" alt="Kineo Logo">
+            <span>Kineo</span>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero-banner">
+        <h1>TURN TEXT PROMPTS INTO CARTOON VIDEOS</h1>
+        <p>Create high-quality animated videos instantly using Kineo AI Engine.</p>
+
+        <div class="app-mockup-wrapper">
+            <img src="app-screenshot.jpg" alt="Kineo App Screenshot">
+        </div>
+    </div>
+
+    <!-- Main Content Cards -->
+    <div class="content-container">
+        
+        <div class="card">
+            <div class="card-title">WHY CHOOSE KINEO AI?</div>
+            <div class="card-desc">Kineo is built to give creators an ultimate tool for generating fast, creative, and professional cartoon animations straight from text.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">WHAT IS KINEO APP?</div>
+            <div class="card-desc">Kineo is a unique, AI-powered text-to-cartoon video maker where creators can generate professional animated videos from text prompts. Instead of complex editing tools, the AI does everything for you—making it a smarter and faster way of storytelling.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">HOW THE APP WORKS:</div>
+            <ul class="feature-list">
+                <li><span class="feature-number">1</span> Text Prompts: Type your story or cartoon idea in the prompt box.</li>
+                <li><span class="feature-number">2</span> AI Generation: The app instantly generates animated scenes based on your text.</li>
+                <li><span class="feature-number">3</span> Multiple Styles: Choose from different cartoon, 3D, and anime styles.</li>
+                <li><span class="feature-number">4</span> Fast Rendering: Get your video ready in just a few clicks.</li>
+                <li><span class="feature-number">5</span> Zero Watermark: Export clean professional videos without any watermark.</li>
+                <li><span class="feature-number">6</span> Commercial Rights: Use and monetize your generated videos anywhere.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2027-28 Kineo AI. All Rights Reserved.</p>
+        <p style="margin-top: 6px;">Support: <a href="mailto:kineoofficial@gmail.com">kineoofficial@gmail.com</a></p>
+    </footer>
+
+    <!-- Fixed iOS Glass Sticky Bottom Download Bar -->
+    <div class="sticky-footer-bar">
+        <a href="https://github.com/kineoai/Kineo/releases/download/v1.0/kineo-app.apk" class="download-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            DOWNLOAD KINEO APP
+        </a>
+    </div>
+
+</body>
+</html>
