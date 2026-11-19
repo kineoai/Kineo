@@ -1,359 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kineo - AI Text-to-Cartoon Video Maker</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kineo - AI Text-to-Cartoon Video Maker</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        body {
-            background-color: #F8F9FA;
-            color: #1D1D1F;
-            padding-bottom: 110px;
-            line-height: 1.5;
-        }
+    body {
+      background-color: #F8F9FA;
+      color: #1D1D1F;
+      padding-bottom: 145px;
+      line-height: 1.5;
+    }
 
-        /* iOS-Style Glass Header */
-        .top-navbar {
-            background-color: rgba(255, 204, 0, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 14px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        }
+    /* Top Header - Pure Bright Yellow */
+    .top-navbar {
+      background-color: #FFEA00;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
 
-        .logo-box {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .logo-box img {
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-        }
+    .logo-box img {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
 
-        .logo-box span {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #000000;
-            letter-spacing: -0.5px;
-        }
+    .logo-box span {
+      font-size: 22px;
+      font-weight: 800;
+      color: #111111;
+      letter-spacing: -0.5px;
+    }
 
-        /* Hero Banner with Soft Gradient */
-        .hero-banner {
-            background: linear-gradient(180deg, #FFCC00 0%, #FFD633 100%);
-            color: #000000;
-            text-align: center;
-            padding: 40px 20px 60px 20px;
-            border-bottom-left-radius: 36px;
-            border-bottom-right-radius: 36px;
-            box-shadow: 0 10px 30px rgba(255, 204, 0, 0.25);
-        }
+    /* Hero Banner - Pure Bright Yellow */
+    .hero-banner {
+      background-color: #FFEA00;
+      color: #000000;
+      text-align: center;
+      padding: 36px 20px 64px 20px;
+      border-bottom-left-radius: 36px;
+      border-bottom-right-radius: 36px;
+    }
 
-        .hero-banner h1 {
-            font-size: 2.3rem;
-            font-weight: 800;
-            letter-spacing: -0.8px;
-            margin-bottom: 12px;
-            line-height: 1.25;
-            color: #000000;
-        }
+    .hero-banner h1 {
+      font-size: 2.1rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
 
-        .hero-banner p {
-            font-size: 1.05rem;
-            font-weight: 500;
-            color: #2C2C2E;
-            max-width: 580px;
-            margin: 0 auto 35px auto;
-        }
+    .hero-banner p {
+      font-size: 1.05rem;
+      color: #222222;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 500;
+    }
 
-        /* iOS Mockup Container */
-        .app-mockup-wrapper {
-            max-width: 290px;
-            margin: 0 auto;
-            background-color: #000000;
-            padding: 10px;
-            border-radius: 44px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
-            border: 4px solid #FFFFFF;
-            position: relative;
-        }
+    /* Clean Smartphone Mockup Frame (Without Notch) */
+    .phone-frame {
+      max-width: 300px;
+      margin: -42px auto 0 auto;
+      background: #1C1C1E;
+      padding: 12px;
+      border-radius: 44px;
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.22), inset 0 0 0 2px #3A3A3C;
+      position: relative;
+      z-index: 10;
+    }
 
-        .app-mockup-wrapper img {
-            width: 100%;
-            display: block;
-            border-radius: 34px;
-        }
+    .phone-screen {
+      width: 100%;
+      border-radius: 32px;
+      overflow: hidden;
+      background: #FFFFFF;
+      position: relative;
+    }
 
-        /* Main Content Container (iOS Rounded Cards) */
-        .content-container {
-            max-width: 760px;
-            margin: -20px auto 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 10;
-        }
+    .phone-screen img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-        .card {
-            background: #FFFFFF;
-            border-radius: 24px;
-            padding: 28px 24px;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-        }
+    /* Main Content Container (Clean White/Light) */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 16px;
+    }
 
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: #1D1D1F;
-            margin-bottom: 12px;
-            letter-spacing: -0.4px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+    /* Intro Subtext */
+    .intro-text {
+      font-size: 15px;
+      color: #515154;
+      line-height: 1.6;
+      padding: 28px 8px 18px 8px;
+    }
 
-        .card-desc {
-            font-size: 0.98rem;
-            color: #48484A;
-            line-height: 1.6;
-        }
+    /* Cards */
+    .card {
+      background-color: #FFFFFF;
+      border-radius: 20px;
+      padding: 22px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      border: 1px solid #EFEFEF;
+    }
 
-        /* iOS-Style List Items */
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 10px;
-        }
+    .card-title {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      color: #111111;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
 
-        .feature-list li {
-            background-color: #F2F2F7;
-            padding: 14px 18px;
-            margin-bottom: 10px;
-            border-radius: 16px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: #1D1D1F;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    /* Custom Click-to-Play Video Player (Zero YouTube Clutter) */
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #000000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
 
-        .feature-number {
-            background: #FFCC00;
-            color: #000000;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            font-weight: 800;
-            flex-shrink: 0;
-        }
+    .video-thumbnail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            color: #8E8E93;
-            font-size: 0.88rem;
-        }
+    .video-container:hover .video-thumbnail {
+      transform: scale(1.02);
+    }
 
-        footer a {
-            color: #000000;
-            font-weight: 700;
-            text-decoration: none;
-        }
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 68px;
+      height: 48px;
+      background-color: rgba(255, 0, 0, 0.9);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      pointer-events: none;
+    }
 
-        /* Ultra Premium Animated Sticky Download Bar */
-        .sticky-footer-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 14px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            border-top: 1px solid rgba(0, 0, 0, 0.08);
-        }
+    .play-button::before {
+      content: '';
+      border-style: solid;
+      border-width: 11px 0 11px 20px;
+      border-color: transparent transparent transparent #FFFFFF;
+      margin-left: 3px;
+    }
 
-        .download-btn {
-            background: linear-gradient(135deg, #FFCC00 0%, #FFA800 100%);
-            color: #000000;
-            font-size: 1.1rem;
-            font-weight: 800;
-            padding: 16px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            max-width: 420px;
-            letter-spacing: 0.3px;
-            box-shadow: 0 8px 25px rgba(255, 168, 0, 0.4);
-            position: relative;
-            overflow: hidden;
-            animation: pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
+    .video-container:hover .play-button {
+      transform: translate(-50%, -50%) scale(1.1);
+      background-color: #FF0000;
+    }
 
-        /* Shiny Light Sweep Animation */
-        .download-btn::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -60%;
-            width: 50%;
-            height: 200%;
-            background: linear-gradient(
-                60deg,
-                rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0.6) 50%,
-                rgba(255, 255, 255, 0) 100%
-            );
-            transform: rotate(25deg);
-            animation: shine-sweep 3s infinite;
-        }
+    .video-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: none;
+    }
 
-        @keyframes pulse-ring {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 8px 25px rgba(255, 168, 0, 0.4);
-            }
-            50% {
-                transform: scale(1.02);
-                box-shadow: 0 12px 35px rgba(255, 168, 0, 0.7);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 8px 25px rgba(255, 168, 0, 0.4);
-            }
-        }
+    /* Feature List */
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
 
-        @keyframes shine-sweep {
-            0% {
-                left: -60%;
-            }
-            20% {
-                left: 140%;
-            }
-            100% {
-                left: 140%;
-            }
-        }
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
 
-        @media (max-width: 600px) {
-            .hero-banner h1 {
-                font-size: 1.85rem;
-            }
-        }
-    </style>
+    .feature-number {
+      background-color: #FFEA00;
+      color: #111111;
+      font-size: 13px;
+      font-weight: 800;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .feature-text {
+      font-size: 14px;
+      color: #2C2C2E;
+      line-height: 1.5;
+    }
+
+    .feature-text strong {
+      color: #111111;
+      font-weight: 700;
+    }
+
+    /* Zupee-Style Sticky Bottom Download Bar */
+    .sticky-footer-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #FFEA00;
+      box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.12);
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 12px 20px 24px 20px;
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sticky-ad-text {
+      font-size: 15px;
+      font-weight: 800;
+      color: #111111;
+      margin-bottom: 10px;
+      letter-spacing: -0.2px;
+    }
+
+    .download-btn-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .download-btn {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #4B0082;
+      color: #FFFFFF;
+      font-size: 17px;
+      font-weight: 800;
+      text-decoration: none;
+      padding: 16px 20px;
+      border-radius: 36px;
+      width: 100%;
+      box-shadow: 0 6px 20px rgba(75, 0, 130, 0.35);
+      transition: transform 0.15s ease;
+    }
+
+    .download-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* Button Shine Animation */
+    .download-btn::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(
+        60deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.35) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: shine-sweep 2.8s infinite;
+    }
+
+    @keyframes shine-sweep {
+      0% { left: -60%; }
+      35% { left: 140%; }
+      100% { left: 140%; }
+    }
+
+    .download-btn svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    /* Zupee-Style Chubby Cartoon White Glove Hand */
+    .zupee-hand {
+      position: absolute;
+      right: 6px;
+      top: -28px;
+      width: 68px;
+      height: 68px;
+      pointer-events: none;
+      z-index: 105;
+      filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.28));
+      animation: zupee-tap 1.1s infinite ease-in-out;
+    }
+
+    @keyframes zupee-tap {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      50% {
+        transform: translate(-11px, 11px) scale(0.92);
+      }
+    }
+
+    /* Footer Credits */
+    footer {
+      text-align: center;
+      padding: 24px 16px 40px 16px;
+      font-size: 12px;
+      color: #8E8E93;
+    }
+
+    footer p {
+      margin-bottom: 4px;
+    }
+
+    footer a {
+      color: #007AFF;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- iOS Top Navigation -->
-    <div class="top-navbar">
-        <a href="#" class="logo-box">
-            <img src="logo.png" alt="Kineo Logo">
-            <span>Kineo</span>
-        </a>
+  <!-- Top Header -->
+  <header class="top-navbar">
+    <div class="logo-box">
+      <img src="logo.png" alt="Kineo Logo">
+      <span>Kineo</span>
     </div>
+  </header>
 
-    <!-- Hero Section -->
-    <div class="hero-banner">
-        <h1>TURN TEXT PROMPTS INTO CARTOON VIDEOS</h1>
-        <p>Create high-quality animated videos instantly using Kineo AI Engine.</p>
+  <!-- Hero Section -->
+  <section class="hero-banner">
+    <h1>TURN TEXT PROMPTS INTO CARTOON VIDEOS</h1>
+    <p>Create high-quality animated videos instantly using Kineo AI Engine.</p>
+  </section>
 
-        <div class="app-mockup-wrapper">
-            <img src="app-screenshot.jpg" alt="Kineo App Screenshot">
-        </div>
+  <!-- Clean Smartphone Mockup Frame -->
+  <div class="phone-frame">
+    <div class="phone-screen">
+      <img src="app-screenshot.jpg" alt="Kineo App Screenshot">
     </div>
-
-    <!-- Main Content Cards -->
-    <div class="content-container">
-        
-        <div class="card">
-            <div class="card-title">WHY CHOOSE KINEO AI?</div>
-            <div class="card-desc">Kineo is built to give creators an ultimate tool for generating fast, creative, and professional cartoon animations straight from text.</div>
-        </div>
-
-        <div class="card">
-            <div class="card-title">WHAT IS KINEO APP?</div>
-            <div class="card-desc">Kineo is a unique, AI-powered text-to-cartoon video maker where creators can generate professional animated videos from text prompts. Instead of complex editing tools, the AI does everything for you—making it a smarter and faster way of storytelling.</div>
-        </div>
-
-<div class="card" style="padding: 20px;">
-  <h2 style="font-size: 14px; font-weight: 700; letter-spacing: 0.8px; color: #111; margin: 0 0 14px 0; text-transform: uppercase;">
-    INSIDE KINEO
-  </h2>
-  <div style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-    <iframe 
-      src="https://www.youtube.com/embed/IU2V7rVs0ig?rel=0&modestbranding=1" 
-      title="Inside Kineo" 
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen>
-    </iframe>
   </div>
-</div>
-        <div class="card">
-            <div class="card-title">HOW THE APP WORKS:</div>
-            <ul class="feature-list">
-                <li><span class="feature-number">1</span> Text Prompts: Type your story or cartoon idea in the prompt box.</li>
-                <li><span class="feature-number">2</span> AI Generation: The app instantly generates animated scenes based on your text.</li>
-                <li><span class="feature-number">3</span> Multiple Styles: Choose from different cartoon, 3D, and anime styles.</li>
-                <li><span class="feature-number">4</span> Fast Rendering: Get your video ready in just a few clicks.</li>
-                <li><span class="feature-number">5</span> Zero Watermark: Export clean professional videos without any watermark.</li>
-                <li><span class="feature-number">6</span> Commercial Rights: Use and monetize your generated videos anywhere.</li>
-            </ul>
-        </div>
 
+  <main class="container">
+    <!-- Intro Subtext -->
+    <div class="intro-text">
+      Kineo is a unique, AI-powered text-to-cartoon video maker where creators can generate professional animated videos from text prompts. Instead of complex editing tools, the AI does everything for you—making it a smarter and faster way of storytelling.
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2027-28 Kineo AI. All Rights Reserved.</p>
-        <p style="margin-top: 6px;">Support: <a href="mailto:kineoofficial@gmail.com">kineoofficial@gmail.com</a></p>
-    </footer>
+    <!-- Inside Kineo Video Card (Click-to-Play) -->
+    <section class="card">
+      <h2 class="card-title">Inside Kineo</h2>
+      
+      <div class="video-container" onclick="playVideo()">
+        <img src="https://img.youtube.com/vi/IU2V7rVs0ig/maxresdefault.jpg" alt="Inside Kineo Thumbnail" class="video-thumbnail" id="thumb-img">
+        <div class="play-button" id="play-btn"></div>
+        <iframe 
+          class="video-iframe"
+          id="yt-iframe"
+          src="" 
+          title="Inside Kineo" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
 
-    <!-- Fixed iOS Glass Sticky Bottom Download Bar -->
-    <div class="sticky-footer-bar">
-        <a href="https://github.com/kineoai/Kineo/releases/download/v1.0/kineo-app.apk" class="download-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            DOWNLOAD KINEO APP
-        </a>
+    <!-- How the App Works Card -->
+    <section class="card">
+      <h2 class="card-title">How The App Works:</h2>
+      <ul class="feature-list">
+        <li class="feature-item">
+          <span class="feature-number">1</span>
+          <span class="feature-text"><strong>Text Prompts:</strong> Type your story or cartoon idea in the prompt box.</span>
+        </li>
+        <li class="feature-item">
+          <span class="feature-number">2</span>
+          <span class="feature-text"><strong>AI Generation:</strong> The app instantly generates animated scenes based on your text.</span>
+        </li>
+        <li class="feature-item">
+          <span class="feature-number">3</span>
+          <span class="feature-text"><strong>Multiple Styles:</strong> Choose from different cartoon, 3D, and anime styles.</span>
+        </li>
+        <li class="feature-item">
+          <span class="feature-number">4</span>
+          <span class="feature-text"><strong>Fast Rendering:</strong> Get your video ready in just a few clicks.</span>
+        </li>
+        <li class="feature-item">
+          <span class="feature-number">5</span>
+          <span class="feature-text"><strong>Zero Watermark:</strong> Export clean professional videos without any watermark.</span>
+        </li>
+        <li class="feature-item">
+          <span class="feature-number">6</span>
+          <span class="feature-text"><strong>Commercial Rights:</strong> Use and monetize your generated videos anywhere.</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Zupee-Style Sticky Bottom Download Bar -->
+  <div class="sticky-footer-bar">
+    <div class="sticky-ad-text">Create Cartoon Videos Free</div>
+    <div class="download-btn-wrapper">
+      <a href="https://github.com/kineoai/Kineo/releases/download/v1.0/kineo-app.apk" class="download-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        DOWNLOAD KINEO APP
+      </a>
+
+      <!-- Chubby Zupee-Style Cartoon White Glove Hand -->
+      <svg class="zupee-hand" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <g transform="rotate(-135 60 60)">
+          <path d="M44 12 C44 5, 56 5, 56 12 L56 44 
+                   C60 40, 70 40, 70 48 L70 50 
+                   C74 46, 84 47, 84 55 L84 57 
+                   C88 54, 96 56, 96 64 L96 76 
+                   C96 92, 82 100, 64 100 L46 100 
+                   C30 100, 22 90, 22 76 L22 60 
+                   C22 52, 32 50, 36 56 L44 65 Z" 
+                fill="#FFFFFF" stroke="#111111" stroke-width="5.5" stroke-linejoin="round"/>
+          <rect x="34" y="96" width="44" height="14" rx="7" fill="#FFFFFF" stroke="#111111" stroke-width="5.5"/>
+          <line x1="48" y1="72" x2="48" y2="86" stroke="#111111" stroke-width="4.5" stroke-linecap="round"/>
+          <line x1="60" y1="72" x2="60" y2="86" stroke="#111111" stroke-width="4.5" stroke-linecap="round"/>
+          <line x1="72" y1="72" x2="72" y2="86" stroke="#111111" stroke-width="4.5" stroke-linecap="round"/>
+        </g>
+      </svg>
     </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2027-28 Kineo AI. All Rights Reserved.</p>
+    <p style="margin-top: 6px;">Support: <a href="mailto:kineoofficial@gmail.com">kineoofficial@gmail.com</a></p>
+  </footer>
+
+  <script>
+    function playVideo() {
+      var thumb = document.getElementById('thumb-img');
+      var playBtn = document.getElementById('play-btn');
+      var iframe = document.getElementById('yt-iframe');
+      
+      thumb.style.display = 'none';
+      playBtn.style.display = 'none';
+      iframe.src = "https://www.youtube.com/embed/IU2V7rVs0ig?autoplay=1&rel=0&modestbranding=1";
+      iframe.style.display = 'block';
+    }
+  </script>
 
 </body>
 </html>
