@@ -20,12 +20,51 @@
       color: #1D1D1F;
       padding-bottom: 120px;
       line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* Top Scrolling Offer Strip */
+    .top-marquee-bar {
+      background-color: #D90429;
+      color: #FFFFFF;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 8px 0;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      width: max-content;
+      animation: marquee-scroll 18s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    .marquee-item {
+      padding: 0 28px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    @keyframes marquee-scroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     /* Top Header - Pure Bright Yellow */
     .top-navbar {
       background-color: #FFEA00;
-      padding: 14px 24px;
+      padding: 14px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -53,6 +92,93 @@
       font-weight: 800;
       color: #111111;
       letter-spacing: -0.5px;
+    }
+
+    .menu-toggle-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      transition: background-color 0.2s ease;
+    }
+
+    .menu-toggle-btn:active {
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+
+    .menu-toggle-btn span {
+      display: block;
+      width: 24px;
+      height: 3px;
+      background-color: #4B0082;
+      border-radius: 2px;
+    }
+
+    /* Fullscreen / Slide Menu Overlay */
+    .nav-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #FFFFFF;
+      z-index: 200;
+      display: none;
+      flex-direction: column;
+    }
+
+    .nav-drawer.open {
+      display: flex;
+    }
+
+    .nav-drawer-header {
+      background-color: #FFEA00;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .close-menu-btn {
+      background: transparent;
+      border: none;
+      font-size: 28px;
+      font-weight: 700;
+      color: #4B0082;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .nav-drawer-body {
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-us-link {
+      font-size: 16px;
+      font-weight: 800;
+      color: #4B0082;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      display: inline-block;
+      padding: 10px 0;
     }
 
     /* Hero Banner - Pure Bright Yellow */
@@ -342,13 +468,44 @@
 </head>
 <body>
 
+  <!-- Top Animated Offer Bar -->
+  <div class="top-marquee-bar" aria-label="Highlights">
+    <div class="marquee-track">
+      <span class="marquee-item">Unlock Unlimited Cartoon Videos & Full Monetization Rights</span>
+      <span class="marquee-item">Unlock Unlimited Cartoon Videos & Full Monetization Rights</span>
+      <span class="marquee-item">Unlock Unlimited Cartoon Videos & Full Monetization Rights</span>
+      <span class="marquee-item">Unlock Unlimited Cartoon Videos & Full Monetization Rights</span>
+      <span class="marquee-item">Unlock Unlimited Cartoon Videos & Full Monetization Rights</span>
+      <span class="marquee-item">Unlock Unlimited Cartoon Videos & Full Monetization Rights</span>
+    </div>
+  </div>
+
   <!-- Top Header -->
   <header class="top-navbar">
     <div class="logo-box">
       <img src="logo.png" alt="Kineo Logo">
       <span>Kineo</span>
     </div>
+    <button type="button" class="menu-toggle-btn" onclick="openMenu()" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
+
+  <!-- Slide/Fullscreen Menu Drawer -->
+  <div class="nav-drawer" id="nav-drawer">
+    <div class="nav-drawer-header">
+      <div class="logo-box">
+        <img src="logo.png" alt="Kineo Logo">
+        <span>Kineo</span>
+      </div>
+      <button type="button" class="close-menu-btn" onclick="closeMenu()" aria-label="Close menu">×</button>
+    </div>
+    <div class="nav-drawer-body">
+      <a href="mailto:kineoofficial@gmail.com" class="contact-us-link">CONTACT US</a>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero-banner">
@@ -393,27 +550,27 @@
       <ul class="feature-list">
         <li class="feature-item">
           <span class="feature-number">1</span>
-          <span class="feature-text"><strong>Text Prompts:</strong> Type your story or cartoon idea in the prompt box.</span>
+          <span class="feature-text"><strong>Unlimited 10min+ AI Videos:</strong> No limits on length or animation sequences.</span>
         </li>
         <li class="feature-item">
           <span class="feature-number">2</span>
-          <span class="feature-text"><strong>AI Generation:</strong> The app instantly generates animated scenes based on your text.</span>
+          <span class="feature-text"><strong>Premium Multi-language Voices:</strong> Ultra-realistic AI voice acting in all languages.</span>
         </li>
         <li class="feature-item">
           <span class="feature-number">3</span>
-          <span class="feature-text"><strong>Multiple Styles:</strong> Choose from different cartoon, 3D, and anime styles.</span>
+          <span class="feature-text"><strong>Ultra 8K Video Quality:</strong> Crystal clear resolution with 60fps rendering.</span>
         </li>
         <li class="feature-item">
           <span class="feature-number">4</span>
-          <span class="feature-text"><strong>Fast Rendering:</strong> Get your video ready in just a few clicks.</span>
+          <span class="feature-text"><strong>Enhanced Prompt Interpretation:</strong> Precise execution of narrative and camera angles.</span>
         </li>
         <li class="feature-item">
           <span class="feature-number">5</span>
-          <span class="feature-text"><strong>Zero Watermark:</strong> Export clean professional videos without any watermark.</span>
+          <span class="feature-text"><strong>Commercial Use Rights:</strong> Build & monetize anywhere.</span>
         </li>
         <li class="feature-item">
           <span class="feature-number">6</span>
-          <span class="feature-text"><strong>Commercial Rights:</strong> Use and monetize your generated videos anywhere.</span>
+          <span class="feature-text"><strong>Zero Watermark Exports:</strong> Clean professional output.</span>
         </li>
       </ul>
     </section>
@@ -435,7 +592,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2027-28 Kineo AI. All Rights Reserved.</p>
+    <p>© 2027-28 Kineo AI. All Rights Reserved.</p>
     <p style="margin-top: 6px;">Support: <a href="mailto:kineoofficial@gmail.com">kineoofficial@gmail.com</a></p>
   </footer>
 
@@ -449,6 +606,14 @@
       playBtn.style.display = 'none';
       iframe.src = "https://www.youtube.com/embed/IU2V7rVs0ig?autoplay=1&rel=0&modestbranding=1";
       iframe.style.display = 'block';
+    }
+
+    function openMenu() {
+      document.getElementById('nav-drawer').classList.add('open');
+    }
+
+    function closeMenu() {
+      document.getElementById('nav-drawer').classList.remove('open');
     }
   </script>
 
