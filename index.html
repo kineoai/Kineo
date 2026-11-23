@@ -44,14 +44,21 @@
     }
     </script>
 
+    <!-- Display Font for Clean Sub-Page Headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
     <!-- AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5395959368133845" crossorigin="anonymous"></script>
+
   <style>
-      .download-btn {
-  background-color: #111111 !important;
-  color: #FFFFFF !important;
-}
-* {
+    .download-btn {
+      background-color: #111111 !important;
+      color: #FFFFFF !important;
+    }
+
+    * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -62,7 +69,7 @@
     body {
       background-color: #F8F9FA;
       color: #1D1D1F;
-      padding-bottom: 120px;
+      padding-bottom: 94px;
       line-height: 1.5;
       overflow-x: hidden;
     }
@@ -122,6 +129,8 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      cursor: pointer;
+      text-decoration: none;
     }
 
     .logo-box img {
@@ -177,7 +186,6 @@
       z-index: 200;
       display: none;
       flex-direction: column;
-      overflow-y: auto;
     }
 
     .nav-drawer.open {
@@ -209,28 +217,10 @@
     }
 
     .nav-drawer-body {
-      padding: 24px;
+      padding: 28px 24px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-    }
-
-    .drawer-nav-link {
-      font-size: 16px;
-      font-weight: 800;
-      color: #4B0082;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      display: block;
-      padding: 12px 0;
-      border-bottom: 1px solid #EFEFEF;
-      background: transparent;
-      border-top: none;
-      border-left: none;
-      border-right: none;
-      text-align: left;
-      cursor: pointer;
+      gap: 20px;
     }
 
     .contact-us-link {
@@ -241,55 +231,7 @@
       text-transform: uppercase;
       letter-spacing: 0.6px;
       display: inline-block;
-      padding: 12px 0;
-    }
-
-    .policy-box {
-      margin-top: 12px;
-      background-color: #F8F9FA;
-      border: 1px solid #E5E5EA;
-      border-radius: 16px;
-      padding: 18px;
-      font-size: 14px;
-      color: #1D1D1F;
-      display: none;
-    }
-
-    .policy-box.active {
-      display: block;
-    }
-
-    .policy-box h3 {
-      font-size: 17px;
-      font-weight: 800;
-      color: #111111;
-      margin-bottom: 10px;
-    }
-
-    .policy-box h4 {
-      font-size: 14px;
-      font-weight: 700;
-      color: #111111;
-      margin-top: 12px;
-      margin-bottom: 4px;
-    }
-
-    .policy-box p {
-      font-size: 13px;
-      color: #2C2C2E;
-      margin-bottom: 8px;
-      line-height: 1.55;
-    }
-
-    .policy-box ul {
-      padding-left: 18px;
-      margin-bottom: 8px;
-      font-size: 13px;
-      color: #2C2C2E;
-    }
-
-    .policy-box li {
-      margin-bottom: 4px;
+      padding: 10px 0;
     }
 
     /* Hero Banner - Pure Bright Yellow */
@@ -484,6 +426,122 @@
       font-weight: 700;
     }
 
+    /* Dedicated Full-Screen Policy / About Interface (Zupee Style) */
+    .subpage-view {
+      display: none;
+      background-color: #FFFFFF;
+      min-height: calc(100vh - 150px);
+    }
+
+    .subpage-view.active {
+      display: block;
+    }
+
+    .breadcrumb-bar {
+      background-color: #EFEBF9;
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(75, 0, 130, 0.08);
+    }
+
+    .breadcrumb-home {
+      color: #3B0082;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .breadcrumb-home:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb-sep {
+      color: #111111;
+      font-weight: 800;
+    }
+
+    .breadcrumb-current {
+      color: #111111;
+      font-weight: 700;
+    }
+
+    .subpage-content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 32px 22px 48px 22px;
+    }
+
+    .zupee-heading-main {
+      font-family: "Lilita One", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 32px;
+      line-height: 1.15;
+      color: #2E008B;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 0.6px;
+      margin-bottom: 22px;
+      font-weight: 400;
+    }
+
+    .zupee-heading-sub {
+      font-family: "Lilita One", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 23px;
+      line-height: 1.2;
+      color: #2E008B;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 0.5px;
+      margin-top: 32px;
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    .subpage-body-text {
+      font-size: 16px;
+      color: #1D1D1F;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .subpage-body-text strong {
+      color: #111111;
+      font-weight: 700;
+    }
+
+    .subpage-list {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .subpage-list li {
+      font-size: 15.5px;
+      color: #1D1D1F;
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+
+    .subpage-list li strong {
+      color: #2E008B;
+      font-weight: 700;
+    }
+
+    .founder-details-list {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 22px 0;
+    }
+
+    .founder-details-list li {
+      font-size: 16px;
+      color: #1D1D1F;
+      line-height: 1.7;
+      padding: 6px 0;
+      border-bottom: 1px solid #F0F0F5;
+    }
+
     /* Sticky Bottom Download Bar */
     .sticky-footer-bar {
       position: fixed;
@@ -558,22 +616,57 @@
       flex-shrink: 0;
     }
 
-    /* Footer Credits */
+    /* Footer Credits (Zupee Style Dark Purple Band) */
     footer {
+      background-color: #3B0073;
+      color: #FFFFFF;
       text-align: center;
-      padding: 24px 16px 40px 16px;
-      font-size: 12px;
-      color: #8E8E93;
+      padding: 28px 20px 44px 20px;
+      font-size: 13px;
+      margin-top: 16px;
+    }
+
+    .footer-links-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-bottom: 18px;
+    }
+
+    .footer-nav-btn {
+      background: transparent;
+      border: none;
+      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 4px 2px;
+    }
+
+    .footer-nav-btn:hover {
+      color: #FFEA00;
+    }
+
+    .footer-divider {
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.22);
+      max-width: 540px;
+      margin: 0 auto 20px auto;
     }
 
     footer p {
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 13px;
     }
 
     footer a {
-      color: #111111;
+      color: #FFEA00;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
     }
   </style>
 </head>
@@ -593,7 +686,7 @@
 
   <!-- Top Header -->
   <header class="top-navbar">
-    <div class="logo-box">
+    <div class="logo-box" onclick="showHome()">
       <img src="logo.png" alt="Kineo Logo">
       <span>Kineo</span>
     </div>
@@ -607,172 +700,64 @@
   <!-- Slide/Fullscreen Menu Drawer -->
   <div class="nav-drawer" id="nav-drawer">
     <div class="nav-drawer-header">
-      <div class="logo-box">
+      <div class="logo-box" onclick="showHome()">
         <img src="logo.png" alt="Kineo Logo">
         <span>Kineo</span>
       </div>
       <button type="button" class="close-menu-btn" onclick="closeMenu()" aria-label="Close menu">×</button>
     </div>
     <div class="nav-drawer-body">
-      <button type="button" class="drawer-nav-link" onclick="toggleSection('about-box')">ABOUT</button>
-      <div class="policy-box" id="about-box">
-        <h3>About Kineo</h3>
-        <p>Kineo (kineo.live and the Kineo app) is a paid AI text-to-cartoon video creation platform that generates cartoon videos up to 10 minutes long. Prompts and videos are not stored on our servers; generated videos save directly to your device's local gallery.</p>
-        <h4>Founder & Developer</h4>
-        <p><strong>Name:</strong> Dhananjay Dwivedi</p>
-        <p><strong>Profile:</strong> BCA-MCA Student, Backend Developer & Businessman</p>
-        <p><strong>Location:</strong> Prayagraj, Uttar Pradesh, India</p>
-      </div>
-
-      <button type="button" class="drawer-nav-link" onclick="toggleSection('terms-box')">TERMS & CONDITIONS</button>
-      <div class="policy-box" id="terms-box">
-        <h3>Terms & Conditions</h3>
-        <ul>
-          <li><strong>Age Requirement (14+):</strong> You must be at least 14 years old to use Kineo. Users under 18 confirm guardian consent.</li>
-          <li><strong>100% Paid Service & Local Gallery Storage:</strong> Kineo is a paid platform. Videos are not stored on servers and save directly to your device gallery.</li>
-          <li><strong>7-Day Refund Policy:</strong> Payments are verified manually in chat (around 60 seconds). Refund requests are eligible within 7 days of purchase via support chat or support@kineo.live.</li>
-          <li><strong>Commercial Rights:</strong> Paid subscribers get commercial rights to publish and monetize generated videos.</li>
-          <li><strong>User Liability & Misuse Disclaimer:</strong> Users are 100% responsible for their prompts and generated videos. Illegal, harmful, or infringing content is strictly prohibited. Dhananjay Dwivedi holds zero legal or financial liability for user misuse.</li>
-          <li><strong>Governing Law:</strong> Laws of India; jurisdiction in Prayagraj, Uttar Pradesh, India.</li>
-        </ul>
-      </div>
-
-      <button type="button" class="drawer-nav-link" onclick="toggleSection('privacy-box')">PRIVACY POLICY</button>
-      <div class="policy-box" id="privacy-box">
-        <h3>Privacy Policy</h3>
-        <ul>
-          <li><strong>Continue with Google:</strong> We only collect basic account details required for sign-in and subscription management.</li>
-          <li><strong>Manual Payment Verification:</strong> Verified in chat within 60 seconds; we do not store UPI PINs or payment passwords.</li>
-          <li><strong>Zero Server Storage:</strong> Prompts and videos are not stored on our servers; videos download directly to your gallery.</li>
-          <li><strong>No Extra Permissions or Tracking APIs:</strong> No unnecessary permissions or third-party tracking APIs are used.</li>
-          <li><strong>Jurisdiction:</strong> Prayagraj, Uttar Pradesh, India under the laws of India.</li>
-        </ul>
-      </div>
-
       <a href="mailto:support@kineo.live" class="contact-us-link">CONTACT US</a>
     </div>
   </div>
 
-  <!-- Hero Section -->
-  <section class="hero-banner">
-    <h1>TURN TEXT PROMPTS INTO CARTOON VIDEOS</h1>
-    <p>Create high-quality animated videos instantly using Kineo AI Engine.</p>
-  </section>
+  <!-- ==================== HOME VIEW ==================== -->
+  <div id="home-view">
+    <!-- Hero Section -->
+    <section class="hero-banner">
+      <h1>TURN TEXT PROMPTS INTO CARTOON VIDEOS</h1>
+      <p>Create high-quality animated videos instantly using Kineo AI Engine.</p>
+    </section>
 
-  <!-- Clean Smartphone Mockup Frame -->
-  <div class="phone-frame">
-    <div class="phone-screen">
-      <img src="app-screenshot.jpg" alt="Kineo App Screenshot">
-    </div>
-  </div>
-
-  <main class="container">
-    <!-- Intro Subtext -->
-    <div class="intro-text">
-      Kineo is a unique, AI-powered text-to-cartoon video maker where creators can generate professional animated videos from text prompts. Instead of complex editing tools, the AI does everything for you—making it a smarter and faster way of storytelling.
-    </div>
-
-    <!-- Inside Kineo Video Card (Click-to-Play) -->
-    <section class="card">
-      <h2 class="card-title">Inside Kineo</h2>
-      
-      <div class="video-container" onclick="playVideo()">
-        <img src="https://img.youtube.com/vi/IU2V7rVs0ig/maxresdefault.jpg" alt="Inside Kineo Thumbnail" class="video-thumbnail" id="thumb-img">
-        <div class="play-button" id="play-btn"></div>
-        <iframe 
-          class="video-iframe"
-          id="yt-iframe"
-          src="" 
-          title="Inside Kineo" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
+    <!-- Clean Smartphone Mockup Frame -->
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <img src="app-screenshot.jpg" alt="Kineo App Screenshot">
       </div>
-    </section>
-
-    <!-- How the App Works Card -->
-    <section class="card">
-      <h2 class="card-title">APP CAPABILITIES:</h2>
-      <ul class="feature-list">
-        <li class="feature-item">
-          <span class="feature-number">1</span>
-          <span class="feature-text"><strong>Unlimited 10min+ AI Videos:</strong> No limits on length or animation sequences.</span>
-        </li>
-        <li class="feature-item">
-          <span class="feature-number">2</span>
-          <span class="feature-text"><strong>Premium Multi-language Voices:</strong> Ultra-realistic AI voice acting in all languages.</span>
-        </li>
-        <li class="feature-item">
-          <span class="feature-number">3</span>
-          <span class="feature-text"><strong>Ultra 8K Video Quality:</strong> Crystal clear resolution with 60fps rendering.</span>
-        </li>
-        <li class="feature-item">
-          <span class="feature-number">4</span>
-          <span class="feature-text"><strong>Enhanced Prompt Interpretation:</strong> Precise execution of narrative and camera angles.</span>
-        </li>
-        <li class="feature-item">
-          <span class="feature-number">5</span>
-          <span class="feature-text"><strong>Commercial Use Rights:</strong> Build & monetize anywhere.</span>
-        </li>
-        <li class="feature-item">
-          <span class="feature-number">6</span>
-          <span class="feature-text"><strong>Zero Watermark Exports:</strong> Clean professional output.</span>
-        </li>
-      </ul>
-    </section>
-  </main>
-
-  <!-- Sticky Bottom Download Bar -->
-  <div class="sticky-footer-bar">
-    <div class="download-btn-wrapper">
-      <a href="https://github.com/kineoai/Kineo/releases/download/v1.0/kineo-app.apk" class="download-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-          <polyline points="7 10 12 15 17 10"></polyline>
-          <line x1="12" y1="15" x2="12" y2="3"></line>
-        </svg>
-        DOWNLOAD KINEO APP
-      </a>
     </div>
-  </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2027-28 Kineo AI. All Rights Reserved.</p>
-    <p style="margin-top: 6px;">Support: <a href="mailto:support@kineo.live">support@kineo.live</a></p>
-  </footer>
+    <main class="container">
+      <!-- Intro Subtext -->
+      <div class="intro-text">
+        Kineo is a unique, AI-powered text-to-cartoon video maker where creators can generate professional animated videos from text prompts. Instead of complex editing tools, the AI does everything for you—making it a smarter and faster way of storytelling.
+      </div>
 
-  <script>
-    function playVideo() {
-      var thumb = document.getElementById('thumb-img');
-      var playBtn = document.getElementById('play-btn');
-      var iframe = document.getElementById('yt-iframe');
-      
-      thumb.style.display = 'none';
-      playBtn.style.display = 'none';
-      iframe.src = "https://www.youtube.com/embed/IU2V7rVs0ig?autoplay=1&rel=0&modestbranding=1";
-      iframe.style.display = 'block';
-    }
+      <!-- Inside Kineo Video Card (Click-to-Play) -->
+      <section class="card">
+        <h2 class="card-title">Inside Kineo</h2>
+        
+        <div class="video-container" onclick="playVideo()">
+          <img src="https://img.youtube.com/vi/IU2V7rVs0ig/maxresdefault.jpg" alt="Inside Kineo Thumbnail" class="video-thumbnail" id="thumb-img">
+          <div class="play-button" id="play-btn"></div>
+          <iframe 
+            class="video-iframe"
+            id="yt-iframe"
+            src="" 
+            title="Inside Kineo" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
 
-    function openMenu() {
-      document.getElementById('nav-drawer').classList.add('open');
-    }
-
-    function closeMenu() {
-      document.getElementById('nav-drawer').classList.remove('open');
-    }
-
-    function toggleSection(id) {
-      var boxes = document.querySelectorAll('.policy-box');
-      boxes.forEach(function(box) {
-        if (box.id === id) {
-          box.classList.toggle('active');
-        } else {
-          box.classList.remove('active');
-        }
-      });
-    }
-  </script>
-
-</body>
-</html>
+      <!-- How the App Works Card -->
+      <section class="card">
+        <h2 class="card-title">APP CAPABILITIES:</h2>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <span class="feature-number">1</span>
+            <span class="feature-text"><strong>Unlimited 10min+ AI Videos:</strong> No limits on length or animation sequences.</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-number">2</span>
+            <span class="feature-text"><strong>Premium Multi-language Voices:</strong> Ultra
