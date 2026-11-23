@@ -8,8 +8,8 @@
     <title>Kineo - AI Text to Cartoon Video Maker | 8K & 10+ Min Videos</title>
     <meta name="title" content="Kineo - AI Text to Cartoon Video Maker | 8K & 10+ Min Videos">
     <meta name="description" content="Turn text prompts into 8K Ultra HD cartoon videos instantly with Kineo. Create 10+ minute AI animated stories with multi-language voices, commercial rights, and zero watermarks.">
-    <meta name="keywords" content="Kineo, kineo.live, AI text to cartoon video maker, text to animation AI, 8K AI video generator, 10 minute AI video maker, cartoon video kaise banaye, AI cartoon generator without watermark, multi-language AI voice video">
-    <meta name="author" content="Kineo">
+    <meta name="keywords" content="Kineo, kineo.live, Dhananjay Dwivedi, Kineo founder, Kineo developer, AI text to cartoon video maker, text to animation AI, 8K AI video generator, 10 minute AI video maker, cartoon video kaise banaye, AI cartoon generator without watermark, multi-language AI voice video, text to cartoon AI tool, AI animation video maker, Hindi cartoon video AI, AI story video generator, monetizable AI cartoon videos, backend developer Prayagraj, BCA MCA developer India">
+    <meta name="author" content="Dhananjay Dwivedi, Kineo">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://kineo.live/">
 
@@ -20,6 +20,30 @@
     <meta property="og:description" content="Generate unlimited 10+ minute cartoon videos in Ultra 8K quality with multi-language AI voices and zero watermarks. Just enter a prompt and create!">
     <meta property="og:image" content="https://kineo.live/assets/logo.png">
 
+    <!-- Person Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dhananjay Dwivedi",
+      "jobTitle": "Backend Developer & Businessman",
+      "description": "Dhananjay Dwivedi is an Indian BCA-MCA student, backend developer, businessman, and the Founder & Developer of Kineo (kineo.live), based in Prayagraj, Uttar Pradesh, India.",
+      "keywords": "Dhananjay Dwivedi, Kineo founder, Kineo developer, AI text to cartoon video maker, backend developer, businessman",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Kineo",
+        "url": "https://kineo.live"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Prayagraj",
+        "addressRegion": "Uttar Pradesh",
+        "addressCountry": "IN"
+      },
+      "url": "https://kineo.live/"
+    }
+    </script>
+
     <!-- AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5395959368133845" crossorigin="anonymous"></script>
   <style>
@@ -27,7 +51,7 @@
   background-color: #111111 !important;
   color: #FFFFFF !important;
 }
-    * {
+* {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -153,6 +177,7 @@
       z-index: 200;
       display: none;
       flex-direction: column;
+      overflow-y: auto;
     }
 
     .nav-drawer.open {
@@ -184,10 +209,28 @@
     }
 
     .nav-drawer-body {
-      padding: 28px 24px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 10px;
+    }
+
+    .drawer-nav-link {
+      font-size: 16px;
+      font-weight: 800;
+      color: #4B0082;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      display: block;
+      padding: 12px 0;
+      border-bottom: 1px solid #EFEFEF;
+      background: transparent;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      text-align: left;
+      cursor: pointer;
     }
 
     .contact-us-link {
@@ -198,7 +241,55 @@
       text-transform: uppercase;
       letter-spacing: 0.6px;
       display: inline-block;
-      padding: 10px 0;
+      padding: 12px 0;
+    }
+
+    .policy-box {
+      margin-top: 12px;
+      background-color: #F8F9FA;
+      border: 1px solid #E5E5EA;
+      border-radius: 16px;
+      padding: 18px;
+      font-size: 14px;
+      color: #1D1D1F;
+      display: none;
+    }
+
+    .policy-box.active {
+      display: block;
+    }
+
+    .policy-box h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: #111111;
+      margin-bottom: 10px;
+    }
+
+    .policy-box h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111111;
+      margin-top: 12px;
+      margin-bottom: 4px;
+    }
+
+    .policy-box p {
+      font-size: 13px;
+      color: #2C2C2E;
+      margin-bottom: 8px;
+      line-height: 1.55;
+    }
+
+    .policy-box ul {
+      padding-left: 18px;
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: #2C2C2E;
+    }
+
+    .policy-box li {
+      margin-bottom: 4px;
     }
 
     /* Hero Banner - Pure Bright Yellow */
@@ -523,7 +614,42 @@
       <button type="button" class="close-menu-btn" onclick="closeMenu()" aria-label="Close menu">×</button>
     </div>
     <div class="nav-drawer-body">
-      <a href="mailto:kineoofficial@gmail.com" class="contact-us-link">CONTACT US</a>
+      <button type="button" class="drawer-nav-link" onclick="toggleSection('about-box')">ABOUT</button>
+      <div class="policy-box" id="about-box">
+        <h3>About Kineo</h3>
+        <p>Kineo (kineo.live and the Kineo app) is a paid AI text-to-cartoon video creation platform that generates cartoon videos up to 10 minutes long. Prompts and videos are not stored on our servers; generated videos save directly to your device's local gallery.</p>
+        <h4>Founder & Developer</h4>
+        <p><strong>Name:</strong> Dhananjay Dwivedi</p>
+        <p><strong>Profile:</strong> BCA-MCA Student, Backend Developer & Businessman</p>
+        <p><strong>Location:</strong> Prayagraj, Uttar Pradesh, India</p>
+      </div>
+
+      <button type="button" class="drawer-nav-link" onclick="toggleSection('terms-box')">TERMS & CONDITIONS</button>
+      <div class="policy-box" id="terms-box">
+        <h3>Terms & Conditions</h3>
+        <ul>
+          <li><strong>Age Requirement (14+):</strong> You must be at least 14 years old to use Kineo. Users under 18 confirm guardian consent.</li>
+          <li><strong>100% Paid Service & Local Gallery Storage:</strong> Kineo is a paid platform. Videos are not stored on servers and save directly to your device gallery.</li>
+          <li><strong>7-Day Refund Policy:</strong> Payments are verified manually in chat (around 60 seconds). Refund requests are eligible within 7 days of purchase via support chat or support@kineo.live.</li>
+          <li><strong>Commercial Rights:</strong> Paid subscribers get commercial rights to publish and monetize generated videos.</li>
+          <li><strong>User Liability & Misuse Disclaimer:</strong> Users are 100% responsible for their prompts and generated videos. Illegal, harmful, or infringing content is strictly prohibited. Dhananjay Dwivedi holds zero legal or financial liability for user misuse.</li>
+          <li><strong>Governing Law:</strong> Laws of India; jurisdiction in Prayagraj, Uttar Pradesh, India.</li>
+        </ul>
+      </div>
+
+      <button type="button" class="drawer-nav-link" onclick="toggleSection('privacy-box')">PRIVACY POLICY</button>
+      <div class="policy-box" id="privacy-box">
+        <h3>Privacy Policy</h3>
+        <ul>
+          <li><strong>Continue with Google:</strong> We only collect basic account details required for sign-in and subscription management.</li>
+          <li><strong>Manual Payment Verification:</strong> Verified in chat within 60 seconds; we do not store UPI PINs or payment passwords.</li>
+          <li><strong>Zero Server Storage:</strong> Prompts and videos are not stored on our servers; videos download directly to your gallery.</li>
+          <li><strong>No Extra Permissions or Tracking APIs:</strong> No unnecessary permissions or third-party tracking APIs are used.</li>
+          <li><strong>Jurisdiction:</strong> Prayagraj, Uttar Pradesh, India under the laws of India.</li>
+        </ul>
+      </div>
+
+      <a href="mailto:support@kineo.live" class="contact-us-link">CONTACT US</a>
     </div>
   </div>
 
@@ -613,7 +739,7 @@
   <!-- Footer -->
   <footer>
     <p>© 2027-28 Kineo AI. All Rights Reserved.</p>
-    <p style="margin-top: 6px;">Support: <a href="mailto:kineoofficial@gmail.com">kineoofficial@gmail.com</a></p>
+    <p style="margin-top: 6px;">Support: <a href="mailto:support@kineo.live">support@kineo.live</a></p>
   </footer>
 
   <script>
@@ -634,6 +760,17 @@
 
     function closeMenu() {
       document.getElementById('nav-drawer').classList.remove('open');
+    }
+
+    function toggleSection(id) {
+      var boxes = document.querySelectorAll('.policy-box');
+      boxes.forEach(function(box) {
+        if (box.id === id) {
+          box.classList.toggle('active');
+        } else {
+          box.classList.remove('active');
+        }
+      });
     }
   </script>
 
