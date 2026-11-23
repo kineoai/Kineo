@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Mobile Browser Top Address Bar Yellow Color -->
+<meta name="theme-color" content="#F8EA06">
+<meta name="msapplication-navbutton-color" content="#F8EA06">
+<meta name="apple-mobile-web-app-status-bar-style" content="#F8EA06">
+    
     <!-- Ultra SEO Meta Tags -->
     <title>Kineo - AI Text to Cartoon Video Maker | 8K & 10+ Min Videos</title>
     <meta name="title" content="Kineo - AI Text to Cartoon Video Maker | 8K & 10+ Min Videos">
@@ -626,13 +631,15 @@
       margin-top: 16px;
     }
 
-    .footer-links-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 22px;
-      margin-bottom: 18px;
+    <!-- Footer Links in Exact Order -->
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 18px 32px; text-align: center; margin-bottom: 18px;">
+  <a href="#terms" onclick="openModal('terms')" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px;">Terms &amp; Conditions</a>
+  <a href="#privacy" onclick="openModal('privacy')" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px;">Privacy Policy</a>
+  <div style="width: 100%; text-align: center; margin-top: 4px;">
+    <a href="#about" onclick="openModal('about')" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px;">About Us</a>
+  </div>
+</div>
+      
     }
 
     .footer-nav-btn {
@@ -784,35 +791,69 @@
   </div>
 
   <!-- ==================== ABOUT US VIEW ==================== -->
-  <section id="about-view" class="subpage-view">
-    <div class="breadcrumb-bar">
-      <span class="breadcrumb-home" onclick="showHome()">Home</span>
-      <span class="breadcrumb-sep">&gt;</span>
-      <span class="breadcrumb-current">About Us</span>
-    </div>
-    <div class="subpage-content">
-      <h1 class="zupee-heading-main">ABOUT KINEO: NEXT-GEN AI CARTOON STUDIO</h1>
-      <p class="subpage-body-text">
-        Welcome to <strong>Kineo</strong> (<strong>kineo.live</strong> and the official Kineo mobile application) — a dedicated AI-powered text-to-cartoon video creation platform engineered for modern storytellers, YouTube creators, and digital brands. Simply describe your story or scene in text, and Kineo generates high-resolution cartoon videos up to <strong>10+ minutes</strong> long without complex timeline editing.
-      </p>
-      <p class="subpage-body-text">
-        Unlike traditional cloud platforms that retain user scripts and media, Kineo operates on a strict privacy-first workflow. Your text prompts are processed in real time and never stored on external servers, while every generated video downloads directly into your device's local gallery.
-      </p>
+  <!-- SEO Meta Tags for Dhananjay Dwivedi & Kineo -->
+<meta name="author" content="Dhananjay Dwivedi">
+<meta name="keywords" content="Kineo, Kineo AI, Kineo Developer, Text to Cartoon AI, Dhananjay Dwivedi, Dhananjay Dwivedi Developer, Dhananjay Dwivedi Backend Developer, DYS Startup">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dhananjay Dwivedi",
+  "birthDate": "2008-08-12",
+  "jobTitle": "Backend Developer & Founder",
+  "url": "https://kineo.live",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Prayagraj",
+    "addressRegion": "Uttar Pradesh",
+    "addressCountry": "India"
+  },
+  "alumniOf": "Integrated BCA-MCA Program",
+  "knowsAbout": ["Backend Development", "Web Development", "Mobile App Development", "AI Video Generation", "Firebase"],
+  "founder": [
+    {
+      "@type": "Organization",
+      "name": "Kineo AI",
+      "url": "https://kineo.live"
+    },
+    {
+      "@type": "Organization",
+      "name": "DYS"
+    }
+  ]
+}
+    <!-- About Us & Developer Section -->
+<div style="font-family: sans-serif; line-height: 1.6; color: #111111;">
+  <h2 style="font-size: 22px; font-weight: 800; margin-bottom: 10px; color: #000000;">About Kineo &amp; Developer</h2>
+  <p style="margin-bottom: 14px;">
+    <strong>Kineo</strong> is an AI-powered text-to-cartoon video creation platform built in 2026 to help creators turn scripts and ideas into high-quality animated videos without complex editing tools.
+  </p>
 
-      <h2 class="zupee-heading-sub">MEET THE FOUNDER &amp; DEVELOPER</h2>
-      <p class="subpage-body-text">
-        Kineo is conceptualized, architected, and operated by <strong>Dhananjay Dwivedi</strong>, a dedicated software builder and entrepreneur from India focused on scalable backend infrastructure and accessible AI creative products.
-      </p>
-      <ul class="founder-details-list">
-        <li><strong>Full Name:</strong> Dhananjay Dwivedi</li>
-        <li><strong>Profile:</strong> BCA-MCA Student, Backend Developer &amp; Businessman</li>
-        <li><strong>Location:</strong> Prayagraj, Uttar Pradesh, India</li>
-        <li><strong>Official Venture:</strong> Founder &amp; Developer of Kineo (kineo.live)</li>
-      </ul>
-      <p class="subpage-body-text">
-        For official queries, customer assistance, or business collaborations, reach out directly at <strong>support@kineo.live</strong>.
-      </p>
-    </div>
+  <div style="background: #F8EA06; padding: 14px 16px; border-radius: 12px; border: 2px solid #000000; margin-bottom: 16px;">
+    <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 6px 0; color: #000000;">About the Developer: Dhananjay Dwivedi</h3>
+    <p style="margin: 0; font-size: 14px; color: #000000;">
+      <strong>Dhananjay Dwivedi</strong> (born August 12, 2008) is an Indian backend developer, entrepreneur, and integrated BCA-MCA student based in <strong>Prayagraj, Uttar Pradesh, India</strong>. He is the founder and lead backend developer behind <strong>Kineo (Kineo AI)</strong>.
+    </p>
+  </div>
+
+  <h4 style="font-size: 16px; font-weight: 700; margin: 12px 0 4px 0; color: #000000;">Early Journey &amp; Entrepreneurship</h4>
+  <p style="margin-bottom: 12px; font-size: 14px;">
+    Rather than focusing solely on traditional school grades, Dhananjay prioritized real-world building from an early age. At just 14 years old, he founded <strong>DYS</strong>, a YouTube channel buy-and-sell startup. After scaling it successfully and gaining practical business experience, he stepped away from the venture to dedicate himself fully to software, web, and mobile app development.
+  </p>
+
+  <h4 style="font-size: 16px; font-weight: 700; margin: 12px 0 4px 0; color: #000000;">Building Kineo &amp; Career Vision</h4>
+  <p style="margin-bottom: 12px; font-size: 14px;">
+    At age 18, Dhananjay engineered Kineo from the ground up, handling its backend architecture, authentication systems, and cross-platform integration. Driven by a genuine love for coding over financial metrics alone, his goal is to grow as a skilled backend engineer and contribute to impactful technology teams.
+  </p>
+
+  <h4 style="font-size: 16px; font-weight: 700; margin: 12px 0 4px 0; color: #000000;">Beyond Coding</h4>
+  <p style="margin-bottom: 0; font-size: 14px;">
+    Away from the screen, Dhananjay is a dedicated listener of classic 90s Bollywood music. His favourite singers are <strong>Kumar Sanu</strong>, <strong>Anuradha Paudwal</strong>, and <strong>Sadhana Sargam</strong>, with the 1990 classic <em>Aashiqui</em> as his favourite film and <em>"Main Duniya Bhula Doonga"</em> as his all-time favourite song.
+  </p>
+</div>
+    
+</script>
+    
   </section>
 
   <!-- ==================== TERMS & CONDITIONS VIEW ==================== -->
