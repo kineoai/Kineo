@@ -311,7 +311,7 @@
       text-transform: uppercase;
       margin-bottom: 14px;
     }
-          /* Custom Click-to-Play Video Player */
+              /* Custom Click-to-Play Video Player */
     .video-container {
       position: relative;
       width: 100%;
@@ -583,7 +583,8 @@
       border-radius: 36px;
       width: 100%;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-      transition: transform 0.15s ease;
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+      -webkit-tap-highlight-color: transparent;
     }
 
     .download-btn:active {
@@ -617,31 +618,32 @@
       width: 24px;
       height: 24px;
       flex-shrink: 0;
-    }
-
-    .download-btn .icon-swap-item {
+        }
+          .download-btn .icon-swap-item {
       position: absolute;
       inset: 0;
       width: 24px;
       height: 24px;
       opacity: 0;
+      will-change: transform, opacity;
     }
-          .download-btn .icon-download-anim {
-      animation: iconCycleFirst 3.2s ease-in-out infinite;
+
+    .download-btn .icon-download-anim {
+      animation: iosIconFirst 3.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
     }
 
     .download-btn .icon-android-anim {
-      animation: iconCycleSecond 3.2s ease-in-out infinite;
+      animation: iosIconSecond 3.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
     }
 
-    @keyframes iconCycleFirst {
-      0%, 42% {
+    @keyframes iosIconFirst {
+      0%, 38% {
         opacity: 1;
         transform: translateY(0) scale(1);
       }
-      50%, 92% {
+      48%, 88% {
         opacity: 0;
-        transform: translateY(-5px) scale(0.82);
+        transform: translateY(-4px) scale(0.9);
       }
       100% {
         opacity: 1;
@@ -649,18 +651,18 @@
       }
     }
 
-    @keyframes iconCycleSecond {
-      0%, 42% {
+    @keyframes iosIconSecond {
+      0%, 38% {
         opacity: 0;
-        transform: translateY(5px) scale(0.82);
+        transform: translateY(4px) scale(0.9);
       }
-      50%, 92% {
+      48%, 88% {
         opacity: 1;
         transform: translateY(0) scale(1);
       }
       100% {
         opacity: 0;
-        transform: translateY(5px) scale(0.82);
+        transform: translateY(4px) scale(0.9);
       }
     }
 
@@ -1052,4 +1054,4 @@
 
 </body>
 </html>
-```[span_4](start_span)[span_4](end_span)[span_5](start_span)[span_5](end_span)
+```[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span)
