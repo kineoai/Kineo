@@ -616,13 +616,59 @@
       100% { left: 140%; }
     }
 
-    .download-btn svg {
+    .download-btn .icon-swap-box {
+      position: relative;
       width: 22px;
       height: 22px;
       flex-shrink: 0;
     }
 
-    /* Footer Credits - Zero White Box Fix & Zupee 2-Row Layout */
+    .download-btn .icon-swap-item {
+      position: absolute;
+      inset: 0;
+      width: 22px;
+      height: 22px;
+      opacity: 0;
+    }
+
+    .download-btn .icon-download-anim {
+      animation: iconCycleFirst 3.2s ease-in-out infinite;
+    }
+
+    .download-btn .icon-android-anim {
+      animation: iconCycleSecond 3.2s ease-in-out infinite;
+    }
+
+    @keyframes iconCycleFirst {
+      0%, 42% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      50%, 92% {
+        opacity: 0;
+        transform: translateY(-5px) scale(0.82);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes iconCycleSecond {
+      0%, 42% {
+        opacity: 0;
+        transform: translateY(5px) scale(0.82);
+      }
+      50%, 92% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(5px) scale(0.82);
+      }
+    }
+          /* Footer Credits - Zero White Box Fix & Zupee 2-Row Layout */
     footer {
       background-color: #3B0073;
       color: #FFFFFF;
@@ -901,13 +947,18 @@
   <div class="sticky-footer-bar">
     <div class="download-btn-wrapper">
       <a href="https://github.com/kineoai/Kineo/releases/download/v1.0/kineo-app.apk" class="download-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-          <polyline points="7 10 12 15 17 10"></polyline>
-          <line x1="12" y1="15" x2="12" y2="3"></line>
-        </svg>
+        <span class="icon-swap-box" aria-hidden="true">
+          <svg class="icon-swap-item icon-download-anim" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <svg class="icon-swap-item icon-android-anim" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67c-.19-.29-.58-.38-.87-.2-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 3 17h18a10.78 10.78 0 0 0-3.4-7.52zM7 14.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"></path>
+          </svg>
+        </span>
         DOWNLOAD KINEO APP
-      </a>
+          </a>
     </div>
   </div>
 
@@ -1005,3 +1056,6 @@
 
 </body>
 </html>
+```[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span)
+
+Agar aapko animation ki speed (abhi `3.2s` loop hai) ya size mein koi chhota sa adjustment chahiye ho toh bataiyega!
