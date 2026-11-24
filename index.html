@@ -13,7 +13,7 @@
     <title>Kineo - AI Text to Cartoon Video Maker | 8K & 10+ Min Videos</title>
     <meta name="title" content="Kineo - AI Text to Cartoon Video Maker | 8K & 10+ Min Videos">
     <meta name="description" content="Turn text prompts into 8K Ultra HD cartoon videos instantly with Kineo. Create 10+ minute AI animated stories with multi-language voices, commercial rights, and zero watermarks.">
-    <meta name="keywords" content="Kineo, kineo.live, Dhananjay Dwivedi, Kineo founder, Kineo developer, AI text to cartoon video maker, text to animation AI, 8K AI video generator, 10 minute AI video maker, cartoon video kaise banaye, AI cartoon generator without watermark, multi-language AI voice video, text to cartoon AI tool, AI animation video maker, Hindi cartoon video AI, AI story video generator, monetizable AI cartoon videos, backend developer Prayagraj, BCA MCA developer India">
+    <meta name="keywords" content="Kineo, kineo.live, Dhananjay Dwivedi, Kineo founder, Kineo developer, DYS founder, AI text to cartoon video maker, text to animation AI, 8K AI video generator, 10 minute AI video maker, cartoon video kaise banaye, AI cartoon generator without watermark, multi-language AI voice video, text to cartoon AI tool, AI animation video maker, Hindi cartoon video AI, AI story video generator, monetizable AI cartoon videos, backend developer Prayagraj, BCA MCA developer India">
     <meta name="author" content="Dhananjay Dwivedi, Kineo">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://kineo.live/">
@@ -33,13 +33,17 @@
       "name": "Dhananjay Dwivedi",
       "birthDate": "2008-08-12",
       "jobTitle": "Backend Developer, Businessman & Founder",
-      "description": "Dhananjay Dwivedi (born August 12, 2008) is an Indian BCA-MCA student, backend developer, businessman, and the Founder & Developer of Kineo (kineo.live), based in Prayagraj, Uttar Pradesh, India.",
-      "keywords": "Dhananjay Dwivedi, Kineo founder, Kineo developer, AI text to cartoon video maker, backend developer, businessman",
+      "description": "Dhananjay Dwivedi (born August 12, 2008) is an Indian BCA-MCA student, backend developer, businessman, and the Founder & Developer of Kineo (kineo.live) and DYS, based in Prayagraj, Uttar Pradesh, India.",
+      "keywords": "Dhananjay Dwivedi, Kineo founder, Kineo developer, DYS founder, AI text to cartoon video maker, backend developer, businessman",
       "worksFor": [
         {
           "@type": "Organization",
           "name": "Kineo",
           "url": "https://kineo.live"
+        },
+        {
+          "@type": "Organization",
+          "name": "DYS"
         }
       ],
       "alumniOf": "Integrated BCA-MCA Program",
@@ -169,8 +173,7 @@
       background-color: #4B0082;
       border-radius: 2px;
     }
-
-    /* Fullscreen / Slide Menu Overlay */
+          /* Fullscreen / Slide Menu Overlay */
     .nav-drawer {
       position: fixed;
       top: 0;
@@ -311,7 +314,7 @@
       text-transform: uppercase;
       margin-bottom: 14px;
     }
-              /* Custom Click-to-Play Video Player */
+          /* Custom Click-to-Play Video Player */
     .video-container {
       position: relative;
       width: 100%;
@@ -416,8 +419,7 @@
       color: #111111;
       font-weight: 700;
     }
-
-    /* Dedicated Full-Screen Policy / About Interface */
+          /* Dedicated Full-Screen Policy / About Interface */
     .subpage-view {
       display: none;
       background-color: #FFFFFF;
@@ -583,8 +585,7 @@
       border-radius: 36px;
       width: 100%;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
-      -webkit-tap-highlight-color: transparent;
+      transition: transform 0.15s ease;
     }
 
     .download-btn:active {
@@ -613,60 +614,63 @@
       100% { left: 140%; }
     }
 
-    .download-btn .icon-swap-box {
+    .btn-icon-box {
       position: relative;
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       flex-shrink: 0;
-        }
-          .download-btn .icon-swap-item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .download-btn .btn-icon-box svg {
       position: absolute;
-      inset: 0;
-      width: 24px;
-      height: 24px;
-      opacity: 0;
-      will-change: transform, opacity;
+      top: 0;
+      left: 0;
+      width: 22px;
+      height: 22px;
+      transform-origin: center;
     }
 
-    .download-btn .icon-download-anim {
-      animation: iosIconFirst 3.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    .icon-download {
+      animation: zupee-download-loop 4.4s infinite ease-in-out;
     }
 
-    .download-btn .icon-android-anim {
-      animation: iosIconSecond 3.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    .icon-android {
+      animation: zupee-android-loop 4.4s infinite ease-in-out;
     }
 
-    @keyframes iosIconFirst {
-      0%, 38% {
+    @keyframes zupee-download-loop {
+      0%, 40% {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: scale(1) translateY(0);
       }
-      48%, 88% {
+      47%, 93% {
         opacity: 0;
-        transform: translateY(-4px) scale(0.9);
+        transform: scale(0.35) translateY(4px);
       }
       100% {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: scale(1) translateY(0);
       }
     }
 
-    @keyframes iosIconSecond {
-      0%, 38% {
+    @keyframes zupee-android-loop {
+      0%, 43% {
         opacity: 0;
-        transform: translateY(4px) scale(0.9);
+        transform: scale(0.35) translateY(4px);
       }
-      48%, 88% {
+      50%, 90% {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: scale(1) translateY(0);
       }
-      100% {
+      97%, 100% {
         opacity: 0;
-        transform: translateY(4px) scale(0.9);
+        transform: scale(0.35) translateY(4px);
       }
-    }
-
-    /* Footer Credits - Zero White Box Fix & Zupee 2-Row Layout */
+      }
+          /* Footer Credits - Zero White Box Fix & Zupee 2-Row Layout */
     footer {
       background-color: #3B0073;
       color: #FFFFFF;
@@ -945,18 +949,18 @@
   <div class="sticky-footer-bar">
     <div class="download-btn-wrapper">
       <a href="https://github.com/kineoai/Kineo/releases/download/v1.0/kineo-app.apk" class="download-btn">
-        <span class="icon-swap-box" aria-hidden="true">
-          <svg class="icon-swap-item icon-download-anim" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <span class="btn-icon-box" aria-hidden="true">
+          <svg class="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
-          <svg class="icon-swap-item icon-android-anim" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48A5.84 5.84 0 0 0 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31A5.983 5.983 0 0 0 6 7h12c0-2.12-1.1-3.98-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"></path>
+          <svg class="icon-android" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.523 15.3414C16.966 15.3414 16.513 14.8884 16.513 14.3314C16.513 13.7744 16.966 13.3214 17.523 13.3214C18.08 13.3214 18.533 13.7744 18.533 14.3314C18.533 14.8884 18.08 15.3414 17.523 15.3414ZM6.477 15.3414C5.92 15.3414 5.467 14.8884 5.467 14.3314C5.467 13.7744 5.92 13.3214 6.477 13.3214C7.034 13.3214 7.487 13.7744 7.487 14.3314C7.487 14.8884 7.034 15.3414 6.477 15.3414ZM17.887 9.2564L19.91 5.7524C20.023 5.5564 19.956 5.3064 19.76 5.1934C19.564 5.0804 19.314 5.1474 19.201 5.3434L17.152 8.8914C15.631 8.1984 13.883 7.8074 12 7.8074C10.117 7.8074 8.369 8.1984 6.848 8.8914L4.799 5.3434C4.686 5.1474 4.436 5.0804 4.24 5.1934C4.044 5.3064 3.977 5.5564 4.09 5.7524L6.113 9.2564C2.688 11.1164 0.369 14.6214 0.04 18.7364H23.96C23.631 14.6214 21.312 11.1164 17.887 9.2564Z"/>
           </svg>
         </span>
         DOWNLOAD KINEO APP
-                </a>
+      </a>
     </div>
   </div>
 
@@ -1054,4 +1058,3 @@
 
 </body>
 </html>
-```[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span)
