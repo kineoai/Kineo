@@ -1588,38 +1588,19 @@
       background: var(--bg-subtle);
       border: 1px solid var(--border-light);
       border-radius: 16px;
-      padding: 14px;
+      padding: 18px 14px;
       text-align: center;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .qr-preview-img {
-      width: 210px;
+      width: 220px;
       max-width: 100%;
       height: auto;
       border-radius: 12px;
       display: block;
-      margin: 0 auto 10px;
+      margin: 0 auto;
       object-fit: contain;
-    }
-
-    .upi-copy-chip {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-primary);
-      background: #ffffff;
-      border: 1px solid var(--border-light);
-      padding: 6px 12px;
-      border-radius: var(--radius-pill);
-      display: inline-block;
-    }
-
-    .upi-action-note {
-      font-size: 12px;
-      color: var(--text-secondary);
-      text-align: center;
-      min-height: 18px;
-      font-weight: 600;
     }
 
     .modal-actions-stack {
@@ -1686,7 +1667,7 @@
 
       <form id="emailAuthForm" class="auth-form-card" style="display:none;" onsubmit="handleEmailAuthSubmit(event)">
         <div class="auth-mode-tabs" role="tablist">
-          <button id="modeSignUpTab" type="button" class="auth-mode-tab active" onclick="setAuthMode('signup')">Sign up for free</button>
+          <button id="modeSignUpTab" type="button" class="auth-mode-tab active" onclick="setAuthMode('signup')">Sign up</button>
           <button id="modeSignInTab" type="button" class="auth-mode-tab" onclick="setAuthMode('signin')">Log in</button>
         </div>
 
@@ -1696,7 +1677,7 @@
             id="authEmailInput"
             type="email"
             class="auth-input"
-            placeholder="you@example.com"
+            placeholder="Enter address"
             autocomplete="email"
             required
           />
@@ -1709,7 +1690,7 @@
               id="authPasswordInput"
               type="password"
               class="auth-input"
-              placeholder="Enter at least 8 characters"
+              placeholder="Create password"
               minlength="8"
               autocomplete="new-password"
               required
@@ -1723,7 +1704,7 @@
         </div>
 
         <button id="emailAuthSubmitBtn" type="submit" class="auth-submit-btn">
-          Sign up for free
+          Sign up
         </button>
       </form>
 
@@ -2351,30 +2332,13 @@
 
       <div class="qr-preview-box">
         <img src="qr.png" alt="Kineo Payment QR Code" class="qr-preview-img" />
-        <div class="upi-copy-chip">UPI ID: paytm.s4eanhy@pty</div>
       </div>
 
-      <p style="font-size:13px;color:var(--text-secondary);text-align:center;line-height:1.5;">
-        Take a screenshot of this QR code or tap Pay ₹100 via UPI App to complete payment, then tap Confirm Payment to receive your subscription activation key and activate your plan.
-      </p>
-
       <div class="modal-actions-stack">
-        <a
-          id="upiPayLinkBtn"
-          href="upi://pay?pa=paytm.s4eanhy@pty&pn=Akhilesh%20Dwivedi&am=100&cu=INR"
-          class="btn-primary-pill"
-          style="text-decoration:none;"
-          onclick="handleUpiButtonClick(event)"
-        >
-          Pay ₹100 via UPI App
-        </a>
-
-        <div id="upiActionFeedback" class="upi-action-note"></div>
-
         <button
           type="button"
-          class="btn-secondary-pill"
-          onclick="confirmPaymentAndOpenActivation()"
+          class="btn-primary-pill"
+          onclick="confirmPaymentAndRedirectTelegram()"
         >
           Confirm Payment
         </button>
@@ -2455,8 +2419,7 @@
 
     // ==================== CONSTANTS & STATE ====================
     const ACTIVATION_KEY_SECRET = "25032023";
-    const UPI_ID = "paytm.s4eanhy@pty";
-    const UPI_PAYMENT_URL = `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=Akhilesh%20Dwivedi&am=100&cu=INR`;
+    const TELEGRAM_CONFIRM_URL = "https://t.me/thekineo?text=I%20have%20purchased%20the%20subscription.%20Please%20activate%20my%20subscription.";
     const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000;
     const VIDEO_FILES = [
       "video1.mp4",
@@ -2648,11 +2611,11 @@
 
       document.getElementById("modeSignUpTab").classList.toggle("active", isSignUp);
       document.getElementById("modeSignInTab").classList.toggle("active", !isSignUp);
-      document.getElementById("authMainHeading").textContent = isSignUp ? "Sign up for free" : "Log in to Kineo";
+      document.getElementById("authMainHeading").textContent = isSignUp ? "Sign up" : "Log in to Kineo";
       document.getElementById("authMainSubtitle").textContent = isSignUp
-        ? "Create your free Kineo account with your email and a password to start making cartoon videos."
+        ? "Create your Kineo account with your email and a password to start making cartoon videos."
         : "Log in with your registered email and password to continue.";
-      emailAuthSubmitBtn.textContent = isSignUp ? "Sign up for free" : "Log in";
+      emailAuthSubmitBtn.textContent = isSignUp ? "Sign up" : "Log in";
       authPasswordInput.setAttribute("autocomplete", isSignUp ? "new-password" : "current-password");
       document.getElementById("forgotPasswordRow").style.display = isSignUp ? "none" : "flex";
     }
@@ -2714,7 +2677,7 @@
         }
       } finally {
         emailAuthSubmitBtn.disabled = false;
-        emailAuthSubmitBtn.textContent = authMode === "signup" ? "Sign up for free" : "Log in";
+        emailAuthSubmitBtn.textContent = authMode === "signup" ? "Sign up" : "Log in";
       }
     }
 
@@ -2724,11 +2687,25 @@
         setAuthMessage("Enter your email address above first to reset your password.");
         return;
       }
+
       try {
+        const signInMethods = await auth.fetchSignInMethodsForEmail(email);
+        if (!Array.isArray(signInMethods) || signInMethods.length === 0) {
+          setAuthMessage("No account found with this email address.");
+          return;
+        }
+
         await auth.sendPasswordResetEmail(email);
-        setAuthMessage("Password reset link sent to your email.", true);
+        setAuthMessage("Password reset link sent to your registered email.", true);
       } catch (err) {
-        setAuthMessage((err && err.message) ? err.message : "Could not send reset email.");
+        const code = err && err.code ? err.code : "";
+        if (code === "auth/user-not-found") {
+          setAuthMessage("No account found with this email address.");
+        } else if (code === "auth/invalid-email") {
+          setAuthMessage("Please enter a valid email address.");
+        } else {
+          setAuthMessage((err && err.message) ? err.message : "Could not send reset email.");
+        }
       }
     }
 
@@ -2878,32 +2855,14 @@
     }
     startOfferLoopTimer();
 
-    // ==================== PAYMENT & DIRECT UPI FLOW ====================
+    // ==================== PAYMENT & TELEGRAM REDIRECT FLOW ====================
     function openPaymentModal() {
-      const noteEl = document.getElementById("upiActionFeedback");
-      if (noteEl) noteEl.textContent = "";
       document.getElementById("paymentModal").classList.add("open");
     }
 
-    function handleUpiButtonClick(event) {
-      const noteEl = document.getElementById("upiActionFeedback");
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(UPI_ID).catch(() => {});
-      }
-      if (noteEl) {
-        noteEl.textContent = `Opening UPI app for ₹100 (${UPI_ID})...`;
-      }
-      try {
-        window.location.assign(UPI_PAYMENT_URL);
-      } catch (e) {
-        event.preventDefault();
-        window.location.href = UPI_PAYMENT_URL;
-      }
-    }
-
-    function confirmPaymentAndOpenActivation() {
+    function confirmPaymentAndRedirectTelegram() {
       closeModal("paymentModal");
-      openActivationModal();
+      window.open(TELEGRAM_CONFIRM_URL, "_blank", "noopener,noreferrer");
     }
 
     function openActivationModal() {
