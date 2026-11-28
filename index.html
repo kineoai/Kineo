@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="color-scheme" content="light only" />
+  <meta name="supported-color-schemes" content="light" />
   <title>Kineo — AI Text-to-Cartoon Video Generator (Up to 8K Ultra HD)</title>
 
   <!-- Hidden SEO Meta Tags -->
@@ -11,7 +13,7 @@
   <meta name="author" content="Kineo AI" />
   <meta name="robots" content="index, follow" />
   <meta name="googlebot" content="index, follow" />
-  <meta name="theme-color" content="#111318" />
+  <meta name="theme-color" content="#f5f6f8" />
   <link rel="canonical" href="https://kineo.live/" />
 
   <!-- Open Graph / Social Media -->
@@ -66,7 +68,7 @@
   </script>
 
   <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5395913681338451" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5395959368133845" crossorigin="anonymous"></script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -75,6 +77,7 @@
 
   <style>
     :root {
+      color-scheme: light only;
       --bg-main: #f5f6f8;
       --bg-surface: #ffffff;
       --bg-subtle: #eef0f4;
@@ -107,6 +110,7 @@
       width: 100%;
       height: 100%;
       font-size: 16px;
+      color-scheme: light only;
       -webkit-text-size-adjust: 100%;
     }
 
@@ -114,8 +118,8 @@
       width: 100%;
       min-height: 100vh;
       min-height: 100dvh;
-      background-color: var(--bg-main);
-      color: var(--text-primary);
+      background-color: #f5f6f8 !important;
+      color: #111318 !important;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       overflow-x: hidden;
       line-height: 1.5;
@@ -136,7 +140,7 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      background: var(--bg-main);
+      background: #f5f6f8;
       z-index: 9999;
       display: flex;
       flex-direction: column;
@@ -148,8 +152,8 @@
     .spinner {
       width: 38px;
       height: 38px;
-      border: 3px solid var(--border-light);
-      border-top-color: var(--dark-btn);
+      border: 3px solid #e5e7eb;
+      border-top-color: #111318;
       border-radius: 50%;
       animation: spin 0.75s linear infinite;
     }
@@ -190,20 +194,20 @@
       font-size: clamp(28px, 5vw, 36px);
       font-weight: 800;
       letter-spacing: -0.025em;
-      color: var(--text-primary);
+      color: #111318;
       margin-bottom: 10px;
     }
 
     .login-subtitle {
       font-size: clamp(14.5px, 2vw, 16px);
-      color: var(--text-secondary);
+      color: #5c6370;
       margin-bottom: 34px;
       line-height: 1.5;
     }
 
     .login-desc {
       font-size: 13.5px;
-      color: var(--text-secondary);
+      color: #5c6370;
       line-height: 1.6;
       margin-bottom: 24px;
       padding: 0 6px;
@@ -212,24 +216,24 @@
     .google-btn {
       width: 100%;
       height: 54px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-pill);
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 9999px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
       font-size: 15.5px;
       font-weight: 600;
-      color: var(--text-primary);
+      color: #111318;
       cursor: pointer;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 2px 8px rgba(17, 19, 24, 0.04);
       transition: all 0.2s ease;
     }
 
     .google-btn:hover:not(:disabled) {
       background: #fafafa;
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 8px 24px rgba(17, 19, 24, 0.08);
       transform: translateY(-1px);
     }
 
@@ -241,7 +245,7 @@
     .auth-error {
       margin-top: 14px;
       font-size: 13px;
-      color: var(--danger);
+      color: #dc2626;
       background: #fef2f2;
       border: 1px solid #fecaca;
       padding: 10px 14px;
@@ -257,17 +261,17 @@
       min-height: 100dvh;
       display: flex;
       flex-direction: column;
-      background: var(--bg-main);
+      background: #f5f6f8;
     }
 
     .navbar {
       width: 100%;
       height: 64px;
       padding: 0 clamp(14px, 4vw, 40px);
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid #e5e7eb;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -293,7 +297,7 @@
       font-size: 20px;
       font-weight: 800;
       letter-spacing: -0.02em;
-      color: var(--text-primary);
+      color: #111318;
     }
 
     .nav-right {
@@ -308,7 +312,7 @@
       font-size: 11px;
       font-weight: 700;
       padding: 4px 10px;
-      border-radius: var(--radius-pill);
+      border-radius: 9999px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
@@ -317,12 +321,12 @@
       width: 38px;
       height: 38px;
       border-radius: 50%;
-      background: var(--dark-btn);
+      background: #111318;
       color: #ffffff;
       font-weight: 700;
       font-size: 15px;
       border: 2px solid #ffffff;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 2px 8px rgba(17, 19, 24, 0.08);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -348,16 +352,16 @@
     /* Offer Countdown Banner */
     .offer-banner {
       width: 100%;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-lg);
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
       padding: 14px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 12px;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 2px 8px rgba(17, 19, 24, 0.04);
     }
 
     .offer-info {
@@ -373,31 +377,31 @@
       font-size: 11.5px;
       font-weight: 700;
       padding: 4px 10px;
-      border-radius: var(--radius-pill);
+      border-radius: 9999px;
     }
 
     .offer-text {
       font-size: 13.5px;
       font-weight: 600;
-      color: var(--text-primary);
+      color: #111318;
     }
 
     .offer-timer {
       font-variant-numeric: tabular-nums;
       font-size: 13.5px;
       font-weight: 700;
-      color: var(--danger);
+      color: #dc2626;
       background: #fef2f2;
       padding: 4px 12px;
-      border-radius: var(--radius-pill);
+      border-radius: 9999px;
     }
 
     .upgrade-mini-btn {
-      background: var(--dark-btn);
+      background: #111318;
       color: #ffffff;
       border: none;
       padding: 8px 16px;
-      border-radius: var(--radius-pill);
+      border-radius: 9999px;
       font-size: 13px;
       font-weight: 600;
       cursor: pointer;
@@ -405,17 +409,17 @@
     }
 
     .upgrade-mini-btn:hover {
-      background: var(--dark-btn-hover);
+      background: #262a34;
     }
 
     /* Studio Card */
     .studio-card {
       width: 100%;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-lg);
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
       padding: clamp(18px, 4vw, 32px);
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 2px 8px rgba(17, 19, 24, 0.04);
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -424,13 +428,13 @@
     .studio-header h1 {
       font-size: clamp(21px, 3.5vw, 28px);
       font-weight: 800;
-      color: var(--text-primary);
+      color: #111318;
       margin-bottom: 4px;
     }
 
     .studio-header p {
       font-size: 14px;
-      color: var(--text-secondary);
+      color: #5c6370;
     }
 
     .prompt-textarea {
@@ -438,19 +442,19 @@
       min-height: 140px;
       padding: 16px;
       border-radius: 16px;
-      border: 1.5px solid var(--border-light);
-      background: var(--bg-main);
+      border: 1.5px solid #e5e7eb;
+      background: #f5f6f8;
       font-family: inherit;
       font-size: 15px;
-      color: var(--text-primary);
+      color: #111318;
       resize: vertical;
       outline: none;
       transition: border-color 0.2s, background 0.2s;
     }
 
     .prompt-textarea:focus {
-      border-color: var(--accent);
-      background: var(--bg-surface);
+      border-color: #0ea5e9;
+      background: #ffffff;
     }
 
     .prompt-meta {
@@ -459,7 +463,7 @@
       align-items: center;
       margin-top: 8px;
       font-size: 12.5px;
-      color: var(--text-muted);
+      color: #8b92a0;
     }
 
     .controls-grid {
@@ -478,7 +482,7 @@
       display: block;
       font-size: 13px;
       font-weight: 600;
-      color: var(--text-secondary);
+      color: #5c6370;
       margin-bottom: 8px;
     }
 
@@ -491,11 +495,11 @@
     .ratio-btn {
       padding: 10px 8px;
       border-radius: 12px;
-      border: 1.5px solid var(--border-light);
-      background: var(--bg-surface);
+      border: 1.5px solid #e5e7eb;
+      background: #ffffff;
       font-size: 13px;
       font-weight: 600;
-      color: var(--text-secondary);
+      color: #5c6370;
       cursor: pointer;
       display: flex;
       flex-direction: column;
@@ -505,8 +509,8 @@
     }
 
     .ratio-btn.active {
-      border-color: var(--dark-btn);
-      background: var(--dark-btn);
+      border-color: #111318;
+      background: #111318;
       color: #ffffff;
     }
 
@@ -515,12 +519,12 @@
       height: 50px;
       padding: 0 14px;
       border-radius: 12px;
-      border: 1.5px solid var(--border-light);
-      background: var(--bg-surface);
+      border: 1.5px solid #e5e7eb;
+      background: #ffffff;
       font-family: inherit;
       font-size: 14px;
       font-weight: 600;
-      color: var(--text-primary);
+      color: #111318;
       outline: none;
       cursor: pointer;
     }
@@ -528,10 +532,10 @@
     .generate-btn {
       width: 100%;
       height: 54px;
-      background: var(--accent);
+      background: #0ea5e9;
       color: #ffffff;
       border: none;
-      border-radius: var(--radius-pill);
+      border-radius: 9999px;
       font-size: 16px;
       font-weight: 700;
       cursor: pointer;
@@ -544,7 +548,7 @@
     }
 
     .generate-btn:hover:not(:disabled) {
-      background: var(--accent-hover);
+      background: #0284c7;
       transform: translateY(-1px);
     }
 
@@ -555,8 +559,8 @@
 
     /* Generation Progress */
     .generation-box {
-      background: var(--bg-main);
-      border: 1px solid var(--border-light);
+      background: #f5f6f8;
+      border: 1px solid #e5e7eb;
       border-radius: 18px;
       padding: 22px 18px;
     }
@@ -566,6 +570,7 @@
       justify-content: space-between;
       font-size: 13.5px;
       font-weight: 600;
+      color: #111318;
       margin-bottom: 10px;
     }
 
@@ -573,7 +578,7 @@
       width: 100%;
       height: 10px;
       background: #e2e8f0;
-      border-radius: var(--radius-pill);
+      border-radius: 9999px;
       overflow: hidden;
     }
 
@@ -581,25 +586,25 @@
       width: 0%;
       height: 100%;
       background: linear-gradient(90deg, #0ea5e9, #2563eb);
-      border-radius: var(--radius-pill);
+      border-radius: 9999px;
       transition: width 0.2s ease;
     }
 
     .progress-note {
       margin-top: 10px;
       font-size: 12.5px;
-      color: var(--text-secondary);
+      color: #5c6370;
       text-align: center;
     }
 
     /* Video Result Card */
     .result-card {
       width: 100%;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-lg);
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
       padding: clamp(16px, 3vw, 24px);
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 8px 24px rgba(17, 19, 24, 0.08);
       display: flex;
       flex-direction: column;
       gap: 16px;
@@ -622,10 +627,10 @@
     .download-btn {
       width: 100%;
       height: 48px;
-      background: var(--dark-btn);
+      background: #111318;
       color: #ffffff;
       border: none;
-      border-radius: var(--radius-pill);
+      border-radius: 9999px;
       font-size: 14.5px;
       font-weight: 600;
       cursor: pointer;
@@ -640,7 +645,7 @@
     .ad-slot {
       width: 100%;
       min-height: 90px;
-      background: var(--bg-surface);
+      background: #ffffff;
       border: 1px dashed #d1d5db;
       border-radius: 14px;
       display: flex;
@@ -669,11 +674,12 @@
     .modal-card {
       width: 100%;
       max-width: 410px;
-      background: var(--bg-surface);
+      background: #ffffff;
+      color: #111318;
       border-radius: 26px;
       padding: 28px 24px 24px;
       position: relative;
-      box-shadow: var(--shadow-lg);
+      box-shadow: 0 20px 48px rgba(17, 19, 24, 0.14);
       text-align: center;
       max-height: 92dvh;
       overflow-y: auto;
@@ -687,8 +693,8 @@
       height: 32px;
       border-radius: 50%;
       border: none;
-      background: var(--bg-subtle);
-      color: var(--text-secondary);
+      background: #eef0f4;
+      color: #5c6370;
       font-size: 16px;
       font-weight: 600;
       cursor: pointer;
@@ -699,20 +705,20 @@
 
     .modal-close:hover {
       background: #e2e8f0;
-      color: var(--text-primary);
+      color: #111318;
     }
 
     .pay-title {
       font-size: 21px;
       font-weight: 800;
-      color: var(--text-primary);
+      color: #111318;
       margin-bottom: 8px;
     }
 
     .pay-subtitle {
       font-size: 13.5px;
       font-weight: 500;
-      color: var(--text-secondary);
+      color: #5c6370;
       line-height: 1.45;
       margin-bottom: 16px;
       padding: 0 4px;
@@ -721,7 +727,7 @@
     .pay-amount {
       font-size: 32px;
       font-weight: 800;
-      color: var(--text-primary);
+      color: #111318;
       margin-bottom: 12px;
       letter-spacing: -0.02em;
     }
@@ -732,7 +738,7 @@
       margin: 0 auto 14px;
       padding: 10px;
       background: #ffffff;
-      border: 1.5px solid var(--border-light);
+      border: 1.5px solid #e5e7eb;
       border-radius: 18px;
       display: flex;
       align-items: center;
@@ -750,23 +756,23 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      background: var(--bg-subtle);
+      background: #eef0f4;
       padding: 6px 12px 6px 14px;
-      border-radius: var(--radius-pill);
+      border-radius: 9999px;
       margin-bottom: 18px;
-      border: 1px solid var(--border-light);
+      border: 1px solid #e5e7eb;
     }
 
     .upi-text {
       font-size: 13px;
       font-weight: 600;
-      color: var(--text-primary);
+      color: #111318;
       user-select: all;
     }
 
     .copy-icon-btn {
       background: #ffffff;
-      border: 1px solid var(--border-light);
+      border: 1px solid #e5e7eb;
       border-radius: 50%;
       width: 28px;
       height: 28px;
@@ -774,7 +780,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      color: var(--text-primary);
+      color: #111318;
       transition: all 0.18s ease;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
     }
@@ -787,16 +793,16 @@
     .copy-icon-btn.copied {
       background: #dcfce7;
       border-color: #86efac;
-      color: var(--success);
+      color: #16a34a;
     }
 
     .pay-upi-btn {
       width: 100%;
       height: 48px;
-      background: var(--accent);
+      background: #0ea5e9;
       color: #ffffff;
       border: none;
-      border-radius: var(--radius-pill);
+      border-radius: 9999px;
       font-size: 15px;
       font-weight: 700;
       cursor: pointer;
@@ -809,16 +815,16 @@
     }
 
     .pay-upi-btn:hover {
-      background: var(--accent-hover);
+      background: #0284c7;
     }
 
     .confirm-pay-btn {
       width: 100%;
       height: 48px;
-      background: var(--dark-btn);
+      background: #111318;
       color: #ffffff;
       border: none;
-      border-radius: var(--radius-pill);
+      border-radius: 9999px;
       font-size: 15px;
       font-weight: 700;
       cursor: pointer;
@@ -831,11 +837,11 @@
     }
 
     .confirm-pay-btn:hover {
-      background: var(--dark-btn-hover);
+      background: #262a34;
     }
 
     .key-section {
-      border-top: 1px solid var(--border-light);
+      border-top: 1px solid #e5e7eb;
       padding-top: 14px;
       display: flex;
       gap: 8px;
@@ -845,8 +851,10 @@
       flex: 1;
       height: 42px;
       padding: 0 14px;
-      border-radius: var(--radius-pill);
-      border: 1.5px solid var(--border-light);
+      border-radius: 9999px;
+      border: 1.5px solid #e5e7eb;
+      background: #ffffff;
+      color: #111318;
       font-size: 13.5px;
       outline: none;
     }
@@ -854,10 +862,10 @@
     .key-submit-btn {
       height: 42px;
       padding: 0 18px;
-      border-radius: var(--radius-pill);
+      border-radius: 9999px;
       border: none;
-      background: var(--bg-subtle);
-      color: var(--text-primary);
+      background: #eef0f4;
+      color: #111318;
       font-size: 13.5px;
       font-weight: 700;
       cursor: pointer;
@@ -867,7 +875,7 @@
       width: 64px;
       height: 64px;
       border-radius: 50%;
-      background: var(--dark-btn);
+      background: #111318;
       color: #ffffff;
       font-size: 26px;
       font-weight: 800;
@@ -886,7 +894,7 @@
       display: block;
       font-size: 12px;
       font-weight: 600;
-      color: var(--text-secondary);
+      color: #5c6370;
       margin-bottom: 5px;
     }
 
@@ -895,7 +903,9 @@
       height: 44px;
       padding: 0 14px;
       border-radius: 12px;
-      border: 1.5px solid var(--border-light);
+      border: 1.5px solid #e5e7eb;
+      background: #ffffff;
+      color: #111318;
       font-size: 14px;
     }
 
@@ -914,10 +924,10 @@
       width: 54px;
       height: 54px;
       border-radius: 50%;
-      background: var(--dark-btn);
+      background: #111318;
       color: #ffffff;
       border: none;
-      box-shadow: var(--shadow-lg);
+      box-shadow: 0 20px 48px rgba(17, 19, 24, 0.14);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -938,10 +948,10 @@
       max-width: 360px;
       height: 430px;
       max-height: 70dvh;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-light);
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
       border-radius: 22px;
-      box-shadow: var(--shadow-lg);
+      box-shadow: 0 20px 48px rgba(17, 19, 24, 0.14);
       z-index: 90;
       display: flex;
       flex-direction: column;
@@ -949,7 +959,7 @@
     }
 
     .chat-header {
-      background: var(--dark-btn);
+      background: #111318;
       color: #ffffff;
       padding: 14px 18px;
       display: flex;
@@ -964,7 +974,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      background: var(--bg-main);
+      background: #f5f6f8;
     }
 
     .msg-bubble {
@@ -978,15 +988,15 @@
 
     .msg-bot {
       align-self: flex-start;
-      background: var(--bg-surface);
-      color: var(--text-primary);
-      border: 1px solid var(--border-light);
+      background: #ffffff;
+      color: #111318;
+      border: 1px solid #e5e7eb;
       border-bottom-left-radius: 4px;
     }
 
     .msg-user {
       align-self: flex-end;
-      background: var(--accent);
+      background: #0ea5e9;
       color: #ffffff;
       border-bottom-right-radius: 4px;
     }
@@ -1001,8 +1011,8 @@
 
     .chat-input-bar {
       padding: 10px;
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border-light);
+      background: #ffffff;
+      border-top: 1px solid #e5e7eb;
       display: flex;
       gap: 8px;
     }
@@ -1011,8 +1021,10 @@
       flex: 1;
       height: 40px;
       padding: 0 14px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--border-light);
+      border-radius: 9999px;
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
+      color: #111318;
       font-size: 13.5px;
       outline: none;
     }
@@ -1022,7 +1034,7 @@
       height: 40px;
       border-radius: 50%;
       border: none;
-      background: var(--dark-btn);
+      background: #111318;
       color: #ffffff;
       cursor: pointer;
       display: flex;
@@ -1039,10 +1051,10 @@
       background: #111318;
       color: #ffffff;
       padding: 10px 20px;
-      border-radius: var(--radius-pill);
+      border-radius: 9999px;
       font-size: 13.5px;
       font-weight: 600;
-      box-shadow: var(--shadow-lg);
+      box-shadow: 0 20px 48px rgba(17, 19, 24, 0.14);
       opacity: 0;
       pointer-events: none;
       transition: all 0.25s ease;
@@ -1061,7 +1073,7 @@
   <!-- Auth Loader -->
   <div id="authLoader">
     <div class="spinner"></div>
-    <p style="font-size: 14px; font-weight: 600; color: var(--text-secondary);">Loading Kineo...</p>
+    <p style="font-size: 14px; font-weight: 600; color: #5c6370;">Loading Kineo...</p>
   </div>
 
   <!-- ================= INTERFACE 1: LOGIN SCREEN ================= -->
@@ -1182,7 +1194,7 @@
       <section id="resultCard" class="result-card hidden">
         <div class="flex items-center justify-between">
           <h3 style="font-size: 17px; font-weight: 700;">Your Generated Cartoon Video</h3>
-          <span id="videoBatchTag" style="font-size: 12px; font-weight: 600; color: var(--accent);">Ready</span>
+          <span id="videoBatchTag" style="font-size: 12px; font-weight: 600; color: #0ea5e9;">Ready</span>
         </div>
         <div class="video-wrapper">
           <video id="outputVideo" controls playsinline loop></video>
@@ -1198,7 +1210,7 @@
       <div class="ad-slot">
         <ins class="adsbygoogle"
              style="display:block; width:100%;"
-             data-ad-client="ca-pub-5395913681338451"
+             data-ad-client="ca-pub-5395959368133845"
              data-ad-slot="auto"
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
@@ -1255,7 +1267,7 @@
 
       <div id="profileAvatarLg" class="profile-avatar-lg">U</div>
       <h3 id="profileDisplayName" style="font-size: 18px; font-weight: 700; margin-bottom: 2px;">User</h3>
-      <p id="profileEmail" style="font-size: 13px; color: var(--text-secondary); margin-bottom: 18px;">user@gmail.com</p>
+      <p id="profileEmail" style="font-size: 13px; color: #5c6370; margin-bottom: 18px;">user@gmail.com</p>
 
       <div class="profile-field">
         <label for="editNameInput">Display Name</label>
@@ -1265,7 +1277,7 @@
       <div class="profile-btn-row">
         <button type="button" id="saveProfileBtn" class="confirm-pay-btn" style="margin-bottom: 0;">Save Changes</button>
         <button type="button" id="openPayFromProfileBtn" class="pay-upi-btn" style="margin-bottom: 0;">Upgrade to Lifetime Pro (₹100)</button>
-        <button type="button" id="logoutBtn" class="key-submit-btn" style="width: 100%; height: 44px; color: var(--danger);">Sign Out</button>
+        <button type="button" id="logoutBtn" class="key-submit-btn" style="width: 100%; height: 44px; color: #dc2626;">Sign Out</button>
       </div>
     </div>
   </div>
@@ -1312,14 +1324,15 @@
       updateProfile
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     const firebaseConfig = {
-      apiKey: "AIzaSyB7NYHjsmq2WVnpkhko9VhHF_fBJCUCG0",
+      apiKey: "AIzaSyB7NYHjsWqZW6VNphka69VhuhLF8JCucG8",
       authDomain: "kineo-680e6.firebaseapp.com",
       projectId: "kineo-680e6",
       storageBucket: "kineo-680e6.firebasestorage.app",
       messagingSenderId: "483117256924",
-      appId: "1:483117256924:web:5f19b883d87cb12f536419",
-      measurementId: "G-3YRP9ZMXKV"
+      appId: "1:483117256924:web:5f19b883d07cb12f536419",
+      measurementId: "G-3YRP92MKXV"
     };
 
     const app = initializeApp(firebaseConfig);
@@ -1373,11 +1386,7 @@
       setTimeout(() => toast.classList.remove("show"), 2600);
     }
 
-    function isMobileBrowser() {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
-
-    // Complete redirect login if returning from Google redirect
+    // Complete redirect login if a fallback redirect occurred
     getRedirectResult(auth)
       .then((result) => {
         if (result && result.user) {
@@ -1385,31 +1394,39 @@
         }
       })
       .catch((error) => {
-        if (error && error.code && error.code !== "auth/no-auth-event") {
-          loginErrorMsg.textContent = "Sign-in failed: " + (error.code || error.message);
+        if (
+          error &&
+          error.code &&
+          error.code !== "auth/no-auth-event" &&
+          error.code !== "auth/popup-closed-by-user"
+        ) {
+          loginErrorMsg.textContent = "Sign-in issue: " + error.code;
           loginErrorMsg.classList.remove("hidden");
         }
       });
 
-    // Reliable Google Sign-In Handler
+    // Smooth Login across All Phones (10k to 1Cr+), iOS, Windows, macOS
     googleLoginBtn.addEventListener("click", async () => {
       loginErrorMsg.classList.add("hidden");
       googleLoginBtn.disabled = true;
 
       try {
-        if (isMobileBrowser()) {
-          await signInWithRedirect(auth, provider);
-        } else {
-          await signInWithPopup(auth, provider);
-        }
+        await signInWithPopup(auth, provider);
       } catch (err) {
-        if (err.code === "auth/popup-blocked" || err.code === "auth/popup-closed-by-user") {
+        const fallbackCodes = [
+          "auth/popup-blocked",
+          "auth/operation-not-supported-in-this-environment",
+          "auth/third-party-cookie-blocked"
+        ];
+        if (fallbackCodes.includes(err.code)) {
           try {
             await signInWithRedirect(auth, provider);
             return;
-          } catch (redirectErr) {
-            loginErrorMsg.textContent = "Sign-in failed: " + (redirectErr.code || redirectErr.message);
+          } catch (redirErr) {
+            loginErrorMsg.textContent = "Sign-in failed: " + (redirErr.code || redirErr.message);
           }
+        } else if (err.code === "auth/popup-closed-by-user") {
+          loginErrorMsg.textContent = "Login window was closed before completing sign-in. Please tap Continue with Google again.";
         } else {
           loginErrorMsg.textContent = "Sign-in failed: " + (err.code || err.message);
         }
@@ -1423,6 +1440,7 @@
       authLoader.classList.add("hidden");
       if (user) {
         currentUser = user;
+        loginErrorMsg.classList.add("hidden");
         loginView.classList.add("hidden");
         appView.classList.remove("hidden");
         chatFab.classList.remove("hidden");
@@ -1494,7 +1512,7 @@
     promptInput.addEventListener("input", () => {
       const letters = promptInput.value.replace(/[^a-zA-Z\u0900-\u097F]/g, "").length;
       charCount.textContent = `${letters} letters`;
-      charCount.style.color = letters >= 10 ? "var(--success)" : "var(--text-muted)";
+      charCount.style.color = letters >= 10 ? "#16a34a" : "#8b92a0";
     });
 
     // Video Generation (3s / 1% step + 5 sequential videos)
