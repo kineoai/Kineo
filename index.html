@@ -99,7 +99,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Hidden SEO keyword vault (invisible to users, indexed by search engines) */
     .seo-keyword-vault {
       position: absolute;
       width: 1px;
@@ -112,7 +111,7 @@
       border: 0;
     }
 
-    /* ==================== #26 WELCOME & AUTH SCREEN ==================== */
+    /* ==================== WELCOME & AUTH SCREEN ==================== */
     .login-screen {
       width: 100%;
       min-height: 100dvh;
@@ -126,8 +125,8 @@
 
     .login-screen.auth-form-active {
       justify-content: flex-start;
-      gap: 14px;
-      padding-top: clamp(16px, 3vh, 28px);
+      gap: 12px;
+      padding-top: clamp(16px, 3vh, 26px);
     }
 
     .login-top-spacer {
@@ -158,9 +157,9 @@
     }
 
     .login-screen.auth-form-active .login-logo-img {
-      width: 58px;
-      height: 58px;
-      margin-bottom: 10px;
+      width: 54px;
+      height: 54px;
+      margin-bottom: 8px;
     }
 
     .login-title {
@@ -197,12 +196,12 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 12px;
-      margin-top: 20px;
+      gap: 10px;
+      margin-top: 16px;
     }
 
     .login-screen.auth-form-active .login-bottom {
-      margin-top: 4px;
+      margin-top: 0;
     }
 
     .login-desc {
@@ -392,7 +391,7 @@
     }
 
     .auth-status-msg {
-      min-height: 20px;
+      min-height: 18px;
       font-size: 13px;
       font-weight: 600;
       color: var(--danger-red);
@@ -404,14 +403,14 @@
       color: var(--success-green);
     }
 
-    /* ==================== MAIN WORKSPACE (TABS #2 - #6) ==================== */
+    /* ==================== MAIN WORKSPACE ==================== */
     .main-app {
       width: 100%;
       min-height: 100dvh;
       background: var(--bg-page);
       display: none;
       flex-direction: column;
-      padding-bottom: calc(var(--nav-height) + 28px + var(--safe-bottom));
+      padding-bottom: calc(var(--nav-height) + var(--safe-bottom));
     }
 
     .main-app.active {
@@ -434,10 +433,13 @@
 
     .tab-container.help-full-bleed {
       max-width: 820px;
+      width: 100%;
+      margin: 0 auto;
       padding: 0;
       display: none;
       flex-direction: column;
       height: calc(100dvh - var(--nav-height) - var(--safe-bottom));
+      overflow: hidden;
     }
 
     .tab-container.help-full-bleed.active {
@@ -449,7 +451,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Shared Brand Header */
     .brand-topbar {
       display: flex;
       align-items: center;
@@ -492,7 +493,7 @@
       white-space: nowrap;
     }
 
-    /* ==================== #2 HOME TAB ==================== */
+    /* ==================== HOME TAB ==================== */
     .home-intro-heading {
       font-size: clamp(20px, 3.2vw, 26px);
       font-weight: 800;
@@ -687,7 +688,7 @@
       background: var(--bg-subtle);
     }
 
-    /* ==================== #3 SUBSCRIPTION TAB ==================== */
+    /* ==================== SUBSCRIPTION TAB ==================== */
     .loop-timer-banner {
       background: #f6f7fa;
       border: 1px solid var(--border-light);
@@ -839,7 +840,7 @@
       color: var(--text-primary);
     }
 
-    /* ==================== #4 CREATE / STUDIO TAB ==================== */
+    /* ==================== CREATE / STUDIO TAB ==================== */
     .studio-heading {
       font-size: clamp(22px, 3.6vw, 28px);
       font-weight: 800;
@@ -1096,7 +1097,7 @@
       margin-top: 8px;
     }
 
-    /* ==================== #5 HELP TAB ==================== */
+    /* ==================== HELP TAB (ZERO EXTRA BOTTOM SPACING) ==================== */
     .help-header {
       padding: 12px 18px;
       background: #ffffff;
@@ -1149,9 +1150,10 @@
     }
 
     .chat-messages-area {
-      flex: 1;
+      flex: 1 1 auto;
+      min-height: 0;
       overflow-y: auto;
-      padding: 18px 16px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -1204,7 +1206,8 @@
     }
 
     .help-input-bar {
-      padding: 8px 14px;
+      margin: 0;
+      padding: 6px 12px;
       background: #ffffff;
       border-top: 1px solid var(--border-light);
       display: flex;
@@ -1215,7 +1218,7 @@
 
     .help-input-field {
       flex: 1;
-      height: 46px;
+      height: 44px;
       border-radius: var(--radius-pill);
       border: 1px solid var(--border-light);
       background: var(--bg-subtle);
@@ -1232,8 +1235,8 @@
     }
 
     .help-send-btn {
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       border: none;
       background: #e5e7eb;
@@ -1251,7 +1254,7 @@
       color: #ffffff;
     }
 
-    /* ==================== #6 PROFILE TAB ==================== */
+    /* ==================== PROFILE TAB ==================== */
     .profile-page-title {
       font-size: clamp(24px, 4vw, 30px);
       font-weight: 800;
@@ -1361,7 +1364,6 @@
       margin-top: 8px;
     }
 
-    /* Edit Profile Sub-View */
     .edit-profile-view {
       display: none;
     }
@@ -1612,6 +1614,14 @@
       display: inline-block;
     }
 
+    .upi-action-note {
+      font-size: 12px;
+      color: var(--text-secondary);
+      text-align: center;
+      min-height: 18px;
+      font-weight: 600;
+    }
+
     .modal-actions-stack {
       display: flex;
       flex-direction: column;
@@ -1640,14 +1650,13 @@
 </head>
 <body>
 
-  <!-- Hidden keywords for search indexing (invisible to users) -->
   <div class="seo-keyword-vault" aria-hidden="true">
     Kineo Kineo.live Kineo AI text to cartoon making ai tool text to cartoon video creation ai tool
     script to cartoon ai generator anime video generator cartoon story creator 720p 1080p 1440p 4k 8k cartoon video ai
     kineo official website text to animation video tool commercial use cartoon video maker
   </div>
 
-  <!-- ==================== #26 WELCOME & AUTH SCREEN ==================== -->
+  <!-- ==================== WELCOME & AUTH SCREEN ==================== -->
   <section id="loginScreen" class="login-screen">
     <div class="login-top-spacer"></div>
 
@@ -1662,7 +1671,6 @@
         Kineo is a text-to-cartoon video creation AI tool capable of generating videos up to 10 minutes in up to 8K Ultra quality with full commercial use.
       </p>
 
-      <!-- Initial Entry Button on Welcome Screen -->
       <button
         id="welcomeAuthTriggerBtn"
         type="button"
@@ -1676,7 +1684,6 @@
         </svg>
       </button>
 
-      <!-- Sign Up / Log In Form Interface (Revealed after tapping entry button) -->
       <form id="emailAuthForm" class="auth-form-card" style="display:none;" onsubmit="handleEmailAuthSubmit(event)">
         <div class="auth-mode-tabs" role="tablist">
           <button id="modeSignUpTab" type="button" class="auth-mode-tab active" onclick="setAuthMode('signup')">Sign up for free</button>
@@ -1724,10 +1731,10 @@
     </div>
   </section>
 
-  <!-- ==================== MAIN APP (#2 - #6) ==================== -->
+  <!-- ==================== MAIN APP ==================== -->
   <div id="mainApp" class="main-app">
 
-    <!-- ==================== #2 HOME TAB ==================== -->
+    <!-- ==================== HOME TAB ==================== -->
     <main id="tabHome" class="tab-container active" role="tabpanel">
       <div class="brand-topbar">
         <div class="brand-left">
@@ -1861,14 +1868,14 @@
       </div>
     </main>
 
-    <!-- ==================== #3 & #24 SUBSCRIPTION TAB ==================== -->
+    <!-- ==================== SUBSCRIPTION TAB ==================== -->
     <section id="tabSubscription" class="tab-container" role="tabpanel">
       <div id="offerLoopBanner" class="loop-timer-banner">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
           <circle cx="12" cy="12" r="9"></circle>
           <polyline points="12 7 12 12 15.5 14"></polyline>
         </svg>
-        <span>Offer resets in <span id="offerTimerDigits" class="timer-digits">23:59:59</span></span>
+        <span>Offer resets in <span id="offerTimerDigits" class="timer-digits">24:00:00</span></span>
       </div>
 
       <div id="activePlanBanner" class="active-plan-banner">
@@ -1997,7 +2004,7 @@
       </div>
     </section>
 
-    <!-- ==================== #4 & #23 CREATE / STUDIO TAB ==================== -->
+    <!-- ==================== CREATE / STUDIO TAB ==================== -->
     <section id="tabCreate" class="tab-container" role="tabpanel">
       <div class="brand-topbar">
         <div class="brand-left">
@@ -2122,7 +2129,7 @@
       </div>
     </section>
 
-    <!-- ==================== #5 & #25 HELP TAB ==================== -->
+    <!-- ==================== HELP TAB ==================== -->
     <section id="tabHelp" class="tab-container help-full-bleed" role="tabpanel">
       <div class="help-header">
         <div class="help-avatar-wrap" aria-hidden="true">
@@ -2173,7 +2180,7 @@
       </form>
     </section>
 
-    <!-- ==================== #6 PROFILE TAB ==================== -->
+    <!-- ==================== PROFILE TAB ==================== -->
     <section id="tabProfile" class="tab-container" role="tabpanel">
       <div id="profileOverviewView">
         <h2 class="profile-page-title">Profile</h2>
@@ -2238,7 +2245,6 @@
         </p>
       </div>
 
-      <!-- Edit Profile View -->
       <div id="editProfileView" class="edit-profile-view">
         <div class="edit-top-bar">
           <button type="button" class="back-circle-btn" onclick="closeEditProfileView()" aria-label="Back">
@@ -2335,7 +2341,7 @@
     </nav>
   </div>
 
-  <!-- ==================== #24 PAYMENT MODAL ==================== -->
+  <!-- ==================== PAYMENT MODAL ==================== -->
   <div id="paymentModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="paymentModalTitle">
     <div class="modal-card">
       <div class="modal-header">
@@ -2353,13 +2359,17 @@
       </p>
 
       <div class="modal-actions-stack">
-        <button
-          type="button"
+        <a
+          id="upiPayLinkBtn"
+          href="upi://pay?pa=paytm.s4eanhy@pty&pn=Akhilesh%20Dwivedi&am=100&cu=INR"
           class="btn-primary-pill"
-          onclick="redirectToUpiApp()"
+          style="text-decoration:none;"
+          onclick="handleUpiButtonClick(event)"
         >
           Pay ₹100 via UPI App
-        </button>
+        </a>
+
+        <div id="upiActionFeedback" class="upi-action-note"></div>
 
         <button
           type="button"
@@ -2420,7 +2430,7 @@
     </div>
   </div>
 
-  <!-- Firebase Compat SDKs (Auth + Firestore for Cross-Device & History-Safe Sync) -->
+  <!-- Firebase Compat SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
@@ -2445,7 +2455,8 @@
 
     // ==================== CONSTANTS & STATE ====================
     const ACTIVATION_KEY_SECRET = "25032023";
-    const UPI_PAYMENT_URL = "upi://pay?pa=paytm.s4eanhy@pty&pn=Akhilesh%20Dwivedi&am=100&cu=INR";
+    const UPI_ID = "paytm.s4eanhy@pty";
+    const UPI_PAYMENT_URL = `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=Akhilesh%20Dwivedi&am=100&cu=INR`;
     const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000;
     const VIDEO_FILES = [
       "video1.mp4",
@@ -2464,6 +2475,7 @@
     let helpReplyTimer = null;
     let selectedEditGender = "Prefer not to say";
     let cloudSubActive = false;
+    let userCycleAnchorMs = null;
 
     // ==================== STORAGE & CLOUD SYNC HELPERS ====================
     function userScopedKey(base) {
@@ -2493,10 +2505,40 @@
       }
     }
 
+    function getUserTimerAnchorMs(user = currentUser) {
+      if (!user || !user.uid) return Date.now();
+      const key = `kineo_v1_${user.uid}_timer_anchor_ms`;
+      const existing = parseInt(localStorage.getItem(key) || "0", 10);
+      if (existing > 0) return existing;
+
+      const authCreatedMs = user.metadata && user.metadata.creationTime
+        ? Date.parse(user.metadata.creationTime)
+        : 0;
+      const anchor = (Number.isFinite(authCreatedMs) && authCreatedMs > 0) ? authCreatedMs : Date.now();
+      localStorage.setItem(key, String(anchor));
+      return anchor;
+    }
+
+    function ensureSubscriptionTabAnchor() {
+      if (!currentUser || !currentUser.uid) return;
+      const anchorKey = userScopedKey("timer_anchor_ms");
+      if (!localStorage.getItem(anchorKey)) {
+        const nowMs = Date.now();
+        localStorage.setItem(anchorKey, String(nowMs));
+        userCycleAnchorMs = nowMs;
+        db.collection("users").doc(currentUser.uid).set({
+          email: currentUser.email || "",
+          timerAnchorMs: nowMs
+        }, { merge: true }).catch(() => {});
+      }
+    }
+
     async function syncUserCloudState(user) {
       if (!user || !user.uid) return;
       const localPro = localStorage.getItem(`kineo_v1_${user.uid}_pro_active`) === "true";
       cloudSubActive = localPro;
+
+      let anchorMs = getUserTimerAnchorMs(user);
 
       try {
         const docRef = db.collection("users").doc(user.uid);
@@ -2504,6 +2546,13 @@
 
         if (snap.exists) {
           const data = snap.data() || {};
+          if (typeof data.timerAnchorMs === "number" && data.timerAnchorMs > 0) {
+            anchorMs = data.timerAnchorMs;
+            localStorage.setItem(`kineo_v1_${user.uid}_timer_anchor_ms`, String(anchorMs));
+          } else {
+            await docRef.set({ timerAnchorMs: anchorMs, email: user.email || "" }, { merge: true });
+          }
+
           if (data.proActive === true) {
             cloudSubActive = true;
             localStorage.setItem(`kineo_v1_${user.uid}_pro_active`, "true");
@@ -2535,6 +2584,7 @@
           await docRef.set({
             email: user.email || "",
             proActive: localPro,
+            timerAnchorMs: anchorMs,
             profile: { gender: profile.gender, bio: profile.bio },
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
           }, { merge: true });
@@ -2543,6 +2593,8 @@
         console.warn("Cloud sync fallback active:", e);
       }
 
+      userCycleAnchorMs = anchorMs;
+      updateOfferCountdownDisplay();
       syncSubscriptionUI();
     }
 
@@ -2556,7 +2608,7 @@
       }).toUpperCase();
     }
 
-    // ==================== #26 WELCOME & AUTHENTICATION ====================
+    // ==================== WELCOME & AUTHENTICATION ====================
     const loginScreenEl = document.getElementById("loginScreen");
     const authStatusMsg = document.getElementById("authStatusMsg");
     const emailAuthSubmitBtn = document.getElementById("emailAuthSubmitBtn");
@@ -2682,10 +2734,12 @@
 
     async function enterAuthenticatedApp(user) {
       currentUser = user;
+      userCycleAnchorMs = getUserTimerAnchorMs(user);
       setAuthMessage("");
       emailAuthSubmitBtn.disabled = false;
       document.getElementById("loginScreen").style.display = "none";
       document.getElementById("mainApp").classList.add("active");
+      updateOfferCountdownDisplay();
       syncSubscriptionUI();
       renderProfileData();
       initHelpChat();
@@ -2699,6 +2753,7 @@
       } else {
         currentUser = null;
         cloudSubActive = false;
+        userCycleAnchorMs = null;
         emailAuthSubmitBtn.disabled = false;
         document.getElementById("mainApp").classList.remove("active");
         document.getElementById("loginScreen").style.display = "flex";
@@ -2744,6 +2799,8 @@
       } else if (tabName === "help") {
         initHelpChat();
       } else if (tabName === "subscription") {
+        ensureSubscriptionTabAnchor();
+        updateOfferCountdownDisplay();
         syncSubscriptionUI();
       }
 
@@ -2752,7 +2809,7 @@
       }
     }
 
-    // ==================== #2 HOME VIDEO PLAYER ====================
+    // ==================== HOME VIDEO PLAYER ====================
     function playTutorialVideo() {
       const poster = document.getElementById("videoPosterLayer");
       const iframe = document.getElementById("tutorialIframe");
@@ -2761,7 +2818,7 @@
       iframe.classList.add("active");
     }
 
-    // ==================== SUBSCRIPTION STATE SYNC (#2, #3 & #24) ====================
+    // ==================== SUBSCRIPTION STATE SYNC ====================
     function syncSubscriptionUI() {
       const active = isSubscribed();
 
@@ -2799,34 +2856,49 @@
       }
     }
 
-    // ==================== #24 24-HOUR LOOP TIMER ====================
-    function startOfferLoopTimer() {
+    // ==================== PER-USER 24-HOUR LOOP TIMER ====================
+    function updateOfferCountdownDisplay() {
       const timerEl = document.getElementById("offerTimerDigits");
-      const totalSecondsInDay = 24 * 3600;
+      if (!timerEl) return;
 
-      function updateCountdown() {
-        const nowSec = Math.floor(Date.now() / 1000);
-        const remaining = totalSecondsInDay - (nowSec % totalSecondsInDay);
-        const hrs = String(Math.floor(remaining / 3600)).padStart(2, "0");
-        const mins = String(Math.floor((remaining % 3600) / 60)).padStart(2, "0");
-        const secs = String(remaining % 60).padStart(2, "0");
-        if (timerEl) {
-          timerEl.textContent = `${hrs}:${mins}:${secs}`;
-        }
-      }
+      const anchor = userCycleAnchorMs || (currentUser ? getUserTimerAnchorMs(currentUser) : Date.now());
+      const elapsedMs = Math.max(0, Date.now() - anchor);
+      const cyclePosMs = elapsedMs % TWENTY_FOUR_HOURS_MS;
+      const remainingSec = Math.max(1, Math.ceil((TWENTY_FOUR_HOURS_MS - cyclePosMs) / 1000));
 
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
+      const hrs = String(Math.floor(remainingSec / 3600)).padStart(2, "0");
+      const mins = String(Math.floor((remainingSec % 3600) / 60)).padStart(2, "0");
+      const secs = String(remainingSec % 60).padStart(2, "0");
+      timerEl.textContent = `${hrs}:${mins}:${secs}`;
+    }
+
+    function startOfferLoopTimer() {
+      updateOfferCountdownDisplay();
+      setInterval(updateOfferCountdownDisplay, 1000);
     }
     startOfferLoopTimer();
 
-    // ==================== MODALS & DIRECT UPI REDIRECT (#24) ====================
+    // ==================== PAYMENT & DIRECT UPI FLOW ====================
     function openPaymentModal() {
+      const noteEl = document.getElementById("upiActionFeedback");
+      if (noteEl) noteEl.textContent = "";
       document.getElementById("paymentModal").classList.add("open");
     }
 
-    function redirectToUpiApp() {
-      window.location.href = UPI_PAYMENT_URL;
+    function handleUpiButtonClick(event) {
+      const noteEl = document.getElementById("upiActionFeedback");
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(UPI_ID).catch(() => {});
+      }
+      if (noteEl) {
+        noteEl.textContent = `Opening UPI app for ₹100 (${UPI_ID})...`;
+      }
+      try {
+        window.location.assign(UPI_PAYMENT_URL);
+      } catch (e) {
+        event.preventDefault();
+        window.location.href = UPI_PAYMENT_URL;
+      }
     }
 
     function confirmPaymentAndOpenActivation() {
@@ -2858,7 +2930,7 @@
       }
     }
 
-    // ==================== #4 & #23 CREATE / STUDIO ====================
+    // ==================== CREATE / STUDIO ====================
     const videoPromptInput = document.getElementById("videoPromptInput");
     const promptCharCount = document.getElementById("promptCharCount");
 
@@ -3006,7 +3078,7 @@
       }, 3000);
     }
 
-    // ==================== #5 HELP CHAT ====================
+    // ==================== HELP CHAT ====================
     const helpInputEl = document.getElementById("helpMessageInput");
     const helpSendBtn = document.getElementById("helpSendBtn");
 
@@ -3161,7 +3233,7 @@
       }, 5000);
     }
 
-    // ==================== #6 PROFILE TAB ====================
+    // ==================== PROFILE TAB ====================
     function getFirstCapitalLetterFromEmail(email) {
       if (!email || typeof email !== "string") return "K";
       const match = email.trim().match(/[A-Za-z]/);
