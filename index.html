@@ -594,6 +594,13 @@
       .benefits-list {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .benefit-row-card.centered-last {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 100%;
+        max-width: 390px;
+      }
     }
 
     .benefit-row-card {
@@ -1097,7 +1104,7 @@
       margin-top: 8px;
     }
 
-    /* ==================== HELP TAB (ZERO EXTRA BOTTOM SPACING) ==================== */
+    /* ==================== HELP TAB ==================== */
     .help-header {
       padding: 12px 18px;
       background: #ffffff;
@@ -1555,6 +1562,7 @@
       box-shadow: var(--shadow-float);
       max-height: 90dvh;
       overflow-y: auto;
+      transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
     .modal-header {
@@ -1588,9 +1596,9 @@
       background: var(--bg-subtle);
       border: 1px solid var(--border-light);
       border-radius: 16px;
-      padding: 18px 14px;
+      padding: 18px 14px 14px;
       text-align: center;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .qr-preview-img {
@@ -1601,6 +1609,15 @@
       display: block;
       margin: 0 auto;
       object-fit: contain;
+    }
+
+    .qr-instruction-note {
+      margin-top: 12px;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      text-align: center;
     }
 
     .modal-actions-stack {
@@ -1622,10 +1639,54 @@
       color: var(--text-primary);
       margin-bottom: 10px;
       outline: none;
+      transition: border-color 0.15s ease;
     }
 
     .key-input:focus {
       border-color: var(--accent-black);
+    }
+
+    .key-input.shake {
+      border-color: var(--danger-red);
+      animation: keyShake 0.28s ease;
+    }
+
+    @keyframes keyShake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    .activation-success-panel {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px 10px 10px;
+      animation: fadeInTab 0.25s ease;
+    }
+
+    .activation-success-panel.active {
+      display: flex;
+    }
+
+    .success-check-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #dcfce7;
+      color: var(--success-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      animation: popIn 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.65); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
@@ -1951,15 +2012,16 @@
           </div>
         </div>
 
-        <div class="benefit-row-card">
+        <div class="benefit-row-card centered-last">
           <div class="benefit-icon-box">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
             </svg>
           </div>
           <div>
-            <div class="benefit-title">Priority Access & Updates</div>
-            <div class="benefit-sub">Instant access to new cartoon models</div>
+            <div class="benefit-title">7-Day Refund Guarantee</div>
+            <div class="benefit-sub">Easy refund within 7 days if unsatisfied</div>
           </div>
         </div>
       </div>
@@ -2332,6 +2394,9 @@
 
       <div class="qr-preview-box">
         <img src="qr.png" alt="Kineo Payment QR Code" class="qr-preview-img" />
+        <p class="qr-instruction-note">
+          Take a screenshot of this QR code, pay via PhonePe, Paytm, GPay, or any UPI app, and tap Confirm Payment to activate your subscription.
+        </p>
       </div>
 
       <div class="modal-actions-stack">
@@ -2354,22 +2419,39 @@
         <button type="button" class="modal-close-btn" onclick="closeModal('activationModal')" aria-label="Close">×</button>
       </div>
 
-      <p style="font-size:13.5px;color:var(--text-secondary);margin-bottom:12px;">
-        Enter your subscription activation key to unlock Kineo Pro lifetime access.
-      </p>
+      <div id="activationFormState">
+        <p style="font-size:13.5px;color:var(--text-secondary);margin-bottom:12px;">
+          Enter your subscription activation key to unlock Kineo Pro lifetime access.
+        </p>
 
-      <input
-        id="activationKeyInput"
-        type="text"
-        class="key-input"
-        placeholder="Enter activation key"
-        autocomplete="off"
-      />
-      <div id="activationErrorMsg" style="font-size:13px;color:var(--danger-red);min-height:18px;margin-bottom:8px;"></div>
+        <input
+          id="activationKeyInput"
+          type="text"
+          class="key-input"
+          placeholder="Enter activation key"
+          autocomplete="off"
+          oninput="clearActivationErrorState()"
+        />
+        <div id="activationErrorMsg" style="font-size:13px;font-weight:600;color:var(--danger-red);min-height:18px;margin-bottom:8px;"></div>
 
-      <button type="button" class="btn-primary-pill" onclick="submitActivationKey()">
-        Activate Subscription
-      </button>
+        <button id="activateKeySubmitBtn" type="button" class="btn-primary-pill" onclick="submitActivationKey()">
+          Activate Subscription
+        </button>
+      </div>
+
+      <div id="activationSuccessPanel" class="activation-success-panel">
+        <div class="success-check-circle">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <div style="font-size:18px;font-weight:800;color:var(--text-primary);margin-bottom:4px;">
+          Payment Done
+        </div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--success-green);">
+          Kineo Pro lifetime subscription activated smoothly.
+        </div>
+      </div>
     </div>
   </div>
 
@@ -2439,6 +2521,7 @@
     let selectedEditGender = "Prefer not to say";
     let cloudSubActive = false;
     let userCycleAnchorMs = null;
+    let isActivatingKey = false;
 
     // ==================== STORAGE & CLOUD SYNC HELPERS ====================
     function userScopedKey(base) {
@@ -2611,7 +2694,7 @@
 
       document.getElementById("modeSignUpTab").classList.toggle("active", isSignUp);
       document.getElementById("modeSignInTab").classList.toggle("active", !isSignUp);
-      document.getElementById("authMainHeading").textContent = isSignUp ? "Sign up" : "Log in to Kineo";
+      document.getElementById("authMainHeading").textContent = isSignUp ? "Create your account" : "Log in to Kineo";
       document.getElementById("authMainSubtitle").textContent = isSignUp
         ? "Create your Kineo account with your email and a password to start making cartoon videos."
         : "Log in with your registered email and password to continue.";
@@ -2689,12 +2772,6 @@
       }
 
       try {
-        const signInMethods = await auth.fetchSignInMethodsForEmail(email);
-        if (!Array.isArray(signInMethods) || signInMethods.length === 0) {
-          setAuthMessage("No account found with this email address.");
-          return;
-        }
-
         await auth.sendPasswordResetEmail(email);
         setAuthMessage("Password reset link sent to your registered email.", true);
       } catch (err) {
@@ -2866,9 +2943,25 @@
     }
 
     function openActivationModal() {
-      document.getElementById("activationKeyInput").value = "";
+      isActivatingKey = false;
+      const inputEl = document.getElementById("activationKeyInput");
+      const btnEl = document.getElementById("activateKeySubmitBtn");
+      inputEl.value = "";
+      inputEl.disabled = false;
+      inputEl.classList.remove("shake");
+      btnEl.disabled = false;
+      btnEl.textContent = "Activate Subscription";
       document.getElementById("activationErrorMsg").textContent = "";
+      document.getElementById("activationFormState").style.display = "block";
+      document.getElementById("activationSuccessPanel").classList.remove("active");
       document.getElementById("activationModal").classList.add("open");
+      setTimeout(() => inputEl.focus(), 60);
+    }
+
+    function clearActivationErrorState() {
+      const inputEl = document.getElementById("activationKeyInput");
+      inputEl.classList.remove("shake");
+      document.getElementById("activationErrorMsg").textContent = "";
     }
 
     function closeModal(modalId) {
@@ -2876,16 +2969,36 @@
     }
 
     async function submitActivationKey() {
+      if (isActivatingKey) return;
+
       const inputEl = document.getElementById("activationKeyInput");
       const errEl = document.getElementById("activationErrorMsg");
+      const btnEl = document.getElementById("activateKeySubmitBtn");
       const entered = inputEl.value.trim();
 
       if (entered === ACTIVATION_KEY_SECRET) {
-        await setSubscribedActive();
-        closeModal("activationModal");
+        isActivatingKey = true;
         errEl.textContent = "";
+        inputEl.classList.remove("shake");
+        inputEl.disabled = true;
+        btnEl.disabled = true;
+        btnEl.textContent = "Activating...";
+
+        await setSubscribedActive();
+
+        document.getElementById("activationFormState").style.display = "none";
+        document.getElementById("activationSuccessPanel").classList.add("active");
+
+        setTimeout(() => {
+          closeModal("activationModal");
+          isActivatingKey = false;
+        }, 1150);
       } else {
         errEl.textContent = "Invalid activation key. Please check and try again.";
+        inputEl.classList.remove("shake");
+        void inputEl.offsetWidth;
+        inputEl.classList.add("shake");
+        inputEl.focus();
       }
     }
 
