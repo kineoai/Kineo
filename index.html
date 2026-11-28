@@ -58,7 +58,6 @@
     :root {
       color-scheme: light only;
       --bg-page: #ffffff;
-      --bg-surface: #ffffff;
       --bg-subtle: #f5f6f8;
       --bg-muted: #eef0f3;
       --text-primary: #0f1115;
@@ -71,10 +70,8 @@
       --accent-indigo: #4f46e5;
       --success-green: #16a34a;
       --danger-red: #dc2626;
-      --gold-badge: #f5b800;
       --radius-pill: 999px;
       --radius-card: 18px;
-      --radius-md: 12px;
       --shadow-card: 0 2px 12px rgba(15, 17, 21, 0.04);
       --shadow-float: 0 12px 32px rgba(15, 17, 21, 0.08);
       --nav-height: 70px;
@@ -103,12 +100,9 @@
       position: absolute;
       width: 1px;
       height: 1px;
-      padding: 0;
-      margin: -1px;
       overflow: hidden;
       clip: rect(0, 0, 0, 0);
       white-space: nowrap;
-      border: 0;
     }
 
     /* ==================== WELCOME & AUTH SCREEN ==================== */
@@ -129,14 +123,8 @@
       padding-top: clamp(16px, 3vh, 26px);
     }
 
-    .login-top-spacer {
-      flex: 0.4;
-      min-height: 6px;
-    }
-
-    .login-screen.auth-form-active .login-top-spacer {
-      display: none;
-    }
+    .login-top-spacer { flex: 0.4; min-height: 6px; }
+    .login-screen.auth-form-active .login-top-spacer { display: none; }
 
     .login-center {
       width: 100%;
@@ -145,14 +133,12 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      transition: all 0.2s ease;
     }
 
     .login-logo-img {
       width: clamp(72px, 14vw, 96px);
       height: clamp(72px, 14vw, 96px);
       object-fit: contain;
-      display: block;
       margin-bottom: 18px;
     }
 
@@ -166,7 +152,6 @@
       font-size: clamp(28px, 4.5vw, 38px);
       font-weight: 800;
       letter-spacing: -0.03em;
-      color: var(--text-primary);
       line-height: 1.18;
       margin-bottom: 10px;
     }
@@ -178,16 +163,12 @@
 
     .login-subtitle {
       font-size: clamp(15px, 2vw, 17px);
-      font-weight: 400;
       color: var(--text-secondary);
       max-width: 390px;
-      line-height: 1.5;
     }
 
     .login-screen.auth-form-active .login-subtitle,
-    .login-screen.auth-form-active .login-desc {
-      display: none;
-    }
+    .login-screen.auth-form-active .login-desc { display: none; }
 
     .login-bottom {
       width: 100%;
@@ -200,14 +181,11 @@
       margin-top: 16px;
     }
 
-    .login-screen.auth-form-active .login-bottom {
-      margin-top: 0;
-    }
+    .login-screen.auth-form-active .login-bottom { margin-top: 0; }
 
     .login-desc {
       font-size: clamp(13px, 1.7vw, 14.5px);
       color: var(--text-secondary);
-      line-height: 1.55;
       max-width: 410px;
       margin-bottom: 4px;
     }
@@ -228,16 +206,12 @@
       justify-content: center;
       gap: 10px;
       box-shadow: var(--shadow-card);
-      transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+      transition: all 0.15s ease;
     }
 
     .welcome-entry-trigger-btn:hover {
       background: var(--bg-subtle);
       border-color: var(--accent-black);
-    }
-
-    .welcome-entry-trigger-btn:active {
-      transform: scale(0.985);
     }
 
     .auth-form-card {
@@ -259,7 +233,6 @@
       background: var(--bg-subtle);
       padding: 4px;
       border-radius: var(--radius-pill);
-      margin-bottom: 2px;
     }
 
     .auth-mode-tab {
@@ -272,7 +245,6 @@
       font-weight: 700;
       color: var(--text-secondary);
       cursor: pointer;
-      transition: all 0.15s ease;
     }
 
     .auth-mode-tab.active {
@@ -281,18 +253,8 @@
       box-shadow: 0 2px 6px rgba(15, 17, 21, 0.06);
     }
 
-    .auth-field-group {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .auth-field-label {
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--text-secondary);
-      padding-left: 4px;
-    }
+    .auth-field-group { display: flex; flex-direction: column; gap: 5px; }
+    .auth-field-label { font-size: 12.5px; font-weight: 700; color: var(--text-secondary); padding-left: 4px; }
 
     .auth-input {
       width: 100%;
@@ -306,23 +268,12 @@
       font-weight: 500;
       color: var(--text-primary);
       outline: none;
-      transition: border-color 0.15s ease, background-color 0.15s ease;
     }
 
-    .auth-input:focus {
-      background: #ffffff;
-      border-color: var(--accent-black);
-    }
+    .auth-input:focus { background: #ffffff; border-color: var(--accent-black); }
 
-    .auth-password-wrap {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-
-    .auth-password-wrap .auth-input {
-      padding-right: 48px;
-    }
+    .auth-password-wrap { position: relative; display: flex; align-items: center; }
+    .auth-password-wrap .auth-input { padding-right: 54px; }
 
     .toggle-pw-btn {
       position: absolute;
@@ -334,14 +285,9 @@
       font-weight: 700;
       color: var(--text-secondary);
       cursor: pointer;
-      padding: 4px 6px;
     }
 
-    .auth-forgot-row {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: -4px;
-    }
+    .auth-forgot-row { display: flex; justify-content: flex-end; margin-top: -4px; }
 
     .auth-forgot-btn {
       background: none;
@@ -353,12 +299,9 @@
       cursor: pointer;
     }
 
-    .auth-forgot-btn:hover {
-      color: var(--text-primary);
-      text-decoration: underline;
-    }
+    .auth-forgot-btn:hover { color: var(--text-primary); text-decoration: underline; }
 
-    .auth-submit-btn {
+    .auth-submit-btn, .btn-primary-pill {
       width: 100%;
       height: 52px;
       border-radius: var(--radius-pill);
@@ -373,21 +316,33 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      margin-top: 4px;
       transition: background-color 0.15s ease, transform 0.15s ease;
     }
 
-    .auth-submit-btn:hover:not(:disabled) {
+    .auth-submit-btn:hover:not(:disabled), .btn-primary-pill:hover:not(:disabled) {
       background: var(--accent-hover);
     }
 
-    .auth-submit-btn:active:not(:disabled) {
-      transform: scale(0.985);
-    }
-
-    .auth-submit-btn:disabled {
+    .auth-submit-btn:disabled, .btn-primary-pill:disabled {
       opacity: 0.7;
       cursor: not-allowed;
+    }
+
+    .btn-secondary-pill {
+      width: 100%;
+      height: 50px;
+      border-radius: var(--radius-pill);
+      background: #ffffff;
+      color: var(--text-primary);
+      border: 1.5px solid var(--border-medium);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
 
     .auth-status-msg {
@@ -399,23 +354,18 @@
       max-width: 400px;
     }
 
-    .auth-status-msg.success {
-      color: var(--success-green);
-    }
+    .auth-status-msg.success { color: var(--success-green); }
 
     /* ==================== MAIN WORKSPACE ==================== */
     .main-app {
       width: 100%;
       min-height: 100dvh;
-      background: var(--bg-page);
       display: none;
       flex-direction: column;
       padding-bottom: calc(var(--nav-height) + var(--safe-bottom));
     }
 
-    .main-app.active {
-      display: flex;
-    }
+    .main-app.active { display: flex; }
 
     .tab-container {
       display: none;
@@ -426,25 +376,16 @@
       flex: 1;
     }
 
-    .tab-container.active {
-      display: block;
-      animation: fadeInTab 0.18s ease-out;
-    }
+    .tab-container.active { display: block; animation: fadeInTab 0.18s ease-out; }
 
     .tab-container.help-full-bleed {
-      max-width: 820px;
-      width: 100%;
-      margin: 0 auto;
       padding: 0;
-      display: none;
       flex-direction: column;
       height: calc(100dvh - var(--nav-height) - var(--safe-bottom));
       overflow: hidden;
     }
 
-    .tab-container.help-full-bleed.active {
-      display: flex;
-    }
+    .tab-container.help-full-bleed.active { display: flex; }
 
     @keyframes fadeInTab {
       from { opacity: 0; transform: translateY(4px); }
@@ -459,25 +400,9 @@
       margin-bottom: 22px;
     }
 
-    .brand-left {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo-sm {
-      width: 34px;
-      height: 34px;
-      object-fit: contain;
-      display: block;
-    }
-
-    .brand-wordmark {
-      font-size: 21px;
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      color: var(--text-primary);
-    }
+    .brand-left { display: inline-flex; align-items: center; gap: 10px; }
+    .brand-logo-sm { width: 34px; height: 34px; object-fit: contain; }
+    .brand-wordmark { font-size: 21px; font-weight: 800; letter-spacing: -0.025em; }
 
     .yt-verified-badge {
       display: inline-flex;
@@ -489,17 +414,15 @@
       border: 1px solid var(--border-light);
       font-size: 12.5px;
       font-weight: 600;
-      color: var(--text-primary);
       white-space: nowrap;
     }
 
-    /* ==================== HOME TAB ==================== */
+    /* ==================== HOME & BENEFITS ==================== */
     .home-intro-heading {
       font-size: clamp(20px, 3.2vw, 26px);
       font-weight: 800;
       letter-spacing: -0.025em;
       line-height: 1.28;
-      color: var(--text-primary);
       margin-bottom: 18px;
     }
 
@@ -523,7 +446,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
     }
 
     .video-poster-img {
@@ -532,12 +454,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
-      transition: transform 0.25s ease;
-    }
-
-    .video-poster-layer:hover .video-poster-img {
-      transform: scale(1.02);
     }
 
     .yt-center-play-btn {
@@ -545,37 +461,14 @@
       z-index: 2;
       background: transparent;
       border: none;
-      padding: 0;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.42));
-      transition: transform 0.16s ease, opacity 0.16s ease;
     }
 
-    .video-poster-layer:hover .yt-center-play-btn {
-      transform: scale(1.08);
-    }
+    .video-player-frame { width: 100%; height: 100%; border: 0; display: none; }
+    .video-player-frame.active { display: block; }
 
-    .video-player-frame {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: none;
-    }
-
-    .video-player-frame.active {
-      display: block;
-    }
-
-    .premium-section-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
-
+    .premium-section-header { margin-bottom: 14px; }
     .premium-section-title {
       font-size: 13px;
       font-weight: 800;
@@ -584,17 +477,10 @@
       color: var(--text-secondary);
     }
 
-    .benefits-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 11px;
-    }
+    .benefits-list { display: grid; grid-template-columns: 1fr; gap: 11px; }
 
     @media (min-width: 640px) {
-      .benefits-list {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
+      .benefits-list { grid-template-columns: repeat(2, 1fr); }
       .benefit-row-card.centered-last {
         grid-column: 1 / -1;
         justify-self: center;
@@ -623,77 +509,12 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      color: var(--text-primary);
     }
 
-    .benefit-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text-primary);
-      line-height: 1.3;
-    }
-
-    .benefit-sub {
-      font-size: 13px;
-      color: var(--text-secondary);
-      margin-top: 2px;
-    }
-
-    .upgrade-pro-wrap {
-      margin-top: 22px;
-    }
-
-    .upgrade-pro-wrap.hidden {
-      display: none;
-    }
-
-    .btn-primary-pill {
-      width: 100%;
-      height: 52px;
-      border-radius: var(--radius-pill);
-      background: var(--accent-black);
-      color: #ffffff;
-      border: none;
-      font-family: inherit;
-      font-size: 15.5px;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      transition: background-color 0.15s ease, transform 0.15s ease;
-    }
-
-    .btn-primary-pill:hover:not(:disabled) {
-      background: var(--accent-hover);
-    }
-
-    .btn-primary-pill:active:not(:disabled) {
-      transform: scale(0.99);
-    }
-
-    .btn-secondary-pill {
-      width: 100%;
-      height: 50px;
-      border-radius: var(--radius-pill);
-      background: #ffffff;
-      color: var(--text-primary);
-      border: 1.5px solid var(--border-medium);
-      font-family: inherit;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: background-color 0.15s ease;
-    }
-
-    .btn-secondary-pill:hover {
-      background: var(--bg-subtle);
-    }
+    .benefit-title { font-size: 15px; font-weight: 700; line-height: 1.3; }
+    .benefit-sub { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+    .upgrade-pro-wrap { margin-top: 22px; }
+    .upgrade-pro-wrap.hidden, .loop-timer-banner.hidden, .pricing-offer-card.hidden { display: none; }
 
     /* ==================== SUBSCRIPTION TAB ==================== */
     .loop-timer-banner {
@@ -707,34 +528,19 @@
       gap: 8px;
       font-size: 13px;
       font-weight: 600;
-      color: var(--text-primary);
       margin-bottom: 20px;
     }
 
-    .loop-timer-banner.hidden {
-      display: none;
-    }
-
-    .timer-digits {
-      font-variant-numeric: tabular-nums;
-      font-weight: 800;
-      color: var(--accent-indigo);
-    }
+    .timer-digits { font-variant-numeric: tabular-nums; font-weight: 800; color: var(--accent-indigo); }
 
     .sub-hero-title {
       font-size: clamp(24px, 4vw, 32px);
       font-weight: 800;
       letter-spacing: -0.03em;
-      line-height: 1.2;
-      color: var(--text-primary);
       margin-bottom: 8px;
     }
 
-    .sub-hero-sub {
-      font-size: 15px;
-      color: var(--text-secondary);
-      margin-bottom: 20px;
-    }
+    .sub-hero-sub { font-size: 15px; color: var(--text-secondary); margin-bottom: 20px; }
 
     .active-plan-banner {
       display: none;
@@ -745,17 +551,8 @@
       margin-bottom: 22px;
     }
 
-    .active-plan-banner.visible {
-      display: block;
-    }
-
-    .active-plan-top {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
-    }
+    .active-plan-banner.visible { display: block; }
+    .active-plan-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
 
     .pro-pill-badge {
       background: var(--accent-indigo);
@@ -765,7 +562,6 @@
       letter-spacing: 0.06em;
       padding: 4px 10px;
       border-radius: var(--radius-pill);
-      text-transform: uppercase;
     }
 
     .live-dot-status {
@@ -777,12 +573,7 @@
       color: var(--success-green);
     }
 
-    .live-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--success-green);
-    }
+    .live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--success-green); }
 
     .pricing-offer-card {
       background: #ffffff;
@@ -794,40 +585,17 @@
       text-align: center;
     }
 
-    .pricing-offer-card.hidden {
-      display: none;
-    }
-
     .offer-tag {
       font-size: 11.5px;
       font-weight: 800;
       letter-spacing: 0.08em;
-      text-transform: uppercase;
       color: var(--text-tertiary);
       margin-bottom: 10px;
     }
 
-    .price-row {
-      display: flex;
-      align-items: baseline;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .price-strike {
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--text-tertiary);
-      text-decoration: line-through;
-    }
-
-    .price-current {
-      font-size: 38px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: var(--text-primary);
-    }
+    .price-row { display: flex; align-items: baseline; justify-content: center; gap: 12px; margin-bottom: 18px; }
+    .price-strike { font-size: 20px; font-weight: 600; color: var(--text-tertiary); text-decoration: line-through; }
+    .price-current { font-size: 38px; font-weight: 800; letter-spacing: -0.03em; }
 
     .activation-link-btn {
       margin-top: 14px;
@@ -843,24 +611,11 @@
       gap: 4px;
     }
 
-    .activation-link-btn:hover {
-      color: var(--text-primary);
-    }
+    .activation-link-btn:hover { color: var(--text-primary); }
 
     /* ==================== CREATE / STUDIO TAB ==================== */
-    .studio-heading {
-      font-size: clamp(22px, 3.6vw, 28px);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      color: var(--text-primary);
-      margin-bottom: 4px;
-    }
-
-    .studio-sub {
-      font-size: 14.5px;
-      color: var(--text-secondary);
-      margin-bottom: 18px;
-    }
+    .studio-heading { font-size: clamp(22px, 3.6vw, 28px); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 4px; }
+    .studio-sub { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 18px; }
 
     .studio-composer-card {
       background: #ffffff;
@@ -890,40 +645,14 @@
       padding: 14px 16px;
       font-family: inherit;
       font-size: 15px;
-      color: var(--text-primary);
-      line-height: 1.5;
       outline: none;
-      transition: border-color 0.15s ease, background-color 0.15s ease;
     }
 
-    .prompt-textarea:focus {
-      background: #ffffff;
-      border-color: var(--accent-black);
-    }
+    .prompt-textarea:focus { background: #ffffff; border-color: var(--accent-black); }
+    .section-mini-label { font-size: 12.5px; font-weight: 700; color: var(--text-secondary); margin: 16px 0 9px; display: block; }
 
-    .prompt-textarea::placeholder {
-      color: var(--text-tertiary);
-    }
-
-    .section-mini-label {
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--text-secondary);
-      margin: 16px 0 9px;
-      display: block;
-    }
-
-    .ratio-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 9px;
-    }
-
-    @media (min-width: 560px) {
-      .ratio-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
+    .ratio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; }
+    @media (min-width: 560px) { .ratio-grid { grid-template-columns: repeat(4, 1fr); } }
 
     .ratio-btn {
       background: #ffffff;
@@ -936,49 +665,15 @@
       cursor: pointer;
       font-family: inherit;
       text-align: left;
-      transition: all 0.15s ease;
     }
 
-    .ratio-btn.active {
-      border-color: var(--accent-black);
-      background: #f5f6f8;
-    }
+    .ratio-btn.active, .quality-btn.active { border-color: var(--accent-black); background: #f5f6f8; }
+    .ratio-box-inner { border: 2px solid var(--text-primary); border-radius: 3px; display: block; }
+    .ratio-text-main { font-size: 13px; font-weight: 700; }
+    .ratio-text-sub { font-size: 11px; color: var(--text-secondary); }
 
-    .ratio-box-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .ratio-box-inner {
-      border: 2px solid var(--text-primary);
-      border-radius: 3px;
-    }
-
-    .ratio-text-main {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-primary);
-      line-height: 1.2;
-    }
-
-    .ratio-text-sub {
-      font-size: 11px;
-      color: var(--text-secondary);
-    }
-
-    .quality-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 9px;
-    }
-
-    @media (min-width: 560px) {
-      .quality-grid {
-        grid-template-columns: repeat(5, 1fr);
-      }
-    }
+    .quality-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+    @media (min-width: 560px) { .quality-grid { grid-template-columns: repeat(5, 1fr); } }
 
     .quality-btn {
       background: #ffffff;
@@ -988,39 +683,15 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       gap: 2px;
       cursor: pointer;
       font-family: inherit;
-      text-align: center;
-      transition: all 0.15s ease;
     }
 
-    .quality-btn.active {
-      border-color: var(--accent-black);
-      background: #f5f6f8;
-    }
+    .quality-btn-main { font-size: 13.5px; font-weight: 800; }
+    .quality-btn-sub { font-size: 10.5px; font-weight: 600; color: var(--text-secondary); }
 
-    .quality-btn-main {
-      font-size: 13.5px;
-      font-weight: 800;
-      color: var(--text-primary);
-      line-height: 1.2;
-    }
-
-    .quality-btn-sub {
-      font-size: 10.5px;
-      font-weight: 600;
-      color: var(--text-secondary);
-    }
-
-    .demo-prompts-list {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-      margin-top: 16px;
-      margin-bottom: 18px;
-    }
+    .demo-prompts-list { display: flex; flex-direction: column; gap: 9px; margin: 16px 0 18px; }
 
     .demo-chip-btn {
       width: fit-content;
@@ -1032,30 +703,13 @@
       font-family: inherit;
       font-size: 13.5px;
       font-weight: 500;
-      color: var(--text-primary);
       cursor: pointer;
       text-align: left;
-      transition: background-color 0.15s ease;
     }
 
-    .demo-chip-btn:hover {
-      background: var(--bg-muted);
-    }
-
-    .studio-feedback {
-      margin-top: 12px;
-      font-size: 13.5px;
-      font-weight: 600;
-      min-height: 20px;
-    }
-
-    .studio-feedback.error {
-      color: var(--danger-red);
-    }
-
-    .studio-feedback.success {
-      color: var(--success-green);
-    }
+    .studio-feedback { margin-top: 12px; font-size: 13.5px; font-weight: 600; min-height: 20px; }
+    .studio-feedback.error { color: var(--danger-red); }
+    .studio-feedback.success { color: var(--success-green); }
 
     .generation-progress-box {
       display: none;
@@ -1066,43 +720,11 @@
       padding: 16px;
     }
 
-    .generation-progress-box.active {
-      display: block;
-    }
-
-    .progress-top-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13.5px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 10px;
-      gap: 10px;
-    }
-
-    .progress-track {
-      width: 100%;
-      height: 10px;
-      background: #e5e8ef;
-      border-radius: var(--radius-pill);
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      width: 0%;
-      height: 100%;
-      background: var(--accent-black);
-      border-radius: var(--radius-pill);
-      transition: width 0.25s ease;
-    }
-
-    .progress-subnote {
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      margin-top: 8px;
-    }
+    .generation-progress-box.active { display: block; }
+    .progress-top-row { display: flex; justify-content: space-between; font-size: 13.5px; font-weight: 700; margin-bottom: 10px; gap: 10px; }
+    .progress-track { width: 100%; height: 10px; background: #e5e8ef; border-radius: var(--radius-pill); overflow: hidden; }
+    .progress-fill { width: 0%; height: 100%; background: var(--accent-black); transition: width 0.25s ease; }
+    .progress-subnote { font-size: 12.5px; font-weight: 600; color: var(--text-secondary); margin-top: 8px; }
 
     /* ==================== HELP TAB ==================== */
     .help-header {
@@ -1122,105 +744,41 @@
       overflow: hidden;
       background: #eef2ff;
       border: 1px solid var(--border-light);
-      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .help-header-meta {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .help-title-row {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--text-primary);
-    }
-
-    .help-status-row {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--success-green);
-      margin-top: 1px;
-    }
-
-    .help-status-row.typing {
-      color: var(--accent-indigo);
-    }
+    .help-title-row { display: inline-flex; align-items: center; gap: 6px; font-size: 16px; font-weight: 800; }
+    .help-status-row { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--success-green); }
+    .help-status-row.typing { color: var(--accent-indigo); }
 
     .chat-messages-area {
       flex: 1 1 auto;
-      min-height: 0;
       overflow-y: auto;
       padding: 16px;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      background: #ffffff;
     }
 
-    .chat-bubble-row {
-      display: flex;
-      flex-direction: column;
-      max-width: 82%;
-    }
+    .chat-bubble-row { display: flex; flex-direction: column; max-width: 82%; }
+    .chat-bubble-row.ai { align-self: flex-start; }
+    .chat-bubble-row.user { align-self: flex-end; }
 
-    .chat-bubble-row.ai {
-      align-self: flex-start;
-    }
-
-    .chat-bubble-row.user {
-      align-self: flex-end;
-    }
-
-    .chat-bubble {
-      padding: 12px 15px;
-      border-radius: 16px;
-      font-size: 14.5px;
-      line-height: 1.45;
-      word-break: break-word;
-    }
-
-    .chat-bubble-row.ai .chat-bubble {
-      background: var(--bg-subtle);
-      color: var(--text-primary);
-      border-bottom-left-radius: 4px;
-    }
-
-    .chat-bubble-row.user .chat-bubble {
-      background: var(--accent-black);
-      color: #ffffff;
-      border-bottom-right-radius: 4px;
-    }
-
-    .chat-time-stamp {
-      font-size: 11px;
-      color: var(--text-tertiary);
-      margin-top: 4px;
-      padding: 0 4px;
-    }
-
-    .chat-bubble-row.user .chat-time-stamp {
-      text-align: right;
-    }
+    .chat-bubble { padding: 12px 15px; border-radius: 16px; font-size: 14.5px; line-height: 1.45; word-break: break-word; }
+    .chat-bubble-row.ai .chat-bubble { background: var(--bg-subtle); border-bottom-left-radius: 4px; }
+    .chat-bubble-row.user .chat-bubble { background: var(--accent-black); color: #ffffff; border-bottom-right-radius: 4px; }
+    .chat-time-stamp { font-size: 11px; color: var(--text-tertiary); margin-top: 4px; padding: 0 4px; }
+    .chat-bubble-row.user .chat-time-stamp { text-align: right; }
 
     .help-input-bar {
-      margin: 0;
       padding: 6px 12px;
       background: #ffffff;
       border-top: 1px solid var(--border-light);
       display: flex;
       align-items: center;
       gap: 10px;
-      flex-shrink: 0;
     }
 
     .help-input-field {
@@ -1232,13 +790,7 @@
       padding: 0 18px;
       font-family: inherit;
       font-size: 14.5px;
-      color: var(--text-primary);
       outline: none;
-    }
-
-    .help-input-field:focus {
-      background: #ffffff;
-      border-color: var(--accent-black);
     }
 
     .help-send-btn {
@@ -1252,37 +804,14 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      flex-shrink: 0;
-      transition: background-color 0.15s ease, color 0.15s ease;
     }
 
-    .help-send-btn.ready {
-      background: var(--accent-black);
-      color: #ffffff;
-    }
+    .help-send-btn.ready { background: var(--accent-black); color: #ffffff; }
 
     /* ==================== PROFILE TAB ==================== */
-    .profile-page-title {
-      font-size: clamp(24px, 4vw, 30px);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      color: var(--text-primary);
-      margin-bottom: 2px;
-    }
-
-    .profile-page-sub {
-      font-size: 14.5px;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-    }
-
-    .profile-avatar-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin-bottom: 24px;
-    }
+    .profile-page-title { font-size: clamp(24px, 4vw, 30px); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 2px; }
+    .profile-page-sub { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 24px; }
+    .profile-avatar-block { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 24px; }
 
     .letter-avatar-circle {
       width: 84px;
@@ -1295,19 +824,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      user-select: none;
       box-shadow: 0 4px 14px rgba(15, 17, 21, 0.08);
     }
 
-    .profile-email-top {
-      margin-top: 12px;
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      word-break: break-all;
-    }
+    .profile-email-top { margin-top: 12px; font-size: 15px; font-weight: 500; color: var(--text-secondary); word-break: break-all; }
 
-    .profile-details-card {
+    .profile-details-card, .edit-card {
       background: #ffffff;
       border: 1px solid var(--border-light);
       border-radius: 18px;
@@ -1315,6 +837,8 @@
       margin-bottom: 20px;
       box-shadow: var(--shadow-card);
     }
+
+    .edit-card { padding: 18px; }
 
     .profile-detail-row {
       padding: 15px 18px;
@@ -1324,29 +848,11 @@
       gap: 12px;
       border-bottom: 1px solid var(--border-light);
       cursor: pointer;
-      transition: background-color 0.12s ease;
     }
 
-    .profile-detail-row:last-child {
-      border-bottom: none;
-    }
-
-    .profile-detail-row:hover {
-      background: #fafbfc;
-    }
-
-    .detail-label {
-      font-size: 12.5px;
-      color: var(--text-secondary);
-      margin-bottom: 3px;
-    }
-
-    .detail-value {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text-primary);
-      word-break: break-word;
-    }
+    .profile-detail-row:last-child { border-bottom: none; }
+    .detail-label { font-size: 12.5px; color: var(--text-secondary); margin-bottom: 3px; }
+    .detail-value { font-size: 15px; font-weight: 700; word-break: break-word; }
 
     .logout-action-btn {
       margin: 18px auto 26px;
@@ -1364,27 +870,11 @@
       width: 100%;
     }
 
-    .disclaimer-copy {
-      font-size: 12.5px;
-      line-height: 1.55;
-      color: var(--text-tertiary);
-      margin-top: 8px;
-    }
+    .disclaimer-copy { font-size: 12.5px; line-height: 1.55; color: var(--text-tertiary); margin-top: 8px; }
 
-    .edit-profile-view {
-      display: none;
-    }
-
-    .edit-profile-view.active {
-      display: block;
-    }
-
-    .edit-top-bar {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 22px;
-    }
+    .edit-profile-view { display: none; }
+    .edit-profile-view.active { display: block; }
+    .edit-top-bar { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
 
     .back-circle-btn {
       width: 42px;
@@ -1396,16 +886,6 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      color: var(--text-primary);
-      flex-shrink: 0;
-    }
-
-    .edit-card {
-      background: #ffffff;
-      border: 1px solid var(--border-light);
-      border-radius: 18px;
-      padding: 18px;
-      margin-bottom: 20px;
     }
 
     .locked-email-box {
@@ -1421,12 +901,7 @@
       margin-bottom: 18px;
     }
 
-    .gender-pills-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-bottom: 18px;
-    }
+    .gender-pills-row { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 18px; }
 
     .gender-pill {
       height: 40px;
@@ -1434,21 +909,13 @@
       border-radius: var(--radius-pill);
       border: 1px solid var(--border-light);
       background: #ffffff;
-      color: var(--text-primary);
       font-family: inherit;
       font-size: 13.5px;
       font-weight: 600;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
     }
 
-    .gender-pill.selected {
-      background: var(--accent-black);
-      color: #ffffff;
-      border-color: var(--accent-black);
-    }
+    .gender-pill.selected { background: var(--accent-black); color: #ffffff; border-color: var(--accent-black); }
 
     .bio-textarea {
       width: 100%;
@@ -1458,13 +925,8 @@
       padding: 12px 14px;
       font-family: inherit;
       font-size: 14.5px;
-      color: var(--text-primary);
       resize: vertical;
       outline: none;
-    }
-
-    .bio-textarea:focus {
-      border-color: var(--accent-black);
     }
 
     /* ==================== BOTTOM NAVIGATION ==================== */
@@ -1498,20 +960,10 @@
       font-weight: 500;
       color: var(--text-tertiary);
       cursor: pointer;
-      position: relative;
     }
 
-    .nav-item.active {
-      color: var(--text-primary);
-      font-weight: 700;
-    }
-
-    .nav-plus-slot {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    .nav-item.active { color: var(--text-primary); font-weight: 700; }
+    .nav-plus-slot { flex: 1; display: flex; align-items: center; justify-content: center; }
 
     .nav-plus-btn {
       width: 50px;
@@ -1524,20 +976,11 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
     }
 
-    .nav-plus-btn.active,
-    .nav-plus-btn:hover {
-      background: var(--accent-black);
-      color: #ffffff;
-    }
+    .nav-plus-btn.active, .nav-plus-btn:hover { background: var(--accent-black); color: #ffffff; }
 
-    .nav-plus-btn:active {
-      transform: scale(0.95);
-    }
-
-    /* ==================== MODALS / SHEETS ==================== */
+    /* ==================== MODALS ==================== */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -1549,9 +992,7 @@
       z-index: 90;
     }
 
-    .modal-backdrop.open {
-      display: flex;
-    }
+    .modal-backdrop.open { display: flex; }
 
     .modal-card {
       width: 100%;
@@ -1562,21 +1003,10 @@
       box-shadow: var(--shadow-float);
       max-height: 90dvh;
       overflow-y: auto;
-      transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
-    .modal-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
-
-    .modal-title {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--text-primary);
-    }
+    .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+    .modal-title { font-size: 18px; font-weight: 800; }
 
     .modal-close-btn {
       width: 34px;
@@ -1585,11 +1015,7 @@
       border: none;
       background: var(--bg-subtle);
       font-size: 18px;
-      color: var(--text-primary);
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .qr-preview-box {
@@ -1601,31 +1027,9 @@
       margin-bottom: 14px;
     }
 
-    .qr-preview-img {
-      width: 220px;
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      display: block;
-      margin: 0 auto;
-      object-fit: contain;
-    }
-
-    .qr-instruction-note {
-      margin-top: 12px;
-      font-size: 12.5px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      line-height: 1.45;
-      text-align: center;
-    }
-
-    .modal-actions-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 12px;
-    }
+    .qr-preview-img { width: 220px; max-width: 100%; border-radius: 12px; display: block; margin: 0 auto; }
+    .qr-instruction-note { margin-top: 12px; font-size: 12.5px; color: var(--text-secondary); }
+    .modal-actions-stack { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
 
     .key-input {
       width: 100%;
@@ -1636,20 +1040,11 @@
       font-family: inherit;
       font-size: 15px;
       font-weight: 600;
-      color: var(--text-primary);
       margin-bottom: 10px;
       outline: none;
-      transition: border-color 0.15s ease;
     }
 
-    .key-input:focus {
-      border-color: var(--accent-black);
-    }
-
-    .key-input.shake {
-      border-color: var(--danger-red);
-      animation: keyShake 0.28s ease;
-    }
+    .key-input.shake { border-color: var(--danger-red); animation: keyShake 0.28s ease; }
 
     @keyframes keyShake {
       0%, 100% { transform: translateX(0); }
@@ -1661,15 +1056,11 @@
       display: none;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       text-align: center;
       padding: 20px 10px 10px;
-      animation: fadeInTab 0.25s ease;
     }
 
-    .activation-success-panel.active {
-      display: flex;
-    }
+    .activation-success-panel.active { display: flex; }
 
     .success-check-circle {
       width: 60px;
@@ -1681,12 +1072,6 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 14px;
-      animation: popIn 0.28s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    @keyframes popIn {
-      0% { transform: scale(0.65); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
@@ -1713,12 +1098,7 @@
         Kineo is a text-to-cartoon video creation AI tool capable of generating videos up to 10 minutes in up to 8K Ultra quality with full commercial use.
       </p>
 
-      <button
-        id="welcomeAuthTriggerBtn"
-        type="button"
-        class="welcome-entry-trigger-btn"
-        onclick="openAuthFormInterface('signup')"
-      >
+      <button id="welcomeAuthTriggerBtn" type="button" class="welcome-entry-trigger-btn" onclick="openAuthFormInterface('signup')">
         <span>Tap here to Sign Up or Log In</span>
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -1734,28 +1114,13 @@
 
         <div class="auth-field-group">
           <label for="authEmailInput" class="auth-field-label">Email Address</label>
-          <input
-            id="authEmailInput"
-            type="email"
-            class="auth-input"
-            placeholder="Enter address"
-            autocomplete="email"
-            required
-          />
+          <input id="authEmailInput" type="email" class="auth-input" placeholder="Enter address" autocomplete="email" required />
         </div>
 
         <div class="auth-field-group">
           <label for="authPasswordInput" class="auth-field-label">Password (minimum 8 characters)</label>
           <div class="auth-password-wrap">
-            <input
-              id="authPasswordInput"
-              type="password"
-              class="auth-input"
-              placeholder="Create password"
-              minlength="8"
-              autocomplete="new-password"
-              required
-            />
+            <input id="authPasswordInput" type="password" class="auth-input" placeholder="Create password" minlength="8" autocomplete="new-password" required />
             <button type="button" class="toggle-pw-btn" onclick="togglePasswordVisibility()">Show</button>
           </div>
         </div>
@@ -1764,9 +1129,7 @@
           <button type="button" class="auth-forgot-btn" onclick="handlePasswordReset()">Forgot password?</button>
         </div>
 
-        <button id="emailAuthSubmitBtn" type="submit" class="auth-submit-btn">
-          Sign up
-        </button>
+        <button id="emailAuthSubmitBtn" type="submit" class="auth-submit-btn">Sign up</button>
       </form>
 
       <div id="authStatusMsg" class="auth-status-msg"></div>
@@ -1822,91 +1185,10 @@
         <span id="homePremiumHeading" class="premium-section-title">GO PRO / PREMIUM</span>
       </div>
 
-      <div class="benefits-list">
-        <div class="benefit-row-card">
-          <div class="benefit-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polygon points="23 7 16 12 23 17 23 7"></polygon>
-              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-            </svg>
-          </div>
-          <div>
-            <div class="benefit-title">Unlimited 10min+ AI Videos</div>
-            <div class="benefit-sub">Long-form cartoon storytelling without short limits</div>
-          </div>
-        </div>
-
-        <div class="benefit-row-card">
-          <div class="benefit-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-              <line x1="12" y1="19" x2="12" y2="23"></line>
-            </svg>
-          </div>
-          <div>
-            <div class="benefit-title">Premium Multi-language Voices</div>
-            <div class="benefit-sub">Expressive AI voiceovers across languages</div>
-          </div>
-        </div>
-
-        <div class="benefit-row-card">
-          <div class="benefit-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-              <path d="M7 15v-6m4 6v-6m-4 3h4m4 3v-6h3v6h-3z"></path>
-            </svg>
-          </div>
-          <div>
-            <div class="benefit-title">Ultra 8K Video Quality</div>
-            <div class="benefit-sub">Sharp high-definition cartoon rendering</div>
-          </div>
-        </div>
-
-        <div class="benefit-row-card">
-          <div class="benefit-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"></path>
-              <line x1="9" y1="21" x2="15" y2="21"></line>
-            </svg>
-          </div>
-          <div>
-            <div class="benefit-title">Enhanced Prompt Interpretation</div>
-            <div class="benefit-sub">Smarter character scenes & camera flow</div>
-          </div>
-        </div>
-
-        <div class="benefit-row-card">
-          <div class="benefit-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-            </svg>
-          </div>
-          <div>
-            <div class="benefit-title">Commercial Use Rights</div>
-            <div class="benefit-sub">Monetize your videos on YouTube & socials</div>
-          </div>
-        </div>
-
-        <div class="benefit-row-card">
-          <div class="benefit-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
-          </div>
-          <div>
-            <div class="benefit-title">Zero Watermark Exports</div>
-            <div class="benefit-sub">Clean exports ready for publishing</div>
-          </div>
-        </div>
-      </div>
+      <div id="homeBenefitsContainer" class="benefits-list"></div>
 
       <div id="homeUpgradeBtnWrap" class="upgrade-pro-wrap">
-        <button type="button" class="btn-primary-pill" onclick="switchTab('subscription')">
-          Upgrade to Pro
-        </button>
+        <button type="button" class="btn-primary-pill" onclick="switchTab('subscription')">Upgrade to Pro</button>
       </div>
     </main>
 
@@ -1925,106 +1207,14 @@
           <span class="pro-pill-badge">PRO PLAN</span>
           <span class="live-dot-status"><span class="live-dot"></span> Plan Active</span>
         </div>
-        <div style="font-size:18px;font-weight:800;color:var(--text-primary);">Kineo Pro is active</div>
+        <div style="font-size:18px;font-weight:800;">Kineo Pro is active</div>
         <div style="font-size:13.5px;color:var(--text-secondary);margin-top:2px;">Lifetime access to all cartoon video & AI tools is unlocked.</div>
       </div>
 
       <h2 id="subSectionHeading" class="sub-hero-title">Become a Lifetime Member</h2>
       <p id="subSectionSubheading" class="sub-hero-sub">Everything included in Kineo Lifetime Subscription:</p>
 
-      <div class="benefits-list">
-        <div class="benefit-row-card">
-          <div class="benefit-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polygon points="23 7 16 12 23 17 23 7"></polygon>
-              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-            </svg>
-          </div>
-          <div>
-            <div class="benefit-title">Unlimited 10min+ AI Videos</div>
-            <div class="benefit-sub">Create extended cartoon episodes</div>
-          </div>
-        </div>
-
-        <div class="benefit-row-card">
-          <div class="benefit-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-              <line x1="12" y1="19" x2="12" y2="23"></line>
-            </svg>
-          </div>
-          <div>
-            <div class="benefit-title">Premium Multi-language Voices</div>
-            <div class="benefit-sub">Natural characters & narration</div>
-          </div>
-        </div>
-
-        <div class="benefit-row-card">
-          <div class="benefit-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-              <path d="M7 15v-6m4 6v-6m-4 3h4m4 3v-6h3v6h-3z"></path>
-            </svg>
-          </div>
-          <div>
-            <div class="benefit-title">Ultra 8K Video Quality</div>
-            <div class="benefit-sub">Crisp frames & smooth motion</div>
-          </div>
-        </div>
-
-        <div class="benefit-row-card">
-          <div class="benefit-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"></path>
-              <line x1="9" y1="21" x2="15" y2="21"></line>
-            </svg>
-          </div>
-          <div>
-            <div class="benefit-title">Enhanced Prompt Interpretation</div>
-            <div class="benefit-sub">Better story & scene accuracy</div>
-          </div>
-        </div>
-
-        <div class="benefit-row-card">
-          <div class="benefit-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-            </svg>
-          </div>
-          <div>
-            <div class="benefit-title">Commercial Use Rights</div>
-            <div class="benefit-sub">Full rights for client & channel content</div>
-          </div>
-        </div>
-
-        <div class="benefit-row-card">
-          <div class="benefit-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
-          </div>
-          <div>
-            <div class="benefit-title">Zero Watermark Exports</div>
-            <div class="benefit-sub">Pure unbranded video output</div>
-          </div>
-        </div>
-
-        <div class="benefit-row-card centered-last">
-          <div class="benefit-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              <polyline points="9 12 11 14 15 10"></polyline>
-            </svg>
-          </div>
-          <div>
-            <div class="benefit-title">7-Day Refund Guarantee</div>
-            <div class="benefit-sub">Easy refund within 7 days if unsatisfied</div>
-          </div>
-        </div>
-      </div>
+      <div id="subBenefitsContainer" class="benefits-list"></div>
 
       <div id="pricingOfferCard" class="pricing-offer-card">
         <div class="offer-tag">LIFETIME MEMBERSHIP OFFER</div>
@@ -2032,9 +1222,7 @@
           <span class="price-strike">₹10,000</span>
           <span class="price-current">₹100</span>
         </div>
-        <button type="button" class="btn-primary-pill" onclick="openPaymentModal()">
-          Get Lifetime Access
-        </button>
+        <button type="button" class="btn-primary-pill" onclick="openPaymentModal()">Get Lifetime Access</button>
         <div>
           <button type="button" class="activation-link-btn" onclick="openActivationModal()">
             <span>Have an Activation Key?</span>
@@ -2064,19 +1252,12 @@
           <span id="promptCharCount">0 / 10,000</span>
         </div>
 
-        <textarea
-          id="videoPromptInput"
-          class="prompt-textarea"
-          maxlength="10000"
-          placeholder="Write your story, anime or cartoon prompt here..."
-        ></textarea>
+        <textarea id="videoPromptInput" class="prompt-textarea" maxlength="10000" placeholder="Write your story, anime or cartoon prompt here..."></textarea>
 
         <span class="section-mini-label">Select Video Size / Aspect Ratio</span>
         <div class="ratio-grid" id="aspectRatioGrid">
           <button type="button" class="ratio-btn active" data-ratio="16:9" onclick="selectRatio('16:9', this)">
-            <span class="ratio-box-icon">
-              <span class="ratio-box-inner" style="width:22px;height:13px;"></span>
-            </span>
+            <span class="ratio-box-inner" style="width:22px;height:13px;"></span>
             <span>
               <div class="ratio-text-main">16:9</div>
               <div class="ratio-text-sub">Landscape</div>
@@ -2084,9 +1265,7 @@
           </button>
 
           <button type="button" class="ratio-btn" data-ratio="9:16" onclick="selectRatio('9:16', this)">
-            <span class="ratio-box-icon">
-              <span class="ratio-box-inner" style="width:13px;height:22px;"></span>
-            </span>
+            <span class="ratio-box-inner" style="width:13px;height:22px;"></span>
             <span>
               <div class="ratio-text-main">9:16</div>
               <div class="ratio-text-sub">Reels / Shorts</div>
@@ -2094,9 +1273,7 @@
           </button>
 
           <button type="button" class="ratio-btn" data-ratio="1:1" onclick="selectRatio('1:1', this)">
-            <span class="ratio-box-icon">
-              <span class="ratio-box-inner" style="width:17px;height:17px;"></span>
-            </span>
+            <span class="ratio-box-inner" style="width:17px;height:17px;"></span>
             <span>
               <div class="ratio-text-main">1:1</div>
               <div class="ratio-text-sub">Square</div>
@@ -2104,9 +1281,7 @@
           </button>
 
           <button type="button" class="ratio-btn" data-ratio="4:5" onclick="selectRatio('4:5', this)">
-            <span class="ratio-box-icon">
-              <span class="ratio-box-inner" style="width:15px;height:19px;"></span>
-            </span>
+            <span class="ratio-box-inner" style="width:15px;height:19px;"></span>
             <span>
               <div class="ratio-text-main">4:5</div>
               <div class="ratio-text-sub">Portrait</div>
@@ -2140,21 +1315,12 @@
 
         <span class="section-mini-label">Demo Short Prompts</span>
         <div class="demo-prompts-list">
-          <button type="button" class="demo-chip-btn" onclick="applyDemoPrompt('A lion cub in a magical forest')">
-            A lion cub in a magical forest
-          </button>
-          <button type="button" class="demo-chip-btn" onclick="applyDemoPrompt('Anime boy running in the rain')">
-            Anime boy running in the rain
-          </button>
-          <button type="button" class="demo-chip-btn" onclick="applyDemoPrompt('Cyberpunk city at sunset')">
-            Cyberpunk city at sunset
-          </button>
+          <button type="button" class="demo-chip-btn" onclick="applyDemoPrompt('A lion cub in a magical forest')">A lion cub in a magical forest</button>
+          <button type="button" class="demo-chip-btn" onclick="applyDemoPrompt('Anime boy running in the rain')">Anime boy running in the rain</button>
+          <button type="button" class="demo-chip-btn" onclick="applyDemoPrompt('Cyberpunk city at sunset')">Cyberpunk city at sunset</button>
         </div>
 
-        <button id="generateVideoBtn" type="button" class="btn-primary-pill" onclick="startVideoGeneration()">
-          Generate Video
-        </button>
-
+        <button id="generateVideoBtn" type="button" class="btn-primary-pill" onclick="startVideoGeneration()">Generate Video</button>
         <div id="studioFeedback" class="studio-feedback"></div>
 
         <div id="generationProgressBox" class="generation-progress-box">
@@ -2165,9 +1331,7 @@
           <div class="progress-track">
             <div id="progressFillBar" class="progress-fill"></div>
           </div>
-          <div id="progressSubNote" class="progress-subnote">
-            Initializing scene pipeline...
-          </div>
+          <div id="progressSubNote" class="progress-subnote">Initializing scene pipeline...</div>
         </div>
       </div>
     </section>
@@ -2185,12 +1349,10 @@
             <circle cx="28.5" cy="29.5" r="1.4" fill="#111827"/>
             <circle cx="35.5" cy="29.5" r="1.4" fill="#111827"/>
             <path d="M29.2 33.8C30.4 35.1 33.6 35.1 34.8 33.8" stroke="#9F1239" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M20.5 29V34" stroke="#4338CA" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M43.5 29V34" stroke="#4338CA" stroke-width="2.5" stroke-linecap="round"/>
           </svg>
         </div>
 
-        <div class="help-header-meta">
+        <div>
           <div class="help-title-row">
             <span>Kineo</span>
             <svg width="17" height="17" viewBox="0 0 24 24" aria-label="Verified">
@@ -2208,13 +1370,7 @@
       <div id="chatMessagesArea" class="chat-messages-area"></div>
 
       <form id="helpChatForm" class="help-input-bar" onsubmit="handleHelpMessageSubmit(event)">
-        <input
-          id="helpMessageInput"
-          type="text"
-          class="help-input-field"
-          placeholder="Type a message..."
-          autocomplete="off"
-        />
+        <input id="helpMessageInput" type="text" class="help-input-field" placeholder="Type a message..." autocomplete="off" />
         <button id="helpSendBtn" type="submit" class="help-send-btn" aria-label="Send message">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
             <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
@@ -2240,9 +1396,7 @@
               <div class="detail-label">Email</div>
               <div id="profileCardEmail" class="detail-value">user@gmail.com</div>
             </div>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-tertiary)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-tertiary)" stroke-width="2.2"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
 
           <div class="profile-detail-row" onclick="openEditProfileView()">
@@ -2250,9 +1404,7 @@
               <div class="detail-label">Gender</div>
               <div id="profileCardGender" class="detail-value">Prefer not to say</div>
             </div>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-tertiary)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-tertiary)" stroke-width="2.2"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
 
           <div class="profile-detail-row" onclick="openEditProfileView()">
@@ -2260,14 +1412,12 @@
               <div class="detail-label">Bio</div>
               <div id="profileCardBio" class="detail-value">Welcome to Kineo</div>
             </div>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-tertiary)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-tertiary)" stroke-width="2.2"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
 
         <button type="button" class="btn-primary-pill" onclick="openEditProfileView()">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
             <path d="M12 20h9"></path>
             <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
           </svg>
@@ -2275,7 +1425,7 @@
         </button>
 
         <button type="button" class="logout-action-btn" onclick="logoutCurrentUser()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
             <polyline points="16 17 21 12 16 7"></polyline>
             <line x1="21" y1="12" x2="9" y2="12"></line>
@@ -2291,7 +1441,7 @@
       <div id="editProfileView" class="edit-profile-view">
         <div class="edit-top-bar">
           <button type="button" class="back-circle-btn" onclick="closeEditProfileView()" aria-label="Back">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
               <line x1="19" y1="12" x2="5" y2="12"></line>
               <polyline points="12 19 5 12 12 5"></polyline>
             </svg>
@@ -2306,7 +1456,7 @@
           <span class="section-mini-label" style="margin-top:0;">Email</span>
           <div class="locked-email-box">
             <span id="editLockedEmail">user@gmail.com</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
               <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
             </svg>
@@ -2321,40 +1471,27 @@
 
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
             <span class="section-mini-label" style="margin:0;">Bio</span>
-            <span id="bioCharCounter" style="font-size:12.5px;color:var(--text-tertiary);font-variant-numeric:tabular-nums;">16 / 300</span>
+            <span id="bioCharCounter" style="font-size:12.5px;color:var(--text-tertiary);">16 / 300</span>
           </div>
-          <textarea
-            id="editBioTextarea"
-            class="bio-textarea"
-            maxlength="300"
-            oninput="updateBioCounter()"
-          >Welcome to Kineo</textarea>
+          <textarea id="editBioTextarea" class="bio-textarea" maxlength="300" oninput="updateBioCounter()">Welcome to Kineo</textarea>
         </div>
 
         <div class="modal-actions-stack">
           <button type="button" class="btn-primary-pill" onclick="saveProfileEdits()">Save Changes</button>
           <button type="button" class="btn-secondary-pill" onclick="closeEditProfileView()">Cancel</button>
         </div>
-
-        <p class="disclaimer-copy" style="margin-top:20px;">
-          Terms & Conditions: Kineo is an AI cartoon video creation tool. You are solely responsible for any misuse of the platform, and the app developer has no connection or liability for such misuse. If a video fails to generate or any other issue occurs, full responsibility rests with you.
-        </p>
       </div>
     </section>
 
     <!-- ==================== BOTTOM NAVIGATION BAR ==================== -->
     <nav class="bottom-nav" aria-label="Primary Navigation">
       <button type="button" class="nav-item active" data-tab="home" onclick="switchTab('home')">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 3l9 8h-3v9h-4v-6h-4v6H6v-9H3l9-8z"/>
-        </svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l9 8h-3v9h-4v-6h-4v6H6v-9H3l9-8z"/></svg>
         <span>Home</span>
       </button>
 
       <button type="button" class="nav-item" data-tab="subscription" onclick="switchTab('subscription')">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/>
-        </svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
         <span>Subscription</span>
       </button>
 
@@ -2368,9 +1505,7 @@
       </div>
 
       <button type="button" class="nav-item" data-tab="help" onclick="switchTab('help')">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-        </svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
         <span>Help</span>
       </button>
 
@@ -2400,13 +1535,7 @@
       </div>
 
       <div class="modal-actions-stack">
-        <button
-          type="button"
-          class="btn-primary-pill"
-          onclick="confirmPaymentAndRedirectTelegram()"
-        >
-          Confirm Payment
-        </button>
+        <button type="button" class="btn-primary-pill" onclick="confirmPaymentAndRedirectTelegram()">Confirm Payment</button>
       </div>
     </div>
   </div>
@@ -2424,30 +1553,19 @@
           Enter your subscription activation key to unlock Kineo Pro lifetime access.
         </p>
 
-        <input
-          id="activationKeyInput"
-          type="text"
-          class="key-input"
-          placeholder="Enter activation key"
-          autocomplete="off"
-          oninput="clearActivationErrorState()"
-        />
+        <input id="activationKeyInput" type="text" class="key-input" placeholder="Enter activation key" autocomplete="off" oninput="clearActivationErrorState()" />
         <div id="activationErrorMsg" style="font-size:13px;font-weight:600;color:var(--danger-red);min-height:18px;margin-bottom:8px;"></div>
 
-        <button id="activateKeySubmitBtn" type="button" class="btn-primary-pill" onclick="submitActivationKey()">
-          Activate Subscription
-        </button>
+        <button id="activateKeySubmitBtn" type="button" class="btn-primary-pill" onclick="submitActivationKey()">Activate Subscription</button>
       </div>
 
       <div id="activationSuccessPanel" class="activation-success-panel">
         <div class="success-check-circle">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
         </div>
-        <div style="font-size:18px;font-weight:800;color:var(--text-primary);margin-bottom:4px;">
-          Payment Done
-        </div>
+        <div style="font-size:18px;font-weight:800;margin-bottom:4px;">Payment Done</div>
         <div style="font-size:13.5px;font-weight:600;color:var(--success-green);">
           Kineo Pro lifetime subscription activated smoothly.
         </div>
@@ -2466,12 +1584,8 @@
         Please activate the Kineo Lifetime Subscription to use video generation and chat support.
       </p>
       <div class="modal-actions-stack">
-        <button type="button" class="btn-primary-pill" onclick="closeModal('subRequiredModal'); switchTab('subscription');">
-          Go to Subscription
-        </button>
-        <button type="button" class="btn-secondary-pill" onclick="closeModal('subRequiredModal')">
-          Later
-        </button>
+        <button type="button" class="btn-primary-pill" onclick="closeModal('subRequiredModal'); switchTab('subscription');">Go to Subscription</button>
+        <button type="button" class="btn-secondary-pill" onclick="closeModal('subRequiredModal')">Later</button>
       </div>
     </div>
   </div>
@@ -2496,20 +1610,53 @@
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
     const db = firebase.firestore();
-
     auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(() => {});
 
     // ==================== CONSTANTS & STATE ====================
     const ACTIVATION_KEY_SECRET = "25032023";
     const TELEGRAM_CONFIRM_URL = "https://t.me/thekineo?text=I%20have%20purchased%20the%20subscription.%20Please%20activate%20my%20subscription.";
     const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000;
-    const VIDEO_FILES = [
-      "video1.mp4",
-      "video2.mp4",
-      "video3.mp4",
-      "video4.mp4",
-      "video5.mp4"
+    const VIDEO_FILES = ["video1.mp4", "video2.mp4", "video3.mp4", "video4.mp4", "video5.mp4"];
+
+    const PREMIUM_BENEFITS = [
+      {
+        title: "Unlimited 10min+ AI Videos",
+        sub: "Create extended cartoon episodes",
+        icon: '<polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>'
+      },
+      {
+        title: "Premium Multi-language Voices",
+        sub: "Natural characters & narration",
+        icon: '<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line>'
+      },
+      {
+        title: "Ultra 8K Video Quality",
+        sub: "Crisp frames & smooth motion",
+        icon: '<rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M7 15v-6m4 6v-6m-4 3h4m4 3v-6h3v6h-3z"></path>'
+      },
+      {
+        title: "Enhanced Prompt Interpretation",
+        sub: "Better story & scene accuracy",
+        icon: '<path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"></path><line x1="9" y1="21" x2="15" y2="21"></line>'
+      },
+      {
+        title: "Commercial Use Rights",
+        sub: "Full rights for client & channel content",
+        icon: '<rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>'
+      },
+      {
+        title: "Zero Watermark Exports",
+        sub: "Pure unbranded video output",
+        icon: '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>'
+      }
     ];
+
+    const REFUND_BENEFIT = {
+      title: "7-Day Refund Guarantee",
+      sub: "Easy refund within 7 days if unsatisfied",
+      icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline>',
+      centered: true
+    };
 
     let currentUser = null;
     let authMode = "signup";
@@ -2523,7 +1670,24 @@
     let userCycleAnchorMs = null;
     let isActivatingKey = false;
 
-    // ==================== STORAGE & CLOUD SYNC HELPERS ====================
+    function renderBenefitsLists() {
+      const makeCard = (b) => `
+        <div class="benefit-row-card${b.centered ? ' centered-last' : ''}">
+          <div class="benefit-icon-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${b.icon}</svg>
+          </div>
+          <div>
+            <div class="benefit-title">${b.title}</div>
+            <div class="benefit-sub">${b.sub}</div>
+          </div>
+        </div>`;
+
+      document.getElementById("homeBenefitsContainer").innerHTML = PREMIUM_BENEFITS.map(makeCard).join("");
+      document.getElementById("subBenefitsContainer").innerHTML = [...PREMIUM_BENEFITS, REFUND_BENEFIT].map(makeCard).join("");
+    }
+    renderBenefitsLists();
+
+    // ==================== STORAGE & CLOUD SYNC ====================
     function userScopedKey(base) {
       const uid = currentUser && currentUser.uid ? currentUser.uid : "guest";
       return `kineo_v1_${uid}_${base}`;
@@ -2534,21 +1698,20 @@
       return cloudSubActive || localStorage.getItem(userScopedKey("pro_active")) === "true";
     }
 
-    async function setSubscribedActive() {
+    function setSubscribedActive() {
       if (!currentUser) return;
       cloudSubActive = true;
       localStorage.setItem(userScopedKey("pro_active"), "true");
       syncSubscriptionUI();
 
-      try {
-        await db.collection("users").doc(currentUser.uid).set({
-          email: currentUser.email || "",
-          proActive: true,
-          activatedAt: firebase.firestore.FieldValue.serverTimestamp()
-        }, { merge: true });
-      } catch (e) {
-        console.warn("Firestore subscription sync warning:", e);
-      }
+      // Non-blocking background Firestore sync so modal never freezes
+      db.collection("users").doc(currentUser.uid).set({
+        email: currentUser.email || "",
+        proActive: true,
+        activatedAt: firebase.firestore.FieldValue.serverTimestamp()
+      }, { merge: true }).catch((e) => {
+        console.warn("Firestore subscription background sync:", e);
+      });
     }
 
     function getUserTimerAnchorMs(user = currentUser) {
@@ -2557,9 +1720,7 @@
       const existing = parseInt(localStorage.getItem(key) || "0", 10);
       if (existing > 0) return existing;
 
-      const authCreatedMs = user.metadata && user.metadata.creationTime
-        ? Date.parse(user.metadata.creationTime)
-        : 0;
+      const authCreatedMs = user.metadata && user.metadata.creationTime ? Date.parse(user.metadata.creationTime) : 0;
       const anchor = (Number.isFinite(authCreatedMs) && authCreatedMs > 0) ? authCreatedMs : Date.now();
       localStorage.setItem(key, String(anchor));
       return anchor;
@@ -2583,7 +1744,6 @@
       if (!user || !user.uid) return;
       const localPro = localStorage.getItem(`kineo_v1_${user.uid}_pro_active`) === "true";
       cloudSubActive = localPro;
-
       let anchorMs = getUserTimerAnchorMs(user);
 
       try {
@@ -2596,14 +1756,14 @@
             anchorMs = data.timerAnchorMs;
             localStorage.setItem(`kineo_v1_${user.uid}_timer_anchor_ms`, String(anchorMs));
           } else {
-            await docRef.set({ timerAnchorMs: anchorMs, email: user.email || "" }, { merge: true });
+            docRef.set({ timerAnchorMs: anchorMs, email: user.email || "" }, { merge: true }).catch(() => {});
           }
 
           if (data.proActive === true) {
             cloudSubActive = true;
             localStorage.setItem(`kineo_v1_${user.uid}_pro_active`, "true");
           } else if (localPro) {
-            await docRef.set({ proActive: true, email: user.email || "" }, { merge: true });
+            docRef.set({ proActive: true, email: user.email || "" }, { merge: true }).catch(() => {});
           }
 
           if (data.profile && (data.profile.gender || data.profile.bio)) {
@@ -2627,13 +1787,13 @@
           }
         } else {
           const profile = getUserProfileStore();
-          await docRef.set({
+          docRef.set({
             email: user.email || "",
             proActive: localPro,
             timerAnchorMs: anchorMs,
             profile: { gender: profile.gender, bio: profile.bio },
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
-          }, { merge: true });
+          }, { merge: true }).catch(() => {});
         }
       } catch (e) {
         console.warn("Cloud sync fallback active:", e);
@@ -2644,7 +1804,6 @@
       syncSubscriptionUI();
     }
 
-    // ==================== INDIAN TIME FORMATTER ====================
     function getFormattedIndianTime(dateObj = new Date()) {
       return dateObj.toLocaleTimeString("en-IN", {
         timeZone: "Asia/Kolkata",
@@ -2654,7 +1813,7 @@
       }).toUpperCase();
     }
 
-    // ==================== WELCOME & AUTHENTICATION ====================
+    // ==================== AUTHENTICATION ====================
     const loginScreenEl = document.getElementById("loginScreen");
     const authStatusMsg = document.getElementById("authStatusMsg");
     const emailAuthSubmitBtn = document.getElementById("emailAuthSubmitBtn");
@@ -2673,9 +1832,7 @@
       emailAuthForm.style.display = "flex";
       loginScreenEl.classList.add("auth-form-active");
       setAuthMode(mode);
-      setTimeout(() => {
-        if (authEmailInput) authEmailInput.focus();
-      }, 60);
+      setTimeout(() => { if (authEmailInput) authEmailInput.focus(); }, 60);
     }
 
     function backToWelcomeOverview() {
@@ -2691,7 +1848,6 @@
       authMode = mode;
       setAuthMessage("");
       const isSignUp = mode === "signup";
-
       document.getElementById("modeSignUpTab").classList.toggle("active", isSignUp);
       document.getElementById("modeSignInTab").classList.toggle("active", !isSignUp);
       document.getElementById("authMainHeading").textContent = isSignUp ? "Create your account" : "Log in to Kineo";
@@ -2705,13 +1861,9 @@
 
     function togglePasswordVisibility() {
       const btn = document.querySelector(".toggle-pw-btn");
-      if (authPasswordInput.type === "password") {
-        authPasswordInput.type = "text";
-        btn.textContent = "Hide";
-      } else {
-        authPasswordInput.type = "password";
-        btn.textContent = "Show";
-      }
+      const show = authPasswordInput.type === "password";
+      authPasswordInput.type = show ? "text" : "password";
+      btn.textContent = show ? "Hide" : "Show";
     }
 
     async function handleEmailAuthSubmit(event) {
@@ -2725,7 +1877,6 @@
         setAuthMessage("Please enter a valid email address.");
         return;
       }
-
       if (password.length < 8) {
         setAuthMessage("Password must be at least 8 characters long.");
         return;
@@ -2736,12 +1887,10 @@
 
       try {
         await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-        let cred;
-        if (authMode === "signup") {
-          cred = await auth.createUserWithEmailAndPassword(email, password);
-        } else {
-          cred = await auth.signInWithEmailAndPassword(email, password);
-        }
+        const cred = authMode === "signup"
+          ? await auth.createUserWithEmailAndPassword(email, password)
+          : await auth.signInWithEmailAndPassword(email, password);
+
         if (cred && cred.user) {
           await enterAuthenticatedApp(cred.user);
         }
@@ -2754,7 +1903,7 @@
         } else if (code === "auth/weak-password") {
           setAuthMessage("Password should be at least 8 characters.");
         } else if (code === "auth/user-not-found" || code === "auth/wrong-password" || code === "auth/invalid-credential") {
-          setAuthMessage("Incorrect email or password. Please check and try again.");
+          setAuthMessage("Account not found or incorrect password. Please check and try again.");
         } else {
           setAuthMessage((err && err.message) ? err.message : "Authentication failed. Please try again.");
         }
@@ -2767,13 +1916,14 @@
     async function handlePasswordReset() {
       const email = authEmailInput.value.trim();
       if (!email) {
-        setAuthMessage("Enter your email address above first to reset your password.");
+        setAuthMessage("Enter your registered email address above first.");
         return;
       }
 
+      setAuthMessage("Sending password reset link...");
       try {
         await auth.sendPasswordResetEmail(email);
-        setAuthMessage("Password reset link sent to your registered email.", true);
+        setAuthMessage("Password reset link sent! Check your email inbox or spam folder.", true);
       } catch (err) {
         const code = err && err.code ? err.code : "";
         if (code === "auth/user-not-found") {
@@ -2816,11 +1966,7 @@
     });
 
     async function logoutCurrentUser() {
-      try {
-        await auth.signOut();
-      } catch (e) {
-        console.error(e);
-      }
+      try { await auth.signOut(); } catch (e) { console.error(e); }
     }
 
     // ==================== TAB NAVIGATION ====================
@@ -2833,19 +1979,13 @@
         profile: "tabProfile"
       };
 
-      Object.values(tabMap).forEach((id) => {
-        document.getElementById(id).classList.remove("active");
-      });
-
-      const targetId = tabMap[tabName] || "tabHome";
-      document.getElementById(targetId).classList.add("active");
+      Object.values(tabMap).forEach((id) => document.getElementById(id).classList.remove("active"));
+      document.getElementById(tabMap[tabName] || "tabHome").classList.add("active");
 
       document.querySelectorAll(".nav-item").forEach((btn) => {
         btn.classList.toggle("active", btn.dataset.tab === tabName);
       });
-
-      const plusBtn = document.getElementById("navCreateBtn");
-      plusBtn.classList.toggle("active", tabName === "create");
+      document.getElementById("navCreateBtn").classList.toggle("active", tabName === "create");
 
       if (tabName === "profile") {
         closeEditProfileView();
@@ -2858,85 +1998,43 @@
         syncSubscriptionUI();
       }
 
-      if (tabName !== "help") {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+      if (tabName !== "help") window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    // ==================== HOME VIDEO PLAYER ====================
     function playTutorialVideo() {
-      const poster = document.getElementById("videoPosterLayer");
+      document.getElementById("videoPosterLayer").style.display = "none";
       const iframe = document.getElementById("tutorialIframe");
-      poster.style.display = "none";
       iframe.src = "https://www.youtube.com/embed/IU2V7rVs0ig?autoplay=1&rel=0&modestbranding=1";
       iframe.classList.add("active");
     }
 
-    // ==================== SUBSCRIPTION STATE SYNC ====================
+    // ==================== SUBSCRIPTION & ACTIVATION ====================
     function syncSubscriptionUI() {
       const active = isSubscribed();
-
-      const homeHeading = document.getElementById("homePremiumHeading");
-      const homeUpgradeWrap = document.getElementById("homeUpgradeBtnWrap");
-      if (homeHeading) {
-        homeHeading.textContent = active ? "YOUR PREMIUM BENEFITS" : "GO PRO / PREMIUM";
-      }
-      if (homeUpgradeWrap) {
-        homeUpgradeWrap.classList.toggle("hidden", active);
-      }
-
-      const offerLoopBanner = document.getElementById("offerLoopBanner");
-      const activeBanner = document.getElementById("activePlanBanner");
-      const offerCard = document.getElementById("pricingOfferCard");
-      const subHeading = document.getElementById("subSectionHeading");
-      const subSubheading = document.getElementById("subSectionSubheading");
-
-      if (offerLoopBanner) {
-        offerLoopBanner.classList.toggle("hidden", active);
-      }
-      if (activeBanner) {
-        activeBanner.classList.toggle("visible", active);
-      }
-      if (offerCard) {
-        offerCard.classList.toggle("hidden", active);
-      }
-      if (subHeading) {
-        subHeading.textContent = active ? "Your Premium Benefits" : "Become a Lifetime Member";
-      }
-      if (subSubheading) {
-        subSubheading.textContent = active
-          ? "Active benefits unlocked with your Kineo Lifetime Plan:"
-          : "Everything included in Kineo Lifetime Subscription:";
-      }
+      document.getElementById("homePremiumHeading").textContent = active ? "YOUR PREMIUM BENEFITS" : "GO PRO / PREMIUM";
+      document.getElementById("homeUpgradeBtnWrap").classList.toggle("hidden", active);
+      document.getElementById("offerLoopBanner").classList.toggle("hidden", active);
+      document.getElementById("activePlanBanner").classList.toggle("visible", active);
+      document.getElementById("pricingOfferCard").classList.toggle("hidden", active);
+      document.getElementById("subSectionHeading").textContent = active ? "Your Premium Benefits" : "Become a Lifetime Member";
+      document.getElementById("subSectionSubheading").textContent = active
+        ? "Active benefits unlocked with your Kineo Lifetime Plan:"
+        : "Everything included in Kineo Lifetime Subscription:";
     }
 
-    // ==================== PER-USER 24-HOUR LOOP TIMER ====================
     function updateOfferCountdownDisplay() {
       const timerEl = document.getElementById("offerTimerDigits");
       if (!timerEl) return;
-
       const anchor = userCycleAnchorMs || (currentUser ? getUserTimerAnchorMs(currentUser) : Date.now());
-      const elapsedMs = Math.max(0, Date.now() - anchor);
-      const cyclePosMs = elapsedMs % TWENTY_FOUR_HOURS_MS;
-      const remainingSec = Math.max(1, Math.ceil((TWENTY_FOUR_HOURS_MS - cyclePosMs) / 1000));
-
+      const remainingSec = Math.max(1, Math.ceil((TWENTY_FOUR_HOURS_MS - (Math.max(0, Date.now() - anchor) % TWENTY_FOUR_HOURS_MS)) / 1000));
       const hrs = String(Math.floor(remainingSec / 3600)).padStart(2, "0");
       const mins = String(Math.floor((remainingSec % 3600) / 60)).padStart(2, "0");
       const secs = String(remainingSec % 60).padStart(2, "0");
       timerEl.textContent = `${hrs}:${mins}:${secs}`;
     }
+    setInterval(updateOfferCountdownDisplay, 1000);
 
-    function startOfferLoopTimer() {
-      updateOfferCountdownDisplay();
-      setInterval(updateOfferCountdownDisplay, 1000);
-    }
-    startOfferLoopTimer();
-
-    // ==================== PAYMENT & TELEGRAM REDIRECT FLOW ====================
-    function openPaymentModal() {
-      document.getElementById("paymentModal").classList.add("open");
-    }
-
+    function openPaymentModal() { document.getElementById("paymentModal").classList.add("open"); }
     function confirmPaymentAndRedirectTelegram() {
       closeModal("paymentModal");
       window.open(TELEGRAM_CONFIRM_URL, "_blank", "noopener,noreferrer");
@@ -2959,8 +2057,7 @@
     }
 
     function clearActivationErrorState() {
-      const inputEl = document.getElementById("activationKeyInput");
-      inputEl.classList.remove("shake");
+      document.getElementById("activationKeyInput").classList.remove("shake");
       document.getElementById("activationErrorMsg").textContent = "";
     }
 
@@ -2968,7 +2065,7 @@
       document.getElementById(modalId).classList.remove("open");
     }
 
-    async function submitActivationKey() {
+    function submitActivationKey() {
       if (isActivatingKey) return;
 
       const inputEl = document.getElementById("activationKeyInput");
@@ -2984,15 +2081,20 @@
         btnEl.disabled = true;
         btnEl.textContent = "Activating...";
 
-        await setSubscribedActive();
-
-        document.getElementById("activationFormState").style.display = "none";
-        document.getElementById("activationSuccessPanel").classList.add("active");
+        setSubscribedActive();
 
         setTimeout(() => {
-          closeModal("activationModal");
-          isActivatingKey = false;
-        }, 1150);
+          document.getElementById("activationFormState").style.display = "none";
+          document.getElementById("activationSuccessPanel").classList.add("active");
+
+          setTimeout(() => {
+            closeModal("activationModal");
+            isActivatingKey = false;
+            inputEl.disabled = false;
+            btnEl.disabled = false;
+            btnEl.textContent = "Activate Subscription";
+          }, 1100);
+        }, 250);
       } else {
         errEl.textContent = "Invalid activation key. Please check and try again.";
         inputEl.classList.remove("shake");
@@ -3007,8 +2109,7 @@
     const promptCharCount = document.getElementById("promptCharCount");
 
     videoPromptInput.addEventListener("input", () => {
-      const len = videoPromptInput.value.length;
-      promptCharCount.textContent = `${len.toLocaleString()} / 10,000`;
+      promptCharCount.textContent = `${videoPromptInput.value.length.toLocaleString()} / 10,000`;
     });
 
     function selectRatio(ratio, btnEl) {
@@ -3036,48 +2137,19 @@
     }
 
     function getLiveGenerationStage(percent, ratio, quality) {
-      if (percent < 15) {
-        return {
-          title: `Analyzing prompt & story beats (${ratio})...`,
-          note: "Breaking script into animated cartoon scenes & camera angles."
-        };
-      }
-      if (percent < 35) {
-        return {
-          title: "Designing characters & cartoon backgrounds...",
-          note: "Synthesizing consistent character keyframes and environment art."
-        };
-      }
-      if (percent < 58) {
-        return {
-          title: "Animating motion & lip-sync frames...",
-          note: "Interpolating smooth cartoon movement across timeline shots."
-        };
-      }
-      if (percent < 80) {
-        return {
-          title: "Adding voiceover & sound design...",
-          note: "Mixing expressive voice narration, ambience, and audio cues."
-        };
-      }
-      if (percent < 100) {
-        return {
-          title: `Rendering & upscaling in ${quality} (${ratio})...`,
-          note: `Applying ${quality} visual polish and final color grading.`
-        };
-      }
-      return {
-        title: `Completed (${quality} • ${ratio})`,
-        note: "Final cartoon video package ready."
-      };
+      if (percent < 15) return { title: `Analyzing prompt & story beats (${ratio})...`, note: "Breaking script into animated cartoon scenes & camera angles." };
+      if (percent < 35) return { title: "Designing characters & cartoon backgrounds...", note: "Synthesizing consistent character keyframes and environment art." };
+      if (percent < 58) return { title: "Animating motion & lip-sync frames...", note: "Interpolating smooth cartoon movement across timeline shots." };
+      if (percent < 80) return { title: "Adding voiceover & sound design...", note: "Mixing expressive voice narration, ambience, and audio cues." };
+      if (percent < 100) return { title: `Rendering & upscaling in ${quality} (${ratio})...`, note: `Applying ${quality} visual polish and final color grading.` };
+      return { title: `Completed (${quality} • ${ratio})`, note: "Final cartoon video package ready." };
     }
 
     function getNextVideoFileName() {
       const key = userScopedKey("video_rotation_index");
       const currentIdx = parseInt(localStorage.getItem(key) || "0", 10);
       const safeIdx = Number.isNaN(currentIdx) ? 0 : currentIdx % VIDEO_FILES.length;
-      const nextIdx = (safeIdx + 1) % VIDEO_FILES.length;
-      localStorage.setItem(key, String(nextIdx));
+      localStorage.setItem(key, String((safeIdx + 1) % VIDEO_FILES.length));
       return VIDEO_FILES[safeIdx];
     }
 
@@ -3092,7 +2164,6 @@
 
     function startVideoGeneration() {
       if (isGeneratingVideo) return;
-
       const promptText = videoPromptInput.value.trim();
       setStudioFeedback("", "");
 
@@ -3100,7 +2171,6 @@
         setStudioFeedback("Please enter at least 10 characters to generate a video.", "error");
         return;
       }
-
       if (!isSubscribed()) {
         document.getElementById("subRequiredModal").classList.add("open");
         return;
@@ -3161,19 +2231,9 @@
     function getFirstWelcomeMessage() {
       const welcomeKey = userScopedKey("help_first_welcome");
       let savedWelcome = null;
-      try {
-        savedWelcome = JSON.parse(localStorage.getItem(welcomeKey) || "null");
-      } catch (e) {
-        savedWelcome = null;
-      }
-
+      try { savedWelcome = JSON.parse(localStorage.getItem(welcomeKey) || "null"); } catch (e) {}
       if (!savedWelcome || !savedWelcome.text) {
-        savedWelcome = {
-          sender: "ai",
-          text: "How may I assist you today?",
-          time: getFormattedIndianTime(new Date()),
-          permanent: true
-        };
+        savedWelcome = { sender: "ai", text: "How may I assist you today?", time: getFormattedIndianTime(new Date()) };
         localStorage.setItem(welcomeKey, JSON.stringify(savedWelcome));
       }
       return savedWelcome;
@@ -3182,14 +2242,8 @@
     function getUserChatHistory() {
       const historyKey = userScopedKey("help_user_messages");
       let data = null;
-      try {
-        data = JSON.parse(localStorage.getItem(historyKey) || "null");
-      } catch (e) {
-        data = null;
-      }
-
+      try { data = JSON.parse(localStorage.getItem(historyKey) || "null"); } catch (e) {}
       if (!data) return [];
-
       if (Date.now() - (data.createdAt || 0) >= TWENTY_FOUR_HOURS_MS) {
         localStorage.removeItem(historyKey);
         return [];
@@ -3199,36 +2253,26 @@
 
     function saveUserChatHistory(messages) {
       const historyKey = userScopedKey("help_user_messages");
-      let existingCreatedAt = Date.now();
+      let createdAt = Date.now();
       try {
         const existing = JSON.parse(localStorage.getItem(historyKey) || "null");
         if (existing && existing.createdAt && (Date.now() - existing.createdAt < TWENTY_FOUR_HOURS_MS)) {
-          existingCreatedAt = existing.createdAt;
+          createdAt = existing.createdAt;
         }
       } catch (e) {}
 
-      const payload = {
-        createdAt: existingCreatedAt,
-        messages
-      };
-
+      const payload = { createdAt, messages };
       localStorage.setItem(historyKey, JSON.stringify(payload));
-
       if (currentUser && currentUser.uid) {
-        db.collection("users").doc(currentUser.uid).set({
-          chat: payload
-        }, { merge: true }).catch(() => {});
+        db.collection("users").doc(currentUser.uid).set({ chat: payload }, { merge: true }).catch(() => {});
       }
     }
 
     function initHelpChat() {
-      const firstMsg = getFirstWelcomeMessage();
-      const history = getUserChatHistory();
       const area = document.getElementById("chatMessagesArea");
       area.innerHTML = "";
-
-      appendMessageNode(area, firstMsg);
-      history.forEach((msg) => appendMessageNode(area, msg));
+      appendMessageNode(area, getFirstWelcomeMessage());
+      getUserChatHistory().forEach((msg) => appendMessageNode(area, msg));
       area.scrollTop = area.scrollHeight;
     }
 
@@ -3250,20 +2294,12 @@
     }
 
     function setHelpTypingState(isTyping) {
-      const statusWrap = document.getElementById("helpPresenceStatus");
-      const statusText = document.getElementById("helpPresenceText");
-      if (isTyping) {
-        statusWrap.classList.add("typing");
-        statusText.textContent = "typing...";
-      } else {
-        statusWrap.classList.remove("typing");
-        statusText.textContent = "Online";
-      }
+      document.getElementById("helpPresenceStatus").classList.toggle("typing", isTyping);
+      document.getElementById("helpPresenceText").textContent = isTyping ? "typing..." : "Online";
     }
 
     function handleHelpMessageSubmit(event) {
       event.preventDefault();
-
       if (!isSubscribed()) {
         document.getElementById("subRequiredModal").classList.add("open");
         return;
@@ -3272,9 +2308,7 @@
       const text = helpInputEl.value.trim();
       if (!text) return;
 
-      const nowTime = getFormattedIndianTime(new Date());
-      const userMsg = { sender: "user", text, time: nowTime };
-
+      const userMsg = { sender: "user", text, time: getFormattedIndianTime(new Date()) };
       const history = getUserChatHistory();
       history.push(userMsg);
       saveUserChatHistory(history);
@@ -3285,10 +2319,9 @@
 
       helpInputEl.value = "";
       helpSendBtn.classList.remove("ready");
-
       setHelpTypingState(true);
-      if (helpReplyTimer) clearTimeout(helpReplyTimer);
 
+      if (helpReplyTimer) clearTimeout(helpReplyTimer);
       helpReplyTimer = setTimeout(() => {
         const replyMsg = {
           sender: "ai",
@@ -3314,10 +2347,7 @@
 
     function getUserProfileStore() {
       const email = (currentUser && currentUser.email) ? currentUser.email : "user@gmail.com";
-      const defaults = {
-        gender: "Prefer not to say",
-        bio: "Welcome to Kineo"
-      };
+      const defaults = { gender: "Prefer not to say", bio: "Welcome to Kineo" };
       try {
         const saved = JSON.parse(localStorage.getItem(userScopedKey("profile_data")) || "null");
         return {
@@ -3332,9 +2362,7 @@
 
     function renderProfileData() {
       const profile = getUserProfileStore();
-      const initial = getFirstCapitalLetterFromEmail(profile.email);
-
-      document.getElementById("profileLetterAvatar").textContent = initial;
+      document.getElementById("profileLetterAvatar").textContent = getFirstCapitalLetterFromEmail(profile.email);
       document.getElementById("profileTopEmail").textContent = profile.email;
       document.getElementById("profileCardEmail").textContent = profile.email;
       document.getElementById("profileCardGender").textContent = profile.gender;
@@ -3344,12 +2372,10 @@
     function openEditProfileView() {
       const profile = getUserProfileStore();
       selectedEditGender = profile.gender;
-
       document.getElementById("editLockedEmail").textContent = profile.email;
       document.getElementById("editBioTextarea").value = profile.bio;
       updateBioCounter();
       renderGenderPills();
-
       document.getElementById("profileOverviewView").style.display = "none";
       document.getElementById("editProfileView").classList.add("active");
     }
@@ -3366,35 +2392,24 @@
 
     function renderGenderPills() {
       document.querySelectorAll("#genderPillsContainer .gender-pill").forEach((btn) => {
-        const g = btn.dataset.gender;
-        const isSel = g === selectedEditGender;
-        btn.classList.toggle("selected", isSel);
-        btn.textContent = g;
+        btn.classList.toggle("selected", btn.dataset.gender === selectedEditGender);
       });
     }
 
     function updateBioCounter() {
-      const len = document.getElementById("editBioTextarea").value.length;
-      document.getElementById("bioCharCounter").textContent = `${len} / 300`;
+      document.getElementById("bioCharCounter").textContent = `${document.getElementById("editBioTextarea").value.length} / 300`;
     }
 
-    async function saveProfileEdits() {
+    function saveProfileEdits() {
       const bioVal = document.getElementById("editBioTextarea").value.trim() || "Welcome to Kineo";
-      const profilePayload = {
-        gender: selectedEditGender,
-        bio: bioVal
-      };
+      const profilePayload = { gender: selectedEditGender, bio: bioVal };
       localStorage.setItem(userScopedKey("profile_data"), JSON.stringify(profilePayload));
 
       if (currentUser && currentUser.uid) {
-        try {
-          await db.collection("users").doc(currentUser.uid).set({
-            email: currentUser.email || "",
-            profile: profilePayload
-          }, { merge: true });
-        } catch (e) {
-          console.warn("Profile cloud save warning:", e);
-        }
+        db.collection("users").doc(currentUser.uid).set({
+          email: currentUser.email || "",
+          profile: profilePayload
+        }, { merge: true }).catch(() => {});
       }
 
       renderProfileData();
