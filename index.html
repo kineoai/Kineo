@@ -1118,7 +1118,7 @@
         </div>
 
         <div class="auth-field-group">
-          <label for="authPasswordInput" class="auth-field-label">Password</label>
+          <label for="authPasswordInput" id="authPasswordLabel" class="auth-field-label"></label>
           <div class="auth-password-wrap">
             <input id="authPasswordInput" type="password" class="auth-input" placeholder="Create password" minlength="8" autocomplete="new-password" required />
             <button type="button" class="toggle-pw-btn" onclick="togglePasswordVisibility()">Show</button>
@@ -1704,7 +1704,6 @@
       localStorage.setItem(userScopedKey("pro_active"), "true");
       syncSubscriptionUI();
 
-      // Non-blocking background Firestore sync so modal never freezes
       db.collection("users").doc(currentUser.uid).set({
         email: currentUser.email || "",
         proActive: true,
@@ -1819,6 +1818,7 @@
     const emailAuthSubmitBtn = document.getElementById("emailAuthSubmitBtn");
     const authEmailInput = document.getElementById("authEmailInput");
     const authPasswordInput = document.getElementById("authPasswordInput");
+    const authPasswordLabel = document.getElementById("authPasswordLabel");
     const welcomeAuthTriggerBtn = document.getElementById("welcomeAuthTriggerBtn");
     const emailAuthForm = document.getElementById("emailAuthForm");
 
@@ -1854,6 +1854,9 @@
       document.getElementById("authMainSubtitle").textContent = isSignUp
         ? "Create your Kineo account with your email and a password to start making cartoon videos."
         : "Log in with your registered email and password to continue.";
+      if (authPasswordLabel) {
+        authPasswordLabel.textContent = isSignUp ? "Create password" : "Enter your password";
+      }
       emailAuthSubmitBtn.textContent = isSignUp ? "Sign up" : "Log in";
       authPasswordInput.setAttribute("autocomplete", isSignUp ? "new-password" : "current-password");
       document.getElementById("forgotPasswordRow").style.display = isSignUp ? "none" : "flex";
