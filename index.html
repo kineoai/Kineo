@@ -4,16 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Kineo — AI Text-to-Cartoon Video Generator (Up to 8K Ultra HD)</title>
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Turn your ideas and scripts into stunning high-quality cartoon and 3D animated videos with Kineo AI. Generate videos up to 10 minutes in 8K Ultra quality with full commercial rights." />
-  <meta name="keywords" content="Kineo, AI cartoon video generator, text to cartoon video, AI animation maker, 8K AI video generator, script to animation, AI video creator" />
+
+  <!-- Hidden SEO Meta Tags -->
+  <meta name="description" content="Turn your ideas and scripts into stunning high-quality cartoon and 3D animated videos with Kineo AI. Generate videos up to 10 minutes in up to 8K Ultra quality with full commercial rights." />
+  <meta name="keywords" content="Kineo, AI cartoon video generator, text to cartoon video, AI animation maker, 8K AI video generator, script to animation, AI video creator, kineo.live" />
   <meta name="author" content="Kineo AI" />
   <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="theme-color" content="#111318" />
   <link rel="canonical" href="https://kineo.live/" />
 
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kineo" />
   <meta property="og:url" content="https://kineo.live/" />
   <meta property="og:title" content="Kineo — AI Text-to-Cartoon Video Generator" />
   <meta property="og:description" content="Turn your ideas and scripts into cartoon videos up to 10 minutes in up to 8K Ultra quality with full commercial use." />
@@ -25,11 +28,12 @@
   <meta name="twitter:description" content="Generate high-quality cartoon videos from text prompts in seconds." />
   <meta name="twitter:image" content="https://kineo.live/logo.png" />
 
-  <!-- Favicon -->
+  <!-- Favicon & App Icons -->
   <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="logo.png" />
 
-  <!-- Structured Schema Markup -->
+  <!-- Structured Schema Markup (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -47,13 +51,27 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Kineo",
+    "url": "https://kineo.live",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://kineo.live/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5395913681338451" crossorigin="anonymous"></script>
 
-  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -78,40 +96,46 @@
       --radius-pill: 9999px;
     }
 
-    * {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       -webkit-tap-highlight-color: transparent;
     }
 
-    html, body {
+    html {
+      width: 100%;
+      height: 100%;
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
       width: 100%;
       min-height: 100vh;
       min-height: 100dvh;
       background-color: var(--bg-main);
       color: var(--text-primary);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       overflow-x: hidden;
       line-height: 1.5;
     }
 
     h1, h2, h3, .brand-font {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    /* Utility Classes */
     .hidden { display: none !important; }
     .flex { display: flex; }
-    .flex-col { display: flex; flex-direction: column; }
     .items-center { align-items: center; }
-    .justify-center { justify-content: center; }
     .justify-between { justify-content: space-between; }
 
-    /* Loading Overlay during Auth Redirect */
+    /* Initial Auth Loader */
     #authLoader {
       position: fixed;
       inset: 0;
+      width: 100%;
+      height: 100%;
       background: var(--bg-main);
       z-index: 9999;
       display: flex;
@@ -120,15 +144,19 @@
       justify-content: center;
       gap: 14px;
     }
+
     .spinner {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border: 3px solid var(--border-light);
       border-top-color: var(--dark-btn);
       border-radius: 50%;
       animation: spin 0.75s linear infinite;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
 
     /* ================= INTERFACE 1: LOGIN SCREEN ================= */
     #loginView {
@@ -138,38 +166,38 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
-      background: radial-gradient(circle at top, #ffffff 0%, #f3f4f6 100%);
+      padding: clamp(16px, 4vw, 32px);
+      background: radial-gradient(circle at top, #ffffff 0%, #f1f3f6 100%);
     }
 
     .login-container {
       width: 100%;
-      max-width: 440px;
+      max-width: 460px;
       text-align: center;
-      padding: 36px 24px;
+      padding: clamp(20px, 4vw, 36px) clamp(12px, 3vw, 24px);
     }
 
     .login-logo {
-      width: 68px;
-      height: 68px;
+      width: 72px;
+      height: 72px;
       object-fit: contain;
       margin: 0 auto 20px;
       display: block;
-      border-radius: 16px;
+      border-radius: 18px;
     }
 
     .login-title {
-      font-size: clamp(26px, 5vw, 34px);
+      font-size: clamp(28px, 5vw, 36px);
       font-weight: 800;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
       color: var(--text-primary);
       margin-bottom: 10px;
     }
 
     .login-subtitle {
-      font-size: 15px;
+      font-size: clamp(14.5px, 2vw, 16px);
       color: var(--text-secondary);
-      margin-bottom: 36px;
+      margin-bottom: 34px;
       line-height: 1.5;
     }
 
@@ -178,7 +206,7 @@
       color: var(--text-secondary);
       line-height: 1.6;
       margin-bottom: 24px;
-      padding: 0 8px;
+      padding: 0 6px;
     }
 
     .google-btn {
@@ -199,14 +227,15 @@
       transition: all 0.2s ease;
     }
 
-    .google-btn:hover {
+    .google-btn:hover:not(:disabled) {
       background: #fafafa;
       box-shadow: var(--shadow-md);
       transform: translateY(-1px);
     }
 
-    .google-btn:active {
-      transform: scale(0.99);
+    .google-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
     }
 
     .auth-error {
@@ -217,9 +246,11 @@
       border: 1px solid #fecaca;
       padding: 10px 14px;
       border-radius: 12px;
+      text-align: left;
+      word-break: break-word;
     }
 
-    /* ================= INTERFACE 2: MAIN STUDIO ================= */
+    /* ================= INTERFACE 2: FULL-SCREEN STUDIO ================= */
     #appView {
       width: 100%;
       min-height: 100vh;
@@ -229,12 +260,11 @@
       background: var(--bg-main);
     }
 
-    /* Top Navbar */
     .navbar {
       width: 100%;
       height: 64px;
-      padding: 0 clamp(16px, 4vw, 36px);
-      background: rgba(255, 255, 255, 0.85);
+      padding: 0 clamp(14px, 4vw, 40px);
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-light);
@@ -269,12 +299,12 @@
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .pro-badge {
       background: linear-gradient(135deg, #0ea5e9, #2563eb);
-      color: #fff;
+      color: #ffffff;
       font-size: 11px;
       font-weight: 700;
       padding: 4px 10px;
@@ -304,13 +334,12 @@
       transform: scale(1.05);
     }
 
-    /* Main Workspace Container */
     .workspace {
       flex: 1;
       width: 100%;
-      max-width: 820px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: clamp(20px, 4vw, 40px) 16px 48px;
+      padding: clamp(16px, 3.5vw, 36px) clamp(12px, 3vw, 24px) 64px;
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -318,6 +347,7 @@
 
     /* Offer Countdown Banner */
     .offer-banner {
+      width: 100%;
       background: var(--bg-surface);
       border: 1px solid var(--border-light);
       border-radius: var(--radius-lg);
@@ -340,7 +370,7 @@
     .offer-tag {
       background: #e0f2fe;
       color: #0369a1;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       padding: 4px 10px;
       border-radius: var(--radius-pill);
@@ -358,13 +388,13 @@
       font-weight: 700;
       color: var(--danger);
       background: #fef2f2;
-      padding: 5px 12px;
+      padding: 4px 12px;
       border-radius: var(--radius-pill);
     }
 
     .upgrade-mini-btn {
       background: var(--dark-btn);
-      color: #fff;
+      color: #ffffff;
       border: none;
       padding: 8px 16px;
       border-radius: var(--radius-pill);
@@ -380,10 +410,11 @@
 
     /* Studio Card */
     .studio-card {
+      width: 100%;
       background: var(--bg-surface);
       border: 1px solid var(--border-light);
       border-radius: var(--radius-lg);
-      padding: clamp(20px, 4vw, 32px);
+      padding: clamp(18px, 4vw, 32px);
       box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
@@ -391,7 +422,7 @@
     }
 
     .studio-header h1 {
-      font-size: clamp(20px, 3.5vw, 26px);
+      font-size: clamp(21px, 3.5vw, 28px);
       font-weight: 800;
       color: var(--text-primary);
       margin-bottom: 4px;
@@ -402,14 +433,9 @@
       color: var(--text-secondary);
     }
 
-    .prompt-box {
-      position: relative;
-      width: 100%;
-    }
-
     .prompt-textarea {
       width: 100%;
-      min-height: 135px;
+      min-height: 140px;
       padding: 16px;
       border-radius: 16px;
       border: 1.5px solid var(--border-light);
@@ -436,16 +462,15 @@
       color: var(--text-muted);
     }
 
-    /* Aspect Ratio & Quality Selector */
     .controls-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 16px;
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 640px) {
       .controls-grid {
-        grid-template-columns: 1.2fr 1fr;
+        grid-template-columns: 1.25fr 1fr;
       }
     }
 
@@ -475,7 +500,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 4px;
+      gap: 3px;
       transition: all 0.15s ease;
     }
 
@@ -487,7 +512,7 @@
 
     .quality-select {
       width: 100%;
-      height: 48px;
+      height: 50px;
       padding: 0 14px;
       border-radius: 12px;
       border: 1.5px solid var(--border-light);
@@ -500,7 +525,6 @@
       cursor: pointer;
     }
 
-    /* Primary Generate CTA */
     .generate-btn {
       width: 100%;
       height: 54px;
@@ -519,7 +543,7 @@
       transition: all 0.2s ease;
     }
 
-    .generate-btn:hover {
+    .generate-btn:hover:not(:disabled) {
       background: var(--accent-hover);
       transform: translateY(-1px);
     }
@@ -527,16 +551,14 @@
     .generate-btn:disabled {
       opacity: 0.65;
       cursor: not-allowed;
-      transform: none;
     }
 
-    /* Progress & Video Output Area */
+    /* Generation Progress */
     .generation-box {
       background: var(--bg-main);
       border: 1px solid var(--border-light);
       border-radius: 18px;
-      padding: 24px 20px;
-      text-align: center;
+      padding: 22px 18px;
     }
 
     .progress-header {
@@ -560,21 +582,23 @@
       height: 100%;
       background: linear-gradient(90deg, #0ea5e9, #2563eb);
       border-radius: var(--radius-pill);
-      transition: width 0.25s ease;
+      transition: width 0.2s ease;
     }
 
     .progress-note {
       margin-top: 10px;
       font-size: 12.5px;
       color: var(--text-secondary);
+      text-align: center;
     }
 
     /* Video Result Card */
     .result-card {
+      width: 100%;
       background: var(--bg-surface);
       border: 1px solid var(--border-light);
       border-radius: var(--radius-lg);
-      padding: 20px;
+      padding: clamp(16px, 3vw, 24px);
       box-shadow: var(--shadow-md);
       display: flex;
       flex-direction: column;
@@ -585,31 +609,21 @@
       width: 100%;
       border-radius: 14px;
       overflow: hidden;
-      background: #000;
-      position: relative;
+      background: #000000;
     }
 
     .video-wrapper video {
       width: 100%;
-      max-height: 440px;
+      max-height: 460px;
       display: block;
       object-fit: contain;
     }
 
-    .result-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: space-between;
-      align-items: center;
-    }
-
     .download-btn {
-      flex: 1;
-      min-width: 180px;
+      width: 100%;
       height: 48px;
       background: var(--dark-btn);
-      color: #fff;
+      color: #ffffff;
       border: none;
       border-radius: var(--radius-pill);
       font-size: 14.5px;
@@ -622,7 +636,7 @@
       text-decoration: none;
     }
 
-    /* AdSense Container */
+    /* AdSense Slot */
     .ad-slot {
       width: 100%;
       min-height: 90px;
@@ -636,10 +650,12 @@
       padding: 8px;
     }
 
-    /* ================= MODALS (PAYMENT, PROFILE, SUPPORT) ================= */
+    /* ================= MODALS ================= */
     .modal-backdrop {
       position: fixed;
       inset: 0;
+      width: 100%;
+      height: 100%;
       background: rgba(17, 19, 24, 0.55);
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
@@ -648,24 +664,18 @@
       align-items: center;
       justify-content: center;
       padding: 16px;
-      animation: fadeIn 0.2s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
     }
 
     .modal-card {
       width: 100%;
-      max-width: 400px;
+      max-width: 410px;
       background: var(--bg-surface);
       border-radius: 26px;
       padding: 28px 24px 24px;
       position: relative;
       box-shadow: var(--shadow-lg);
       text-align: center;
-      max-height: 92vh;
+      max-height: 92dvh;
       overflow-y: auto;
     }
 
@@ -685,7 +695,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.15s;
     }
 
     .modal-close:hover {
@@ -693,7 +702,6 @@
       color: var(--text-primary);
     }
 
-    /* Payment Modal Specifics */
     .pay-title {
       font-size: 21px;
       font-weight: 800;
@@ -706,8 +714,8 @@
       font-weight: 500;
       color: var(--text-secondary);
       line-height: 1.45;
-      margin-bottom: 18px;
-      padding: 0 6px;
+      margin-bottom: 16px;
+      padding: 0 4px;
     }
 
     .pay-amount {
@@ -737,14 +745,13 @@
       object-fit: contain;
     }
 
-    /* Clean UPI Copy Row */
     .upi-copy-row {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
       background: var(--bg-subtle);
-      padding: 7px 14px;
+      padding: 6px 12px 6px 14px;
       border-radius: var(--radius-pill);
       margin-bottom: 18px;
       border: 1px solid var(--border-light);
@@ -760,7 +767,7 @@
     .copy-icon-btn {
       background: #ffffff;
       border: 1px solid var(--border-light);
-      border-radius: 8px;
+      border-radius: 50%;
       width: 28px;
       height: 28px;
       display: inline-flex;
@@ -769,12 +776,11 @@
       cursor: pointer;
       color: var(--text-primary);
       transition: all 0.18s ease;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
     }
 
     .copy-icon-btn:hover {
       background: #f8fafc;
-      border-color: #cbd5e1;
       transform: scale(1.06);
     }
 
@@ -828,7 +834,6 @@
       background: var(--dark-btn-hover);
     }
 
-    /* Activation Key Box */
     .key-section {
       border-top: 1px solid var(--border-light);
       padding-top: 14px;
@@ -846,10 +851,6 @@
       outline: none;
     }
 
-    .key-input:focus {
-      border-color: var(--dark-btn);
-    }
-
     .key-submit-btn {
       height: 42px;
       padding: 0 18px;
@@ -862,17 +863,12 @@
       cursor: pointer;
     }
 
-    .key-submit-btn:hover {
-      background: #e2e8f0;
-    }
-
-    /* Profile Modal */
     .profile-avatar-lg {
       width: 64px;
       height: 64px;
       border-radius: 50%;
       background: var(--dark-btn);
-      color: #fff;
+      color: #ffffff;
       font-size: 26px;
       font-weight: 800;
       display: flex;
@@ -913,8 +909,8 @@
     /* ================= FLOATING AI SUPPORT CHAT ================= */
     .chat-fab {
       position: fixed;
-      bottom: 22px;
-      right: 22px;
+      bottom: 20px;
+      right: 20px;
       width: 54px;
       height: 54px;
       border-radius: 50%;
@@ -936,12 +932,12 @@
 
     .chat-window {
       position: fixed;
-      bottom: 88px;
+      bottom: 84px;
       right: 20px;
       width: calc(100vw - 40px);
       max-width: 360px;
-      height: 440px;
-      max-height: 70vh;
+      height: 430px;
+      max-height: 70dvh;
       background: var(--bg-surface);
       border: 1px solid var(--border-light);
       border-radius: 22px;
@@ -954,7 +950,7 @@
 
     .chat-header {
       background: var(--dark-btn);
-      color: #fff;
+      color: #ffffff;
       padding: 14px 18px;
       display: flex;
       align-items: center;
@@ -1027,17 +1023,17 @@
       border-radius: 50%;
       border: none;
       background: var(--dark-btn);
-      color: #fff;
+      color: #ffffff;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    /* Toast Notification */
+    /* Toast */
     #toast {
       position: fixed;
-      bottom: 28px;
+      bottom: 26px;
       left: 50%;
       transform: translateX(-50%) translateY(20px);
       background: #111318;
@@ -1062,13 +1058,13 @@
 </head>
 <body>
 
-  <!-- Initial Auth Check Loader -->
+  <!-- Auth Loader -->
   <div id="authLoader">
     <div class="spinner"></div>
     <p style="font-size: 14px; font-weight: 600; color: var(--text-secondary);">Loading Kineo...</p>
   </div>
 
-  <!-- ================= INTERFACE 1: LOGIN VIEW ================= -->
+  <!-- ================= INTERFACE 1: LOGIN SCREEN ================= -->
   <main id="loginView" class="hidden">
     <div class="login-container">
       <img src="logo.png" alt="Kineo Logo" class="login-logo" onerror="this.style.display='none'" />
@@ -1093,9 +1089,8 @@
     </div>
   </main>
 
-  <!-- ================= INTERFACE 2: STUDIO WORKSPACE ================= -->
+  <!-- ================= INTERFACE 2: FULL-SCREEN STUDIO ================= -->
   <div id="appView" class="hidden">
-    <!-- Navbar -->
     <header class="navbar">
       <div class="nav-left">
         <img src="logo.png" alt="Kineo" class="nav-logo" onerror="this.style.display='none'" />
@@ -1107,9 +1102,7 @@
       </div>
     </header>
 
-    <!-- Main Workspace -->
     <main class="workspace">
-      <!-- Offer Countdown Banner -->
       <div id="offerBanner" class="offer-banner">
         <div class="offer-info">
           <span class="offer-tag">LIMITED OFFER</span>
@@ -1119,21 +1112,20 @@
         <button id="openPayBannerBtn" class="upgrade-mini-btn">Unlock Pro</button>
       </div>
 
-      <!-- Prompt & Controls Card -->
       <section class="studio-card">
         <div class="studio-header">
           <h1>Create AI Cartoon Video</h1>
           <p>Describe your scene, characters, and style in detail.</p>
         </div>
 
-        <div class="prompt-box">
+        <div>
           <textarea
             id="promptInput"
             class="prompt-textarea"
             placeholder="Example: A cute little astronaut cat floating inside a colorful candy galaxy, 3D Pixar animation style, cinematic lighting, 8K..."
           ></textarea>
           <div class="prompt-meta">
-            <span id="charHint">Minimum 10 letters required</span>
+            <span>Minimum 10 letters required</span>
             <span id="charCount">0 letters</span>
           </div>
         </div>
@@ -1175,7 +1167,6 @@
           <span>Generate Cartoon Video</span>
         </button>
 
-        <!-- Progress Section -->
         <div id="generationBox" class="generation-box hidden">
           <div class="progress-header">
             <span id="progressStage">Initializing Kineo AI Engine...</span>
@@ -1188,7 +1179,6 @@
         </div>
       </section>
 
-      <!-- Video Result Card -->
       <section id="resultCard" class="result-card hidden">
         <div class="flex items-center justify-between">
           <h3 style="font-size: 17px; font-weight: 700;">Your Generated Cartoon Video</h3>
@@ -1197,17 +1187,14 @@
         <div class="video-wrapper">
           <video id="outputVideo" controls playsinline loop></video>
         </div>
-        <div class="result-actions">
-          <a id="downloadVideoBtn" href="video1.mp4" download="Kineo_Cartoon_Video.mp4" class="download-btn">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-            </svg>
-            <span>Download Video (MP4)</span>
-          </a>
-        </div>
+        <a id="downloadVideoBtn" href="video1.mp4" download="Kineo_Cartoon_Video.mp4" class="download-btn">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+          <span>Download Video (MP4)</span>
+        </a>
       </section>
 
-      <!-- AdSense Display Unit -->
       <div class="ad-slot">
         <ins class="adsbygoogle"
              style="display:block; width:100%;"
@@ -1219,7 +1206,7 @@
     </main>
   </div>
 
-  <!-- ================= PAYMENT MODAL (INTERFACE 3) ================= -->
+  <!-- ================= PAYMENT MODAL ================= -->
   <div id="paymentModal" class="modal-backdrop hidden">
     <div class="modal-card">
       <button id="closePayModal" class="modal-close" aria-label="Close">✕</button>
@@ -1233,15 +1220,14 @@
         <img src="qr.png" alt="UPI Payment QR Code" />
       </div>
 
-      <!-- Clean UPI ID + Improved Copy Icon -->
       <div class="upi-copy-row">
         <span class="upi-text">UPI: paytm.s4eanhy@pty</span>
         <button id="copyUpiBtn" class="copy-icon-btn" type="button" title="Copy UPI ID" aria-label="Copy UPI ID">
-          <svg id="copySvg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <svg id="copySvg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
           </svg>
-          <svg id="checkSvg" class="hidden" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <svg id="checkSvg" class="hidden" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
         </button>
@@ -1262,7 +1248,7 @@
     </div>
   </div>
 
-  <!-- ================= PROFILE MODAL (INTERFACE 4) ================= -->
+  <!-- ================= PROFILE MODAL ================= -->
   <div id="profileModal" class="modal-backdrop hidden">
     <div class="modal-card">
       <button id="closeProfileModal" class="modal-close" aria-label="Close">✕</button>
@@ -1284,7 +1270,7 @@
     </div>
   </div>
 
-  <!-- ================= FLOATING AI SUPPORT CHAT (INTERFACE 5) ================= -->
+  <!-- ================= AI SUPPORT CHAT ================= -->
   <button id="chatFab" class="chat-fab hidden" title="Kineo AI Support" aria-label="Open Support Chat">
     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
@@ -1310,10 +1296,9 @@
     </form>
   </div>
 
-  <!-- Toast Notification -->
   <div id="toast"></div>
 
-  <!-- ================= FIREBASE & APP LOGIC ================= -->
+  <!-- ================= FIREBASE & APPLICATION SCRIPT ================= -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import {
@@ -1327,7 +1312,6 @@
       updateProfile
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-    // Your Exact Firebase Project Configuration
     const firebaseConfig = {
       apiKey: "AIzaSyB7NYHjsmq2WVnpkhko9VhHF_fBJCUCG0",
       authDomain: "kineo-680e6.firebaseapp.com",
@@ -1343,7 +1327,6 @@
     const provider = new GoogleAuthProvider();
     provider.setCustomParameters({ prompt: "select_account" });
 
-    // DOM Elements
     const authLoader = document.getElementById("authLoader");
     const loginView = document.getElementById("loginView");
     const appView = document.getElementById("appView");
@@ -1383,7 +1366,6 @@
     let currentUser = null;
     let isPro = localStorage.getItem("kineo_pro_unlocked") === "true";
 
-    // Toast Helper
     function showToast(msg) {
       const toast = document.getElementById("toast");
       toast.textContent = msg;
@@ -1391,48 +1373,45 @@
       setTimeout(() => toast.classList.remove("show"), 2600);
     }
 
-    // Detect Mobile Browser for Reliable Redirect Auth
     function isMobileBrowser() {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
 
-    // Handle Redirect Result on Page Load (Fixes Mobile Popup Return Issue)
+    // Complete redirect login if returning from Google redirect
     getRedirectResult(auth)
       .then((result) => {
         if (result && result.user) {
-          showToast("Welcome back, " + (result.user.displayName || "Creator") + "!");
+          showToast("Welcome to Kineo!");
         }
       })
       .catch((error) => {
-        console.error("Redirect Sign-In Error:", error);
-        loginErrorMsg.textContent = "Sign-in failed: " + error.message;
-        loginErrorMsg.classList.remove("hidden");
+        if (error && error.code && error.code !== "auth/no-auth-event") {
+          loginErrorMsg.textContent = "Sign-in failed: " + (error.code || error.message);
+          loginErrorMsg.classList.remove("hidden");
+        }
       });
 
-    // Google Sign-In Trigger
+    // Reliable Google Sign-In Handler
     googleLoginBtn.addEventListener("click", async () => {
       loginErrorMsg.classList.add("hidden");
       googleLoginBtn.disabled = true;
+
       try {
         if (isMobileBrowser()) {
-          // Smooth full-tab redirect on Android/iOS browsers
           await signInWithRedirect(auth, provider);
         } else {
-          // Instant popup on Desktop/Laptop
           await signInWithPopup(auth, provider);
         }
       } catch (err) {
-        console.error("Auth error:", err);
-        // Fallback to redirect if popup blocked
         if (err.code === "auth/popup-blocked" || err.code === "auth/popup-closed-by-user") {
           try {
             await signInWithRedirect(auth, provider);
             return;
-          } catch (redirErr) {
-            loginErrorMsg.textContent = "Sign-in failed. Please try again.";
+          } catch (redirectErr) {
+            loginErrorMsg.textContent = "Sign-in failed: " + (redirectErr.code || redirectErr.message);
           }
         } else {
-          loginErrorMsg.textContent = "Sign-in failed: " + (err.message || "Check authorized domains.");
+          loginErrorMsg.textContent = "Sign-in failed: " + (err.code || err.message);
         }
         loginErrorMsg.classList.remove("hidden");
       } finally {
@@ -1440,7 +1419,6 @@
       }
     });
 
-    // Auth State Observer
     onAuthStateChanged(auth, (user) => {
       authLoader.classList.add("hidden");
       if (user) {
@@ -1464,13 +1442,13 @@
 
     function updateUserUI(user) {
       const savedName = localStorage.getItem("kineo_custom_name_" + user.uid);
-      const name = savedName || user.displayName || user.email.split("@")[0];
+      const name = savedName || user.displayName || (user.email ? user.email.split("@")[0] : "Creator");
       const initial = name.trim().charAt(0).toUpperCase() || "K";
 
       openProfileBtn.textContent = initial;
       document.getElementById("profileAvatarLg").textContent = initial;
       document.getElementById("profileDisplayName").textContent = name;
-      document.getElementById("profileEmail").textContent = user.email;
+      document.getElementById("profileEmail").textContent = user.email || "";
       document.getElementById("editNameInput").value = name;
 
       if (isPro) {
@@ -1480,10 +1458,10 @@
       }
     }
 
-    // 24-Hour Looping Countdown Timer
+    // 24-Hour Loop Timer
     function startOfferTimer() {
       const CYCLE_MS = 24 * 60 * 60 * 1000;
-      let endTime = parseInt(localStorage.getItem("kineo_offer_end"), 10);
+      let endTime = parseInt(localStorage.getItem("kineo_offer_end") || "0", 10);
       if (!endTime || endTime <= Date.now()) {
         endTime = Date.now() + CYCLE_MS;
         localStorage.setItem("kineo_offer_end", endTime.toString());
@@ -1504,7 +1482,7 @@
     }
     startOfferTimer();
 
-    // Aspect Ratio Selector
+    // Aspect Ratio Toggle
     document.querySelectorAll(".ratio-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         document.querySelectorAll(".ratio-btn").forEach((b) => b.classList.remove("active"));
@@ -1512,16 +1490,16 @@
       });
     });
 
-    // Prompt Letter Counter
+    // Letter Counter
     promptInput.addEventListener("input", () => {
       const letters = promptInput.value.replace(/[^a-zA-Z\u0900-\u097F]/g, "").length;
       charCount.textContent = `${letters} letters`;
       charCount.style.color = letters >= 10 ? "var(--success)" : "var(--text-muted)";
     });
 
-    // Video Generation Flow (3-Second / 1% Incremental Loading + Sequential 5 Videos)
+    // Video Generation (3s / 1% step + 5 sequential videos)
     const videoFiles = ["video1.mp4", "video2.mp4", "video3.mp4", "video4.mp4", "video5.mp4"];
-    let genInterval = null;
+    let genTimer = null;
 
     generateBtn.addEventListener("click", () => {
       const letters = promptInput.value.replace(/[^a-zA-Z\u0900-\u097F]/g, "").length;
@@ -1531,60 +1509,54 @@
         return;
       }
 
-      const selectedQuality = document.getElementById("qualitySelect").value;
-      if ((selectedQuality === "4K" || selectedQuality === "8K") && !isPro) {
+      const quality = document.getElementById("qualitySelect").value;
+      if ((quality === "4K" || quality === "8K") && !isPro) {
         paymentModal.classList.remove("hidden");
         return;
       }
 
-      // Start Generation
       generateBtn.disabled = true;
       resultCard.classList.add("hidden");
       generationBox.classList.remove("hidden");
 
-      let percent = 0;
+      let pct = 0;
       progressFill.style.width = "0%";
       progressPercent.textContent = "0%";
       progressStage.textContent = "Analyzing script & character rigs...";
 
-      clearInterval(genInterval);
-      // 1% every 30ms = 3 seconds total
-      genInterval = setInterval(() => {
-        percent += 1;
-        progressFill.style.width = percent + "%";
-        progressPercent.textContent = percent + "%";
+      clearInterval(genTimer);
+      genTimer = setInterval(() => {
+        pct += 1;
+        progressFill.style.width = pct + "%";
+        progressPercent.textContent = pct + "%";
 
-        if (percent === 30) progressStage.textContent = "Generating 3D cartoon keyframes...";
-        if (percent === 65) progressStage.textContent = "Applying lighting & lip-sync...";
-        if (percent === 90) progressStage.textContent = "Encoding final MP4 stream...";
+        if (pct === 30) progressStage.textContent = "Generating 3D cartoon keyframes...";
+        if (pct === 65) progressStage.textContent = "Applying lighting & lip-sync...";
+        if (pct === 90) progressStage.textContent = "Encoding final MP4 stream...";
 
-        if (percent >= 100) {
-          clearInterval(genInterval);
-          finishGeneration();
+        if (pct >= 100) {
+          clearInterval(genTimer);
+          generationBox.classList.add("hidden");
+          generateBtn.disabled = false;
+
+          const idx = parseInt(localStorage.getItem("kineo_vid_idx") || "0", 10);
+          const chosen = videoFiles[idx % videoFiles.length];
+          localStorage.setItem("kineo_vid_idx", ((idx + 1) % videoFiles.length).toString());
+
+          outputVideo.src = chosen;
+          downloadVideoBtn.href = chosen;
+          downloadVideoBtn.download = `Kineo_Cartoon_${(idx % videoFiles.length) + 1}.mp4`;
+          videoBatchTag.textContent = `Clip #${(idx % videoFiles.length) + 1} Ready`;
+
+          resultCard.classList.remove("hidden");
+          outputVideo.play().catch(() => {});
+          resultCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          showToast("Cartoon video generated!");
         }
       }, 30);
     });
 
-    function finishGeneration() {
-      generationBox.classList.add("hidden");
-      generateBtn.disabled = false;
-
-      let vidIndex = parseInt(localStorage.getItem("kineo_vid_index") || "0", 10);
-      const chosenFile = videoFiles[vidIndex % videoFiles.length];
-      localStorage.setItem("kineo_vid_index", ((vidIndex + 1) % videoFiles.length).toString());
-
-      outputVideo.src = chosenFile;
-      downloadVideoBtn.href = chosenFile;
-      downloadVideoBtn.download = `Kineo_Cartoon_${vidIndex + 1}.mp4`;
-      videoBatchTag.textContent = `Clip #${(vidIndex % videoFiles.length) + 1} Ready`;
-
-      resultCard.classList.remove("hidden");
-      outputVideo.play().catch(() => {});
-      resultCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      showToast("Cartoon video generated successfully!");
-    }
-
-    // Payment Modal & Clean Copy Icon Logic
+    // Payment Modal & Copy Button
     document.getElementById("openPayBannerBtn").addEventListener("click", () => {
       paymentModal.classList.remove("hidden");
     });
@@ -1598,18 +1570,18 @@
       try {
         await navigator.clipboard.writeText(upiId);
       } catch (e) {
-        const temp = document.createElement("input");
-        temp.value = upiId;
-        document.body.appendChild(temp);
-        temp.select();
+        const tmp = document.createElement("input");
+        tmp.value = upiId;
+        document.body.appendChild(tmp);
+        tmp.select();
         document.execCommand("copy");
-        document.body.removeChild(temp);
+        document.body.removeChild(tmp);
       }
 
       copyUpiBtn.classList.add("copied");
       copySvg.classList.add("hidden");
       checkSvg.classList.remove("hidden");
-      showToast("UPI ID copied: paytm.s4eanhy@pty");
+      showToast("UPI ID copied!");
 
       setTimeout(() => {
         copyUpiBtn.classList.remove("copied");
@@ -1618,21 +1590,19 @@
       }, 2000);
     });
 
-    // Activation Key Bypass Verification
     activateKeyBtn.addEventListener("click", () => {
-      const code = activationKeyInput.value.trim();
-      if (code === "25032023") {
+      if (activationKeyInput.value.trim() === "25032023") {
         isPro = true;
         localStorage.setItem("kineo_pro_unlocked", "true");
         paymentModal.classList.add("hidden");
         if (currentUser) updateUserUI(currentUser);
-        showToast("Lifetime Pro Activated! Enjoy 4K & 8K videos.");
+        showToast("Lifetime Pro Activated!");
       } else {
-        showToast("Invalid Activation Key. Confirm payment to get your key.");
+        showToast("Invalid Activation Key.");
       }
     });
 
-    // Profile Modal Logic
+    // Profile Modal
     openProfileBtn.addEventListener("click", () => {
       profileModal.classList.remove("hidden");
     });
@@ -1655,7 +1625,7 @@
       } catch (e) {}
       updateUserUI(currentUser);
       profileModal.classList.add("hidden");
-      showToast("Profile updated!");
+      showToast("Profile saved!");
     });
 
     document.getElementById("logoutBtn").addEventListener("click", async () => {
@@ -1663,14 +1633,13 @@
       profileModal.classList.add("hidden");
     });
 
-    // Close modals on backdrop click
-    [paymentModal, profileModal].forEach((modal) => {
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) modal.classList.add("hidden");
+    [paymentModal, profileModal].forEach((m) => {
+      m.addEventListener("click", (e) => {
+        if (e.target === m) m.classList.add("hidden");
       });
     });
 
-    // Persistent 24h Expiring AI Support Chat with IST Timestamp
+    // 24h AI Support Chat with IST Timestamp
     function getISTTime() {
       return new Date().toLocaleTimeString("en-IN", {
         timeZone: "Asia/Kolkata",
@@ -1681,60 +1650,60 @@
     }
 
     function initSupportChat() {
-      const CHAT_KEY = "kineo_chat_history_v1";
-      const EXPIRY_MS = 24 * 60 * 60 * 1000;
-      let stored = null;
+      const KEY = "kineo_chat_v1";
+      const TTL = 24 * 60 * 60 * 1000;
+      let data = null;
 
       try {
-        stored = JSON.parse(localStorage.getItem(CHAT_KEY));
+        data = JSON.parse(localStorage.getItem(KEY));
       } catch (e) {}
 
-      if (!stored || Date.now() - stored.createdAt > EXPIRY_MS) {
-        stored = {
+      if (!data || Date.now() - data.createdAt > TTL) {
+        data = {
           createdAt: Date.now(),
           messages: [
             {
               sender: "bot",
-              text: "Hi! Welcome to Kineo AI Support. Need help generating cartoon videos or activating Lifetime Pro?",
+              text: "Welcome to Kineo AI Support! Ask anything about cartoon video creation or ₹100 Lifetime Pro.",
               time: getISTTime()
             }
           ]
         };
-        localStorage.setItem(CHAT_KEY, JSON.stringify(stored));
+        localStorage.setItem(KEY, JSON.stringify(data));
       }
 
-      renderChat(stored.messages);
+      renderChat(data.messages);
 
       document.getElementById("chatForm").onsubmit = (e) => {
         e.preventDefault();
         const input = document.getElementById("chatInput");
-        const text = input.value.trim();
-        if (!text) return;
+        const msg = input.value.trim();
+        if (!msg) return;
 
-        stored.messages.push({ sender: "user", text, time: getISTTime() });
+        data.messages.push({ sender: "user", text: msg, time: getISTTime() });
         input.value = "";
 
-        const lower = text.toLowerCase();
-        let reply = "Our team is available on Telegram (@thekineo) for instant activation & custom queries.";
-        if (lower.includes("pay") || lower.includes("pro") || lower.includes("100") || lower.includes("key")) {
-          reply = "Lifetime Pro costs ₹100 one-time. Scan the QR or pay to paytm.s4eanhy@pty, then click 'Confirm Payment' to receive your Activation Key.";
-        } else if (lower.includes("video") || lower.includes("generate") || lower.includes("8k")) {
-          reply = "Type at least 10 letters describing your cartoon scene, choose your aspect ratio, and click Generate!";
+        const lower = msg.toLowerCase();
+        let botReply = "Need help? Click Confirm Payment to contact @thekineo on Telegram.";
+        if (lower.includes("pay") || lower.includes("100") || lower.includes("pro") || lower.includes("key")) {
+          botReply = "Scan QR Code To Pay ₹100 (UPI / Google Pay / PhonePe / Paytm) to paytm.s4eanhy@pty, then click Confirm Payment.";
+        } else if (lower.includes("video") || lower.includes("prompt")) {
+          botReply = "Enter at least 10 letters describing your cartoon video, pick aspect ratio, and hit Generate!";
         }
 
         setTimeout(() => {
-          stored.messages.push({ sender: "bot", text: reply, time: getISTTime() });
-          localStorage.setItem(CHAT_KEY, JSON.stringify(stored));
-          renderChat(stored.messages);
-        }, 450);
+          data.messages.push({ sender: "bot", text: botReply, time: getISTTime() });
+          localStorage.setItem(KEY, JSON.stringify(data));
+          renderChat(data.messages);
+        }, 400);
 
-        localStorage.setItem(CHAT_KEY, JSON.stringify(stored));
-        renderChat(stored.messages);
+        localStorage.setItem(KEY, JSON.stringify(data));
+        renderChat(data.messages);
       };
     }
 
-    function renderChat(messages) {
-      chatMessages.innerHTML = messages
+    function renderChat(msgs) {
+      chatMessages.innerHTML = msgs
         .map(
           (m) => `
           <div class="msg-bubble ${m.sender === "user" ? "msg-user" : "msg-bot"}">
