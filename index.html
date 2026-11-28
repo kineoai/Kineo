@@ -11,10 +11,11 @@
   <meta name="mobile-web-app-capable" content="yes" />
 
   <title>Kineo — Text to Cartoon AI Video Generator | Kineo Official</title>
-  <meta name="description" content="Kineo (kineo.live) is a text-to-cartoon AI video creation tool capable of generating cartoon and anime videos up to 10 minutes in up to 8K Ultra quality with commercial use." />
-  <meta name="keywords" content="Kineo, Kineo AI, Kineo live, kineo.live, text to cartoon AI, text to cartoon video generator, AI cartoon maker, anime video generator, script to cartoon AI, 8K cartoon AI tool, Kineo official website" />
+  <meta name="description" content="Kineo (kineo.live) is a text-to-cartoon video creation AI tool capable of generating videos up to 10 minutes in up to 8K Ultra quality with full commercial use." />
+  <meta name="keywords" content="Kineo, Kineo AI, Kineo live, kineo.live, text to cartoon making ai tool, text to cartoon video creation ai tool, text to cartoon AI, AI cartoon video generator, script to cartoon AI, anime video generator, cartoon story maker AI, 8K cartoon video AI, commercial cartoon AI tool" />
   <meta name="author" content="Kineo" />
   <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://kineo.live/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kineo" />
@@ -27,6 +28,23 @@
   <meta name="twitter:title" content="Kineo — Text to Cartoon AI Video Generator" />
   <meta name="twitter:description" content="Text-to-cartoon AI video creation tool by Kineo." />
   <meta name="twitter:image" content="https://kineo.live/logo.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Kineo",
+    "url": "https://kineo.live/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "description": "Kineo is a text-to-cartoon video creation AI tool capable of generating videos up to 10 minutes in up to 8K Ultra quality with full commercial use.",
+    "offers": {
+      "@type": "Offer",
+      "price": "100",
+      "priceCurrency": "INR"
+    }
+  }
+  </script>
 
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="shortcut icon" type="image/png" href="favicon.png" />
@@ -63,7 +81,7 @@
       --safe-bottom: env(safe-area-inset-bottom, 0px);
     }
 
-    * {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -94,7 +112,7 @@
       border: 0;
     }
 
-    /* ==================== #1 LOGIN / SIGN UP SCREEN ==================== */
+    /* ==================== #26 WELCOME & AUTH SCREEN ==================== */
     .login-screen {
       width: 100%;
       min-height: 100dvh;
@@ -107,8 +125,8 @@
     }
 
     .login-top-spacer {
-      flex: 0.5;
-      min-height: 12px;
+      flex: 0.45;
+      min-height: 10px;
     }
 
     .login-center {
@@ -164,6 +182,34 @@
       margin-bottom: 4px;
     }
 
+    .welcome-entry-trigger-btn {
+      width: 100%;
+      height: 54px;
+      border-radius: var(--radius-pill);
+      background: #ffffff;
+      color: var(--text-primary);
+      border: 1.5px solid var(--border-medium);
+      font-family: inherit;
+      font-size: 15.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: var(--shadow-card);
+      transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .welcome-entry-trigger-btn:hover {
+      background: var(--bg-subtle);
+      border-color: var(--accent-black);
+    }
+
+    .welcome-entry-trigger-btn:active {
+      transform: scale(0.985);
+    }
+
     .auth-form-card {
       width: 100%;
       background: #ffffff;
@@ -175,6 +221,31 @@
       flex-direction: column;
       gap: 12px;
       text-align: left;
+    }
+
+    .auth-card-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2px;
+    }
+
+    .auth-back-welcome-btn {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 4px;
+    }
+
+    .auth-back-welcome-btn:hover {
+      color: var(--text-primary);
     }
 
     .auth-mode-tabs {
@@ -883,6 +954,52 @@
       color: var(--text-secondary);
     }
 
+    .quality-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+    }
+
+    @media (min-width: 560px) {
+      .quality-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    .quality-btn {
+      background: #ffffff;
+      border: 1.5px solid var(--border-light);
+      border-radius: 13px;
+      padding: 10px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      cursor: pointer;
+      font-family: inherit;
+      text-align: center;
+      transition: all 0.15s ease;
+    }
+
+    .quality-btn.active {
+      border-color: var(--accent-black);
+      background: #f5f6f8;
+    }
+
+    .quality-btn-main {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .quality-btn-sub {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
     .demo-prompts-list {
       display: flex;
       flex-direction: column;
@@ -947,6 +1064,7 @@
       font-weight: 700;
       color: var(--text-primary);
       margin-bottom: 10px;
+      gap: 10px;
     }
 
     .progress-track {
@@ -967,6 +1085,7 @@
 
     .progress-subnote {
       font-size: 12.5px;
+      font-weight: 600;
       color: var(--text-secondary);
       margin-top: 8px;
     }
@@ -1515,20 +1634,21 @@
 </head>
 <body>
 
-  <!-- Hidden keywords for search indexing -->
+  <!-- Hidden keywords for search indexing (invisible to users) -->
   <div class="seo-keyword-vault" aria-hidden="true">
     Kineo Kineo.live Kineo AI text to cartoon making ai tool text to cartoon video creation ai tool
-    script to cartoon ai generator anime video creator 8k cartoon video ai kineo official website
+    script to cartoon ai generator anime video generator cartoon story creator 720p 1080p 1440p 4k 8k cartoon video ai
+    kineo official website text to animation video tool commercial use cartoon video maker
   </div>
 
-  <!-- ==================== #1 EMAIL & PASSWORD SIGN UP / LOGIN SCREEN ==================== -->
+  <!-- ==================== #26 WELCOME & AUTH SCREEN ==================== -->
   <section id="loginScreen" class="login-screen">
     <div class="login-top-spacer"></div>
 
     <div class="login-center">
       <img src="logo.png" alt="Kineo Logo" class="login-logo-img" />
-      <h1 id="authMainHeading" class="login-title">Sign up for free</h1>
-      <p id="authMainSubtitle" class="login-subtitle">Create your free Kineo account with your email and a password to start making cartoon videos.</p>
+      <h1 id="authMainHeading" class="login-title">Welcome to Kineo</h1>
+      <p id="authMainSubtitle" class="login-subtitle">Turn your ideas and scripts into cartoon videos — log in for the full experience.</p>
     </div>
 
     <div class="login-bottom">
@@ -1536,7 +1656,27 @@
         Kineo is a text-to-cartoon video creation AI tool capable of generating videos up to 10 minutes in up to 8K Ultra quality with full commercial use.
       </p>
 
-      <form id="emailAuthForm" class="auth-form-card" onsubmit="handleEmailAuthSubmit(event)">
+      <!-- Initial Entry Button on Welcome Screen -->
+      <button
+        id="welcomeAuthTriggerBtn"
+        type="button"
+        class="welcome-entry-trigger-btn"
+        onclick="openAuthFormInterface('signup')"
+      >
+        <span>Tap here to Sign Up or Log In</span>
+        <span>→</span>
+      </button>
+
+      <!-- Sign Up / Log In Form Interface (Revealed after tapping entry button) -->
+      <form id="emailAuthForm" class="auth-form-card" style="display:none;" onsubmit="handleEmailAuthSubmit(event)">
+        <div class="auth-card-top-bar">
+          <button type="button" class="auth-back-welcome-btn" onclick="backToWelcomeOverview()">
+            <span>←</span>
+            <span>Welcome</span>
+          </button>
+          <span style="font-size:11.5px;font-weight:700;color:var(--text-tertiary);">Account Access</span>
+        </div>
+
         <div class="auth-mode-tabs" role="tablist">
           <button id="modeSignUpTab" type="button" class="auth-mode-tab active" onclick="setAuthMode('signup')">Sign up for free</button>
           <button id="modeSignInTab" type="button" class="auth-mode-tab" onclick="setAuthMode('signin')">Log in</button>
@@ -1720,7 +1860,7 @@
       </div>
     </main>
 
-    <!-- ==================== #3 SUBSCRIPTION TAB ==================== -->
+    <!-- ==================== #3 & #24 SUBSCRIPTION TAB ==================== -->
     <section id="tabSubscription" class="tab-container" role="tabpanel">
       <div id="offerLoopBanner" class="loop-timer-banner">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
@@ -1804,7 +1944,7 @@
         <div class="offer-tag">LIFETIME MEMBERSHIP OFFER</div>
         <div class="price-row">
           <span class="price-strike">₹10,000</span>
-          <span class="price-current">₹110</span>
+          <span class="price-current">₹100</span>
         </div>
         <button type="button" class="btn-primary-pill" onclick="openPaymentModal()">
           Get Lifetime Access
@@ -1818,7 +1958,7 @@
       </div>
     </section>
 
-    <!-- ==================== #4 CREATE / STUDIO TAB ==================== -->
+    <!-- ==================== #4 & #23 CREATE / STUDIO TAB ==================== -->
     <section id="tabCreate" class="tab-container" role="tabpanel">
       <div class="brand-topbar">
         <div class="brand-left">
@@ -1885,6 +2025,30 @@
           </button>
         </div>
 
+        <span class="section-mini-label">Select Video Quality</span>
+        <div class="quality-grid" id="videoQualityGrid">
+          <button type="button" class="quality-btn" data-quality="720p" onclick="selectQuality('720p', this)">
+            <span class="quality-btn-main">720p</span>
+            <span class="quality-btn-sub">HD</span>
+          </button>
+          <button type="button" class="quality-btn active" data-quality="1080p" onclick="selectQuality('1080p', this)">
+            <span class="quality-btn-main">1080p</span>
+            <span class="quality-btn-sub">Full HD</span>
+          </button>
+          <button type="button" class="quality-btn" data-quality="1440p" onclick="selectQuality('1440p', this)">
+            <span class="quality-btn-main">1440p</span>
+            <span class="quality-btn-sub">2K QHD</span>
+          </button>
+          <button type="button" class="quality-btn" data-quality="4K" onclick="selectQuality('4K', this)">
+            <span class="quality-btn-main">4K</span>
+            <span class="quality-btn-sub">Ultra HD</span>
+          </button>
+          <button type="button" class="quality-btn" data-quality="8K" onclick="selectQuality('8K', this)">
+            <span class="quality-btn-main">8K</span>
+            <span class="quality-btn-sub">Master</span>
+          </button>
+        </div>
+
         <span class="section-mini-label">Demo Short Prompts</span>
         <div class="demo-prompts-list">
           <button type="button" class="demo-chip-btn" onclick="applyDemoPrompt('A lion cub in a magical forest')">
@@ -1906,20 +2070,20 @@
 
         <div id="generationProgressBox" class="generation-progress-box">
           <div class="progress-top-row">
-            <span id="progressStatusLabel">Rendering cartoon video...</span>
+            <span id="progressStatusLabel">Preparing cartoon studio...</span>
             <span id="progressPercentText">0%</span>
           </div>
           <div class="progress-track">
             <div id="progressFillBar" class="progress-fill"></div>
           </div>
           <div id="progressSubNote" class="progress-subnote">
-            Updating +1% every 3 seconds until 100% completion.
+            Initializing scene pipeline...
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ==================== #5 HELP TAB ==================== -->
+    <!-- ==================== #5 & #25 HELP TAB ==================== -->
     <section id="tabHelp" class="tab-container help-full-bleed" role="tabpanel">
       <div class="help-header">
         <div class="help-avatar-wrap" aria-hidden="true">
@@ -2120,11 +2284,11 @@
     </nav>
   </div>
 
-  <!-- ==================== PAYMENT MODAL ==================== -->
+  <!-- ==================== #24 PAYMENT MODAL ==================== -->
   <div id="paymentModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="paymentModalTitle">
     <div class="modal-card">
       <div class="modal-header">
-        <h3 id="paymentModalTitle" class="modal-title">Lifetime Plan — ₹110</h3>
+        <h3 id="paymentModalTitle" class="modal-title">Lifetime Plan — ₹100</h3>
         <button type="button" class="modal-close-btn" onclick="closeModal('paymentModal')" aria-label="Close">×</button>
       </div>
 
@@ -2133,8 +2297,8 @@
         <div class="upi-copy-chip">UPI ID: paytm.s4eanhy@pty</div>
       </div>
 
-      <p style="font-size:13px;color:var(--text-secondary);text-align:center;">
-        Scan QR or tap below to pay ₹110 via any UPI app (PhonePe, GPay, Paytm, FamPay), then confirm payment on Telegram.
+      <p style="font-size:13px;color:var(--text-secondary);text-align:center;line-height:1.5;">
+        Take a screenshot of this QR code or tap Pay ₹100 via UPI App to complete payment, then tap Confirm Payment to receive your subscription activation key and activate your plan.
       </p>
 
       <div class="modal-actions-stack">
@@ -2143,18 +2307,16 @@
           class="btn-primary-pill"
           onclick="redirectToUpiApp()"
         >
-          Pay ₹110 via UPI App
+          Pay ₹100 via UPI App
         </button>
 
-        <a
-          href="https://t.me/thekineo?text=I%20have%20purchased%20the%20subscription.%20Please%20activate%20my%20subscription."
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
           class="btn-secondary-pill"
-          style="text-decoration:none;"
+          onclick="confirmPaymentAndOpenActivation()"
         >
           Confirm Payment
-        </a>
+        </button>
       </div>
     </div>
   </div>
@@ -2230,7 +2392,7 @@
 
     // ==================== CONSTANTS & STATE ====================
     const ACTIVATION_KEY_SECRET = "25032023";
-    const UPI_PAYMENT_URL = "upi://pay?pa=paytm.s4eanhy@pty&pn=Akhilesh%20Dwivedi&am=110&cu=INR";
+    const UPI_PAYMENT_URL = "upi://pay?pa=paytm.s4eanhy@pty&pn=Akhilesh%20Dwivedi&am=100&cu=INR";
     const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000;
     const VIDEO_FILES = [
       "video1.mp4",
@@ -2243,6 +2405,7 @@
     let currentUser = null;
     let authMode = "signup";
     let selectedRatio = "16:9";
+    let selectedQuality = "1080p";
     let isGeneratingVideo = false;
     let generationInterval = null;
     let helpReplyTimer = null;
@@ -2275,15 +2438,34 @@
       }).toUpperCase();
     }
 
-    // ==================== EMAIL & PASSWORD AUTHENTICATION (#1) ====================
+    // ==================== #26 WELCOME & AUTHENTICATION ====================
     const authStatusMsg = document.getElementById("authStatusMsg");
     const emailAuthSubmitBtn = document.getElementById("emailAuthSubmitBtn");
     const authEmailInput = document.getElementById("authEmailInput");
     const authPasswordInput = document.getElementById("authPasswordInput");
+    const welcomeAuthTriggerBtn = document.getElementById("welcomeAuthTriggerBtn");
+    const emailAuthForm = document.getElementById("emailAuthForm");
 
     function setAuthMessage(text, isSuccess = false) {
       authStatusMsg.textContent = text;
       authStatusMsg.classList.toggle("success", isSuccess);
+    }
+
+    function openAuthFormInterface(mode = "signup") {
+      welcomeAuthTriggerBtn.style.display = "none";
+      emailAuthForm.style.display = "flex";
+      setAuthMode(mode);
+      setTimeout(() => {
+        if (authEmailInput) authEmailInput.focus();
+      }, 60);
+    }
+
+    function backToWelcomeOverview() {
+      setAuthMessage("");
+      emailAuthForm.style.display = "none";
+      welcomeAuthTriggerBtn.style.display = "inline-flex";
+      document.getElementById("authMainHeading").textContent = "Welcome to Kineo";
+      document.getElementById("authMainSubtitle").textContent = "Turn your ideas and scripts into cartoon videos — log in for the full experience.";
     }
 
     function setAuthMode(mode) {
@@ -2397,6 +2579,7 @@
         emailAuthSubmitBtn.disabled = false;
         document.getElementById("mainApp").classList.remove("active");
         document.getElementById("loginScreen").style.display = "flex";
+        backToWelcomeOverview();
       }
     });
 
@@ -2455,7 +2638,7 @@
       iframe.classList.add("active");
     }
 
-    // ==================== SUBSCRIPTION STATE SYNC (#2 & #3) ====================
+    // ==================== SUBSCRIPTION STATE SYNC (#2, #3 & #24) ====================
     function syncSubscriptionUI() {
       const active = isSubscribed();
 
@@ -2493,7 +2676,7 @@
       }
     }
 
-    // ==================== #3 24-HOUR LOOP TIMER ====================
+    // ==================== #24 24-HOUR LOOP TIMER ====================
     function startOfferLoopTimer() {
       const timerEl = document.getElementById("offerTimerDigits");
       const totalSecondsInDay = 24 * 3600;
@@ -2514,13 +2697,18 @@
     }
     startOfferLoopTimer();
 
-    // ==================== MODALS & DIRECT UPI REDIRECT ====================
+    // ==================== MODALS & DIRECT UPI REDIRECT (#24) ====================
     function openPaymentModal() {
       document.getElementById("paymentModal").classList.add("open");
     }
 
     function redirectToUpiApp() {
       window.location.href = UPI_PAYMENT_URL;
+    }
+
+    function confirmPaymentAndOpenActivation() {
+      closeModal("paymentModal");
+      openActivationModal();
     }
 
     function openActivationModal() {
@@ -2547,7 +2735,7 @@
       }
     }
 
-    // ==================== #4 CREATE / STUDIO ====================
+    // ==================== #4 & #23 CREATE / STUDIO ====================
     const videoPromptInput = document.getElementById("videoPromptInput");
     const promptCharCount = document.getElementById("promptCharCount");
 
@@ -2562,6 +2750,12 @@
       btnEl.classList.add("active");
     }
 
+    function selectQuality(quality, btnEl) {
+      selectedQuality = quality;
+      document.querySelectorAll(".quality-btn").forEach((b) => b.classList.remove("active"));
+      btnEl.classList.add("active");
+    }
+
     function applyDemoPrompt(text) {
       videoPromptInput.value = text;
       promptCharCount.textContent = `${text.length.toLocaleString()} / 10,000`;
@@ -2572,6 +2766,43 @@
       const el = document.getElementById("studioFeedback");
       el.textContent = msg;
       el.className = `studio-feedback ${type || ""}`;
+    }
+
+    function getLiveGenerationStage(percent, ratio, quality) {
+      if (percent < 15) {
+        return {
+          title: `Analyzing prompt & story beats (${ratio})...`,
+          note: "Breaking script into animated cartoon scenes & camera angles."
+        };
+      }
+      if (percent < 35) {
+        return {
+          title: "Designing characters & cartoon backgrounds...",
+          note: "Synthesizing consistent character keyframes and environment art."
+        };
+      }
+      if (percent < 58) {
+        return {
+          title: "Animating motion & lip-sync frames...",
+          note: "Interpolating smooth cartoon movement across timeline shots."
+        };
+      }
+      if (percent < 80) {
+        return {
+          title: "Adding voiceover & sound design...",
+          note: "Mixing expressive voice narration, ambience, and audio cues."
+        };
+      }
+      if (percent < 100) {
+        return {
+          title: `Rendering & upscaling in ${quality} (${ratio})...`,
+          note: `Applying ${quality} visual polish and final color grading.`
+        };
+      }
+      return {
+        title: `Completed (${quality} • ${ratio})`,
+        note: "Final cartoon video package ready."
+      };
     }
 
     function getNextVideoFileName() {
@@ -2621,15 +2852,20 @@
       progressBox.classList.add("active");
 
       let percent = 0;
+      const initialStage = getLiveGenerationStage(0, selectedRatio, selectedQuality);
       progressFill.style.width = "0%";
       progressPctText.textContent = "0%";
-      progressStatusLabel.textContent = `Rendering cartoon video (${selectedRatio})...`;
-      progressSubNote.textContent = "Progress increases by 1% every 3 seconds.";
+      progressStatusLabel.textContent = initialStage.title;
+      progressSubNote.textContent = initialStage.note;
 
       generationInterval = setInterval(() => {
         percent += 1;
         progressFill.style.width = `${percent}%`;
         progressPctText.textContent = `${percent}%`;
+
+        const stage = getLiveGenerationStage(percent, selectedRatio, selectedQuality);
+        progressStatusLabel.textContent = stage.title;
+        progressSubNote.textContent = stage.note;
 
         if (percent >= 100) {
           clearInterval(generationInterval);
@@ -2639,9 +2875,9 @@
           genBtn.textContent = "Generate Video";
 
           const fileToDownload = getNextVideoFileName();
-          progressStatusLabel.textContent = "Generation complete (100%)";
+          progressStatusLabel.textContent = `Generation complete (${selectedQuality})`;
           progressSubNote.textContent = `Downloading ${fileToDownload}...`;
-          setStudioFeedback(`Video ready! Starting download: ${fileToDownload}`, "success");
+          setStudioFeedback(`Video ready (${selectedQuality}, ${selectedRatio})! Starting download: ${fileToDownload}`, "success");
           triggerFileDownload(fileToDownload);
         }
       }, 3000);
