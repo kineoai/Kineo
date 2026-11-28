@@ -737,6 +737,13 @@
       flex-shrink: 0;
     }
 
+    .help-header-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+    }
+
     .help-avatar-wrap {
       width: 44px;
       height: 44px;
@@ -747,11 +754,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
 
-    .help-title-row { display: inline-flex; align-items: center; gap: 6px; font-size: 16px; font-weight: 800; }
-    .help-status-row { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--success-green); }
-    .help-status-row.typing { color: var(--accent-indigo); }
+    .help-title-row { display: inline-flex; align-items: center; gap: 6px; font-size: 16px; font-weight: 800; line-height: 1.25; }
+    .help-status-row { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 700; color: var(--success-green); line-height: 1.25; }
+    .help-status-row.typing { color: var(--success-green); }
 
     .chat-messages-area {
       flex: 1 1 auto;
@@ -1352,7 +1360,7 @@
           </svg>
         </div>
 
-        <div>
+        <div class="help-header-meta">
           <div class="help-title-row">
             <span>Kineo</span>
             <svg width="17" height="17" viewBox="0 0 24 24" aria-label="Verified">
