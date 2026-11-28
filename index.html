@@ -1,0 +1,2645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Primary SEO Meta Tags -->
+  <title>Kineo — Text to Cartoon Video Making AI Tool | AI Animation Generator</title>
+  <meta name="title" content="Kineo — Text to Cartoon Video Making AI Tool | AI Animation Generator" />
+  <meta name="description" content="Kineo (kineo.live) is an advanced text-to-cartoon video creation AI tool. Turn your ideas, scripts, and stories into 8K Ultra cartoon and anime videos up to 10 minutes with multi-language AI voices and full commercial rights." />
+  <meta name="keywords" content="Kineo, Kineo AI, kineo.live, text to cartoon video maker, text to cartoon AI tool, AI cartoon video generator, script to cartoon video AI, AI anime video maker, text to animation AI, cartoon video banane wala AI, 8K AI video generator" />
+  <meta name="author" content="Kineo" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kineo.live/" />
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kineo.live/" />
+  <meta property="og:site_name" content="Kineo" />
+  <meta property="og:title" content="Kineo — Text to Cartoon Video Creation AI Tool" />
+  <meta property="og:description" content="Turn your ideas and scripts into cartoon videos up to 10 minutes in up to 8K Ultra quality with full commercial use." />
+  <meta property="og:image" content="https://kineo.live/logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://kineo.live/" />
+  <meta name="twitter:title" content="Kineo — Text to Cartoon Video Making AI Tool" />
+  <meta name="twitter:description" content="Generate 10-minute 8K Ultra cartoon & anime videos from text prompts with Kineo AI." />
+  <meta name="twitter:image" content="https://kineo.live/logo.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <!-- Structured Data (JSON-LD) for Google Search Ranking -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Kineo",
+    "alternateName": ["Kineo AI", "Kineo Text to Cartoon Video Maker"],
+    "url": "https://kineo.live",
+    "logo": "https://kineo.live/logo.png",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web, Android, iOS, Windows, macOS",
+    "description": "Kineo is a text-to-cartoon video creation AI tool capable of generating cartoon and anime videos up to 10 minutes in 8K Ultra quality with multi-language AI voices and commercial use rights.",
+    "offers": {
+      "@type": "Offer",
+      "price": "100",
+      "priceCurrency": "INR"
+    }
+  }
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5395959368133845"
+     crossorigin="anonymous"></script>
+
+  <!-- Modern Typography (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-page: #ffffff;
+      --bg-surface: #ffffff;
+      --bg-subtle: #f3f4f6;
+      --bg-card: #fafafa;
+      --text-primary: #0f1115;
+      --text-secondary: #6b7280;
+      --text-muted: #9ca3af;
+      --border-light: #e5e7eb;
+      --border-subtle: #f0f1f3;
+      --accent-black: #0a0a0c;
+      --accent-black-hover: #1f2024;
+      --accent-green: #16a34a;
+      --accent-red: #dc2626;
+      --accent-gold: #f59e0b;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 8px 24px rgba(15, 17, 21, 0.06);
+      --shadow-lg: 0 20px 50px rgba(15, 17, 21, 0.12);
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-surface);
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow: hidden;
+    }
+
+    /* Visually hidden SEO text (crawled by search engines, invisible to users) */
+    .seo-sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    /* True Full-Screen App Container across Mobile, Tablet, Laptop, PC & MacBook */
+    .app-frame {
+      width: 100%;
+      height: 100%;
+      min-height: 100dvh;
+      background: var(--bg-surface);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-max {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* ================= SCREEN #1: AUTH / LOGIN ================= */
+    #authScreen {
+      height: 100%;
+      width: 100%;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: calc(28px + var(--safe-top)) 24px calc(36px + var(--safe-bottom));
+      text-align: center;
+      overflow-y: auto;
+    }
+
+    .auth-center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 12px;
+    }
+
+    .auth-logo-wrap {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .auth-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .auth-title {
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .auth-subtitle {
+      font-size: clamp(15px, 2vw, 17px);
+      line-height: 1.5;
+      color: var(--text-secondary);
+      max-width: 380px;
+      font-weight: 400;
+    }
+
+    .auth-bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .auth-desc {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--text-secondary);
+      max-width: 380px;
+    }
+
+    .google-btn {
+      width: 100%;
+      height: 54px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1.5px solid #e2e4e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .google-btn:hover {
+      background: #fafafa;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+    }
+
+    .google-btn:active {
+      transform: scale(0.985);
+    }
+
+    .google-btn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .auth-status {
+      font-size: 12.5px;
+      color: var(--accent-red);
+      min-height: 18px;
+      line-height: 1.4;
+    }
+
+    /* ================= MAIN APP SHELL ================= */
+    #mainApp {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .tab-container {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-top: var(--safe-top);
+      scroll-behavior: smooth;
+    }
+
+    .tab-container::-webkit-scrollbar {
+      width: 5px;
+    }
+    .tab-container::-webkit-scrollbar-thumb {
+      background: #e5e7eb;
+      border-radius: 4px;
+    }
+
+    .tab-view {
+      padding: 20px 20px 32px;
+      min-height: 100%;
+    }
+
+    /* Top Brand Bar */
+    .top-brand-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .brand-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo-sm {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+    }
+
+    .yt-verified-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f9fafb;
+      border: 1px solid var(--border-light);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    /* ================= SCREEN #2: HOME TAB ================= */
+    .home-intro-title {
+      font-size: clamp(19px, 2.5vw, 24px);
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .video-showcase-card {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #0f1115;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-md);
+      margin-bottom: 24px;
+      cursor: pointer;
+    }
+
+    .video-thumb-layer {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .video-thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .video-showcase-card:hover .video-thumb-img {
+      transform: scale(1.02);
+    }
+
+    .video-play-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .video-showcase-card:hover .video-play-overlay {
+      background: rgba(0, 0, 0, 0.32);
+    }
+
+    .clean-play-btn {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.96);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+      transition: transform 0.2s ease;
+    }
+
+    .video-showcase-card:hover .clean-play-btn {
+      transform: scale(1.08);
+    }
+
+    .video-iframe-frame {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .section-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .benefits-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .benefit-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 14px 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .benefit-icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .bg-amber-soft { background: #fef3c7; color: #d97706; }
+    .bg-blue-soft { background: #e0f2fe; color: #0284c7; }
+    .bg-purple-soft { background: #f3e8ff; color: #7e22ce; }
+    .bg-cyan-soft { background: #cffafe; color: #0891b2; }
+    .bg-slate-soft { background: #f1f5f9; color: #334155; }
+    .bg-emerald-soft { background: #d1fae5; color: #059669; }
+    .bg-rose-soft { background: #ffe4e6; color: #e11d48; }
+
+    .benefit-info h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .benefit-info p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.35;
+    }
+
+    .primary-pill-btn {
+      width: 100%;
+      height: 52px;
+      border-radius: 999px;
+      background: var(--accent-black);
+      color: #ffffff;
+      border: none;
+      font-size: 15.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 18px;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .primary-pill-btn:hover {
+      background: var(--accent-black-hover);
+    }
+
+    .primary-pill-btn:active {
+      transform: scale(0.985);
+    }
+
+    .secondary-pill-btn {
+      width: 100%;
+      height: 50px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--text-primary);
+      border: 1.5px solid var(--border-light);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.15s ease;
+    }
+
+    .secondary-pill-btn:hover {
+      background: #f9fafb;
+    }
+
+    /* ================= SCREEN #3: SUBSCRIPTION TAB ================= */
+    .loop-timer-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      color: #92400e;
+      padding: 11px 14px;
+      border-radius: 14px;
+      font-size: 13.5px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .timer-digits {
+      font-variant-numeric: tabular-nums;
+      font-weight: 800;
+      color: #b45309;
+      background: #fef3c7;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .sub-hero-title {
+      font-size: clamp(22px, 3vw, 28px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .sub-hero-subtitle {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+    }
+
+    .pricing-box-card {
+      margin-top: 18px;
+      background: #fafafa;
+      border: 1.5px solid var(--border-light);
+      border-radius: 22px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .pricing-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .price-old {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .price-new {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+    }
+
+    .activation-link-btn {
+      margin-top: 14px;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+    }
+
+    .activation-link-btn:hover {
+      color: var(--text-primary);
+    }
+
+    /* Pro Active Card */
+    .pro-active-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #fafafa;
+      border: 1px solid var(--border-light);
+      border-radius: 22px;
+      padding: 18px;
+      margin-bottom: 22px;
+    }
+
+    .pro-crown-badge {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 6px 16px rgba(79, 70, 229, 0.25);
+    }
+
+    .pro-status-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .pro-plan-pill {
+      background: #e5e7eb;
+      color: #374151;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+    }
+
+    .pro-active-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-green);
+    }
+
+    .pro-active-dot::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-green);
+    }
+
+    .pro-active-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .pro-active-desc {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* ================= SCREEN #4: CREATE / STUDIO (+) ================= */
+    .studio-title {
+      font-size: clamp(21px, 3vw, 26px);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 4px;
+    }
+
+    .studio-subtitle {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .studio-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .char-counter-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .prompt-textarea {
+      width: 100%;
+      height: 150px;
+      background: #f3f4f6;
+      border: 1.5px solid transparent;
+      border-radius: 16px;
+      padding: 14px;
+      font-family: inherit;
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--text-primary);
+      resize: none;
+      outline: none;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .prompt-textarea:focus {
+      background: #ffffff;
+      border-color: var(--accent-black);
+    }
+
+    .prompt-error-msg {
+      color: var(--accent-red);
+      font-size: 12.5px;
+      font-weight: 600;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ratio-label {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      margin: 14px 0 8px;
+      display: block;
+    }
+
+    .ratio-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .ratio-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 10px 6px;
+      border-radius: 12px;
+      background: #f5f6f8;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      transition: all 0.15s ease;
+    }
+
+    .ratio-btn.active {
+      background: #0a0a0c;
+      color: #ffffff;
+      border-color: #0a0a0c;
+    }
+
+    .ratio-icon-shape {
+      border: 1.8px solid currentColor;
+      border-radius: 2px;
+    }
+
+    .demo-prompts-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .demo-chip {
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      color: var(--text-primary);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+
+    .demo-chip:hover {
+      background: #e5e7eb;
+    }
+
+    .demo-chip:active {
+      transform: scale(0.98);
+    }
+
+    .gen-progress-box {
+      margin-top: 16px;
+      background: #f9fafb;
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .gen-percent-text {
+      font-size: 28px;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .gen-stage-text {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 10px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #0a0a0c 0%, #374151 100%);
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+
+    /* ================= SCREEN #5: HELP TAB ================= */
+    #tab-help {
+      padding: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .help-header-wrap {
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-subtle);
+      flex-shrink: 0;
+    }
+
+    .help-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 20px;
+    }
+
+    .ai-female-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #eef2ff;
+      border: 1.5px solid #e0e7ff;
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .help-agent-meta {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .help-name-row {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 16.5px;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .help-status-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin-top: 1px;
+    }
+
+    .online-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+    }
+
+    .typing-text {
+      color: #16a34a;
+      font-weight: 600;
+    }
+
+    .chat-messages-area {
+      flex: 1;
+      overflow-y: auto;
+      padding: 18px 20px;
+      background: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chat-bubble {
+      max-width: min(82%, 520px);
+      padding: 12px 16px;
+      border-radius: 18px;
+      font-size: 14.5px;
+      line-height: 1.45;
+      position: relative;
+      word-wrap: break-word;
+    }
+
+    .chat-bubble.ai {
+      align-self: flex-start;
+      background: #ffffff;
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      border-bottom-left-radius: 6px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .chat-bubble.user {
+      align-self: flex-end;
+      background: var(--accent-black);
+      color: #ffffff;
+      border-bottom-right-radius: 6px;
+    }
+
+    .chat-time {
+      display: block;
+      font-size: 10.5px;
+      margin-top: 6px;
+      text-align: right;
+      opacity: 0.65;
+    }
+
+    .chat-input-bar-wrap {
+      width: 100%;
+      background: #ffffff;
+      border-top: 1px solid var(--border-subtle);
+      flex-shrink: 0;
+    }
+
+    .chat-input-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+    }
+
+    .chat-input-field {
+      flex: 1;
+      height: 46px;
+      border-radius: 999px;
+      border: 1px solid var(--border-light);
+      background: #f3f4f6;
+      padding: 0 18px;
+      font-family: inherit;
+      font-size: 14.5px;
+      color: var(--text-primary);
+      outline: none;
+    }
+
+    .chat-input-field:focus {
+      background: #ffffff;
+      border-color: #d1d5db;
+    }
+
+    .chat-send-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      color: #6b7280;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .chat-send-btn.ready {
+      background: var(--accent-black);
+      color: #ffffff;
+    }
+
+    /* ================= SCREEN #6: PROFILE TAB ================= */
+    .profile-header-title {
+      font-size: clamp(24px, 3vw, 30px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 2px;
+    }
+
+    .profile-header-sub {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 22px;
+    }
+
+    .avatar-center-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .letter-avatar-circle {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: #659b38;
+      color: #ffffff;
+      font-size: 36px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      user-select: none;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .profile-email-caption {
+      font-size: 14.5px;
+      font-weight: 500;
+      color: #4b5563;
+    }
+
+    .profile-info-card {
+      background: #fafafa;
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .profile-row {
+      padding: 15px 18px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .profile-row:last-child {
+      border-bottom: none;
+    }
+
+    .profile-row-label {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 4px;
+    }
+
+    .profile-row-val {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+      word-break: break-word;
+    }
+
+    .logout-link-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--accent-red);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .disclaimer-text {
+      margin-top: 12px;
+      font-size: 12px;
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+
+    .edit-header-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .back-circle-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #f3f4f6;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-primary);
+    }
+
+    .edit-form-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: 22px;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .field-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .locked-email-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f3f4f6;
+      border-radius: 14px;
+      padding: 13px 15px;
+      font-size: 14.5px;
+      color: #4b5563;
+      margin-bottom: 18px;
+    }
+
+    .gender-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .gender-pill {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      border: none;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .gender-pill.active {
+      background: var(--accent-black);
+      color: #ffffff;
+    }
+
+    .bio-textarea {
+      width: 100%;
+      height: 100px;
+      border-radius: 16px;
+      border: 1.5px solid var(--border-light);
+      padding: 13px 14px;
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--text-primary);
+      resize: none;
+      outline: none;
+    }
+
+    .bio-textarea:focus {
+      border-color: var(--accent-black);
+    }
+
+    /* ================= BOTTOM NAVIGATION BAR ================= */
+    .bottom-nav {
+      height: calc(68px + var(--safe-bottom));
+      padding-bottom: var(--safe-bottom);
+      background: #ffffff;
+      border-top: 1px solid var(--border-subtle);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 20;
+    }
+
+    .nav-item {
+      background: none;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      color: #9ca3af;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      height: 100%;
+      transition: color 0.15s ease;
+    }
+
+    .nav-item.active {
+      color: var(--text-primary);
+    }
+
+    .nav-create-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-create-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--accent-black);
+      color: #ffffff;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+      transition: transform 0.15s ease;
+    }
+
+    .nav-create-btn:active {
+      transform: scale(0.93);
+    }
+
+    /* ================= MODALS & TOASTS ================= */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 17, 21, 0.55);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 50;
+      animation: fadeIn 0.18s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-card {
+      width: 100%;
+      max-width: 390px;
+      background: #ffffff;
+      border-radius: 26px;
+      padding: 22px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      position: relative;
+      max-height: 90%;
+      overflow-y: auto;
+    }
+
+    .modal-close-x {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f3f4f6;
+      border: none;
+      font-size: 18px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-title {
+      font-size: 19px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+
+    .modal-desc {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      margin-bottom: 16px;
+    }
+
+    .qr-preview-box {
+      background: #f9fafb;
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      padding: 12px;
+      margin-bottom: 14px;
+    }
+
+    .qr-preview-box img {
+      width: 100%;
+      max-width: 230px;
+      border-radius: 12px;
+      display: block;
+      margin: 0 auto 8px;
+    }
+
+    .upi-copy-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-primary);
+      cursor: pointer;
+    }
+
+    .upi-app-btn {
+      width: 100%;
+      height: 48px;
+      border-radius: 999px;
+      background: #0284c7;
+      color: #ffffff;
+      border: none;
+      font-size: 14.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      text-decoration: none;
+    }
+
+    .tg-confirm-btn {
+      width: 100%;
+      height: 48px;
+      border-radius: 999px;
+      background: var(--accent-black);
+      color: #ffffff;
+      border: none;
+      font-size: 14.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .key-input-field {
+      width: 100%;
+      height: 50px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border-light);
+      background: #f9fafb;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      outline: none;
+      margin-bottom: 10px;
+    }
+
+    .key-input-field:focus {
+      border-color: var(--accent-black);
+      background: #ffffff;
+    }
+
+    .toast-banner {
+      position: fixed;
+      top: calc(16px + var(--safe-top));
+      left: 50%;
+      transform: translateX(-50%);
+      background: #111827;
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      white-space: nowrap;
+      max-width: 90%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hidden Semantic SEO Keywords & Description (Invisible to users, readable by Search Engines) -->
+  <section class="seo-sr-only" aria-hidden="true">
+    <h1>Kineo — Text to Cartoon Video Making AI Tool</h1>
+    <p>Kineo (kineo.live) is the leading AI text-to-cartoon video maker and AI animation generator. Convert text prompts and scripts into high-quality 8K Ultra cartoon videos, anime stories, and animated videos up to 10 minutes with multi-language AI voices and full commercial rights.</p>
+    <ul>
+      <li>Text to cartoon video AI tool</li>
+      <li>AI cartoon video generator online</li>
+      <li>Script to animation video maker</li>
+      <li>Kineo AI video generation model</li>
+    </ul>
+  </section>
+
+  <div class="app-frame">
+    <!-- Toast Notification -->
+    <div id="toastBanner" class="toast-banner hidden"></div>
+
+    <!-- ==================== INTERFACE #1: GOOGLE LOGIN SCREEN ==================== -->
+    <section id="authScreen">
+      <div class="auth-center">
+        <div class="auth-logo-wrap">
+          <img src="logo.png" alt="Kineo Logo" onerror="this.outerHTML=window.KINEO_FALLBACK_LOGO" />
+        </div>
+        <h1 class="auth-title">Welcome to Kineo</h1>
+        <p class="auth-subtitle">Turn your ideas and scripts into cartoon videos — log in for the full experience.</p>
+      </div>
+
+      <div class="auth-bottom">
+        <p class="auth-desc">
+          Kineo is a text-to-cartoon video creation AI tool capable of generating videos up to 10 minutes in up to 8K Ultra quality with full commercial use.
+        </p>
+        <button id="googleSignInBtn" class="google-btn" type="button">
+          <svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true">
+            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+          </svg>
+          <span>Continue with Google</span>
+        </button>
+        <div id="authStatusMsg" class="auth-status"></div>
+      </div>
+    </section>
+
+    <!-- ==================== MAIN LOGGED-IN APP ==================== -->
+    <div id="mainApp" class="hidden">
+      <div class="tab-container" id="tabScrollContainer">
+
+        <!-- ==================== INTERFACE #2: HOME TAB ==================== -->
+        <section id="tab-home" class="tab-view">
+          <div class="content-max">
+            <div class="top-brand-bar">
+              <div class="brand-left">
+                <img src="logo.png" alt="Kineo" class="brand-logo-sm" onerror="this.outerHTML=window.KINEO_FALLBACK_LOGO_SM" />
+                <span class="brand-name">Kineo</span>
+              </div>
+              <div class="yt-verified-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FF0000" aria-hidden="true">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                <span>Verified by YouTube</span>
+              </div>
+            </div>
+
+            <h2 class="home-intro-title">New to Kineo? Watch the tutorial video below to get started.</h2>
+
+            <!-- Clean YouTube Video Player Card -->
+            <div class="video-showcase-card" id="tutorialVideoCard">
+              <div class="video-thumb-layer" id="videoThumbLayer">
+                <img
+                  src="https://img.youtube.com/vi/IU2V7rVs0ig/maxresdefault.jpg"
+                  onerror="this.src='https://img.youtube.com/vi/IU2V7rVs0ig/hqdefault.jpg'"
+                  alt="Kineo Tutorial Video"
+                  class="video-thumb-img"
+                />
+                <div class="video-play-overlay">
+                  <div class="clean-play-btn" aria-label="Play Video">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#0a0a0c">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Premium Benefits Section -->
+            <div class="section-eyebrow" id="homeBenefitsHeading">GO PRO / PREMIUM</div>
+
+            <div class="benefits-stack">
+              <div class="benefit-card">
+                <div class="benefit-icon-box bg-amber-soft">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg>
+                </div>
+                <div class="benefit-info">
+                  <h4>Unlimited 10min+ AI Videos</h4>
+                  <p>No limits on length or animation sequences</p>
+                </div>
+              </div>
+
+              <div class="benefit-card">
+                <div class="benefit-icon-box bg-blue-soft">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 2v20M8 6v12M16 6v12M4 10v4M20 10v4"/></svg>
+                </div>
+                <div class="benefit-info">
+                  <h4>Premium Multi-language Voices</h4>
+                  <p>Ultra-realistic AI voice acting in all languages</p>
+                </div>
+              </div>
+
+              <div class="benefit-card">
+                <div class="benefit-icon-box bg-purple-soft">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-8 12H9.5v-2h-2v2H6V9h1.5v2.5h2V9H11v6zm7-1c0 .55-.45 1-1 1h-.75v1.5h-1.5V15H14c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1h3c.55 0 1 .45 1 1v4zm-3.5-.5h2v-3h-2v3z"/></svg>
+                </div>
+                <div class="benefit-info">
+                  <h4>Ultra 8K Video Quality</h4>
+                  <p>Crystal clear resolution with 60fps rendering</p>
+                </div>
+              </div>
+
+              <div class="benefit-card">
+                <div class="benefit-icon-box bg-cyan-soft">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7zm-1 19h2v1h-2v-1z"/></svg>
+                </div>
+                <div class="benefit-info">
+                  <h4>Enhanced Prompt Interpretation</h4>
+                  <p>Precise execution of narrative and camera angles</p>
+                </div>
+              </div>
+
+              <div class="benefit-card">
+                <div class="benefit-icon-box bg-slate-soft">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+                </div>
+                <div class="benefit-info">
+                  <h4>Commercial Use Rights</h4>
+                  <p>Build & monetize anywhere</p>
+                </div>
+              </div>
+
+              <div class="benefit-card">
+                <div class="benefit-icon-box bg-emerald-soft">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zm-7-2h5v-4h-5v4z"/></svg>
+                </div>
+                <div class="benefit-info">
+                  <h4>Zero Watermark Exports</h4>
+                  <p>Clean professional output</p>
+                </div>
+              </div>
+            </div>
+
+            <button id="homeUpgradeBtn" class="primary-pill-btn" type="button">Upgrade to Pro</button>
+          </div>
+        </section>
+
+        <!-- ==================== INTERFACE #3: SUBSCRIPTION TAB ==================== -->
+        <section id="tab-subscription" class="tab-view hidden">
+          <div class="content-max">
+            <!-- Free Plan View -->
+            <div id="subFreeView">
+              <div class="loop-timer-banner">
+                <span>⚡ Limited Time Offer ends in</span>
+                <span class="timer-digits" id="loopTimerDisplay">23 : 59 : 59</span>
+              </div>
+
+              <h2 class="sub-hero-title">Become a Lifetime Premium Member</h2>
+              <p class="sub-hero-subtitle">Unlock all professional creation tools. One payment, forever.</p>
+
+              <div class="benefits-stack">
+                <div class="benefit-card">
+                  <div class="benefit-icon-box bg-amber-soft">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg>
+                  </div>
+                  <div class="benefit-info">
+                    <h4>Unlimited 10min+ AI Videos</h4>
+                    <p>No limits on length or animation sequences</p>
+                  </div>
+                </div>
+
+                <div class="benefit-card">
+                  <div class="benefit-icon-box bg-blue-soft">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 2v20M8 6v12M16 6v12M4 10v4M20 10v4"/></svg>
+                  </div>
+                  <div class="benefit-info">
+                    <h4>Premium Multi-language Voices</h4>
+                    <p>Ultra-realistic AI voice acting in all languages</p>
+                  </div>
+                </div>
+
+                <div class="benefit-card">
+                  <div class="benefit-icon-box bg-purple-soft">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-8 12H9.5v-2h-2v2H6V9h1.5v2.5h2V9H11v6zm7-1c0 .55-.45 1-1 1h-.75v1.5h-1.5V15H14c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1h3c.55 0 1 .45 1 1v4zm-3.5-.5h2v-3h-2v3z"/></svg>
+                  </div>
+                  <div class="benefit-info">
+                    <h4>Ultra 8K Video Quality</h4>
+                    <p>Crystal clear resolution with 60fps rendering</p>
+                  </div>
+                </div>
+
+                <div class="benefit-card">
+                  <div class="benefit-icon-box bg-cyan-soft">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7zm-1 19h2v1h-2v-1z"/></svg>
+                  </div>
+                  <div class="benefit-info">
+                    <h4>Enhanced Prompt Interpretation</h4>
+                    <p>Precise execution of narrative and camera angles</p>
+                  </div>
+                </div>
+
+                <div class="benefit-card">
+                  <div class="benefit-icon-box bg-slate-soft">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+                  </div>
+                  <div class="benefit-info">
+                    <h4>Commercial Use Rights</h4>
+                    <p>Build & monetize anywhere</p>
+                  </div>
+                </div>
+
+                <div class="benefit-card">
+                  <div class="benefit-icon-box bg-emerald-soft">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zm-7-2h5v-4h-5v4z"/></svg>
+                  </div>
+                  <div class="benefit-info">
+                    <h4>Zero Watermark Exports</h4>
+                    <p>Clean professional output</p>
+                  </div>
+                </div>
+
+                <div class="benefit-card">
+                  <div class="benefit-icon-box bg-rose-soft">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                  </div>
+                  <div class="benefit-info">
+                    <h4>7-Day Satisfaction Guarantee</h4>
+                    <p>Risk-free trial with our money-back guarantee</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pricing-box-card">
+                <div class="pricing-label">ONE-TIME LIFETIME PAYMENT</div>
+                <div class="price-row">
+                  <span class="price-old">₹10,000</span>
+                  <span class="price-new">₹100</span>
+                </div>
+                <button id="openPaymentModalBtn" class="primary-pill-btn" type="button" style="margin-top: 12px;">Get Premium</button>
+                <button id="openActivationModalBtn" class="activation-link-btn" type="button">Activation Key →</button>
+              </div>
+            </div>
+
+            <!-- Pro Active View -->
+            <div id="subProView" class="hidden">
+              <div class="pro-active-card">
+                <div class="pro-crown-badge">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="pro-status-row">
+                    <span class="pro-plan-pill">PRO PLAN</span>
+                    <span class="pro-active-dot">Active</span>
+                  </div>
+                  <div class="pro-active-title">Kineo Pro is active</div>
+                  <div class="pro-active-desc">Lifetime access to all video and voice tools.</div>
+                </div>
+              </div>
+
+              <div class="section-eyebrow">UNLOCKED BENEFITS</div>
+              <div class="benefits-stack">
+                <div class="benefit-card">
+                  <div class="benefit-icon-box bg-amber-soft">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg>
+                  </div>
+                  <div class="benefit-info">
+                    <h4>Unlimited 10min+ AI Videos</h4>
+                    <p>No limits on length or animation sequences</p>
+                  </div>
+                </div>
+
+                <div class="benefit-card">
+                  <div class="benefit-icon-box bg-blue-soft">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 2v20M8 6v12M16 6v12M4 10v4M20 10v4"/></svg>
+                  </div>
+                  <div class="benefit-info">
+                    <h4>Premium Multi-language Voices</h4>
+                    <p>Ultra-realistic AI voice acting in all languages</p>
+                  </div>
+                </div>
+
+                <div class="benefit-card">
+                  <div class="benefit-icon-box bg-purple-soft">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-8 12H9.5v-2h-2v2H6V9h1.5v2.5h2V9H11v6zm7-1c0 .55-.45 1-1 1h-.75v1.5h-1.5V15H14c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1h3c.55 0 1 .45 1 1v4zm-3.5-.5h2v-3h-2v3z"/></svg>
+                  </div>
+                  <div class="benefit-info">
+                    <h4>Ultra 8K Video Quality</h4>
+                    <p>Crystal clear resolution with 60fps rendering</p>
+                  </div>
+                </div>
+
+                <div class="benefit-card">
+                  <div class="benefit-icon-box bg-cyan-soft">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7zm-1 19h2v1h-2v-1z"/></svg>
+                  </div>
+                  <div class="benefit-info">
+                    <h4>Enhanced Prompt Interpretation</h4>
+                    <p>Precise execution of narrative and camera angles</p>
+                  </div>
+                </div>
+
+                <div class="benefit-card">
+                  <div class="benefit-icon-box bg-slate-soft">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+                  </div>
+                  <div class="benefit-info">
+                    <h4>Commercial Use Rights</h4>
+                    <p>Build & monetize anywhere</p>
+                  </div>
+                </div>
+
+                <div class="benefit-card">
+                  <div class="benefit-icon-box bg-emerald-soft">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zm-7-2h5v-4h-5v4z"/></svg>
+                  </div>
+                  <div class="benefit-info">
+                    <h4>Zero Watermark Exports</h4>
+                    <p>Clean professional output</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== INTERFACE #4: CREATE / STUDIO (+) ==================== -->
+        <section id="tab-create" class="tab-view hidden">
+          <div class="content-max">
+            <div class="top-brand-bar">
+              <div class="brand-left">
+                <img src="logo.png" alt="Kineo" class="brand-logo-sm" onerror="this.outerHTML=window.KINEO_FALLBACK_LOGO_SM" />
+                <span class="brand-name">Kineo</span>
+              </div>
+            </div>
+
+            <h2 class="studio-title">Video Generation Model v1.2</h2>
+            <p class="studio-subtitle">Describe the cartoon video you want to create below.</p>
+
+            <div class="studio-card">
+              <div class="char-counter-row">
+                <span>Prompt</span>
+                <span id="promptCharCount">0 / 10,000</span>
+              </div>
+
+              <textarea
+                id="videoPromptInput"
+                class="prompt-textarea"
+                maxlength="10000"
+                placeholder="Write your story, anime or cartoon prompt here..."
+              ></textarea>
+
+              <div id="promptErrorMsg" class="prompt-error-msg hidden"></div>
+
+              <!-- Aspect Ratio / Size Selector -->
+              <span class="ratio-label">Aspect Ratio & Size</span>
+              <div class="ratio-grid" id="aspectRatioGrid">
+                <button type="button" class="ratio-btn active" data-ratio="16:9">
+                  <span class="ratio-icon-shape" style="width:22px;height:13px;"></span>
+                  <span>16:9</span>
+                </button>
+                <button type="button" class="ratio-btn" data-ratio="9:16">
+                  <span class="ratio-icon-shape" style="width:13px;height:22px;"></span>
+                  <span>9:16</span>
+                </button>
+                <button type="button" class="ratio-btn" data-ratio="1:1">
+                  <span class="ratio-icon-shape" style="width:17px;height:17px;"></span>
+                  <span>1:1</span>
+                </button>
+                <button type="button" class="ratio-btn" data-ratio="4:5">
+                  <span class="ratio-icon-shape" style="width:15px;height:19px;"></span>
+                  <span>4:5</span>
+                </button>
+              </div>
+
+              <!-- Demo Short Prompts -->
+              <div class="demo-prompts-wrap">
+                <button type="button" class="demo-chip">A lion cub in a magical forest</button>
+                <button type="button" class="demo-chip">Anime boy running in the rain</button>
+                <button type="button" class="demo-chip">Cyberpunk city at sunset</button>
+              </div>
+
+              <button id="generateVideoBtn" class="primary-pill-btn" type="button">Generate Video</button>
+
+              <!-- Generation Loader (3 seconds = 1%, 100% triggers download) -->
+              <div id="genProgressBox" class="gen-progress-box hidden">
+                <div class="gen-percent-text" id="genPercentText">0%</div>
+                <div class="gen-stage-text" id="genStageText">Initializing Kineo v1.2 Cartoon Engine...</div>
+                <div class="progress-track">
+                  <div class="progress-fill" id="genProgressFill"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== INTERFACE #5: HELP TAB ==================== -->
+        <section id="tab-help" class="tab-view hidden">
+          <div class="help-header-wrap">
+            <div class="content-max help-header">
+              <div class="ai-female-avatar" aria-hidden="true">
+                <svg width="44" height="44" viewBox="0 0 64 64" fill="none">
+                  <circle cx="32" cy="32" r="32" fill="#E8EEF7"/>
+                  <path d="M18 30C18 19.5 24 13 32 13C40 13 46 19.5 46 30V43C46 45 44 46 42 46H22C20 46 18 45 18 43V30Z" fill="#23262F"/>
+                  <path d="M14 62C15.5 51.5 22.5 47 32 47C41.5 47 48.5 51.5 50 62H14Z" fill="#5B73B8"/>
+                  <path d="M27 47L32 53L37 47" fill="#DCE4F7"/>
+                  <rect x="28" y="39" width="8" height="9" rx="4" fill="#F2C6A8"/>
+                  <path d="M22 29C22 22.5 26.5 18 32 18C37.5 18 42 22.5 42 29C42 35.5 37.5 41 32 41C26.5 41 22 35.5 22 29Z" fill="#F7D3BA"/>
+                  <path d="M21 28C21 20.5 26 16 32 16C38 16 43 20.5 43 28C40.5 23.5 36.5 21.5 32 22C28 22.5 24 24.5 21 28Z" fill="#23262F"/>
+                  <circle cx="28" cy="29.5" r="1.5" fill="#1F2937"/>
+                  <circle cx="36" cy="29.5" r="1.5" fill="#1F2937"/>
+                  <path d="M29 34.5C30.2 35.8 33.8 35.8 35 34.5" stroke="#B96B58" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M20 29C20 21.8 25.4 16 32 16C38.6 16 44 21.8 44 29" stroke="#111827" stroke-width="2.2" stroke-linecap="round"/>
+                  <rect x="18" y="26" width="3.5" height="7" rx="1.7" fill="#111827"/>
+                  <rect x="42.5" y="26" width="3.5" height="7" rx="1.7" fill="#111827"/>
+                  <path d="M43 32C42.5 35.5 39.5 37 36 37" stroke="#111827" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+
+              <div class="help-agent-meta">
+                <div class="help-name-row">
+                  <span>Kineo</span>
+                  <svg width="17" height="17" viewBox="0 0 24 24" aria-label="Verified">
+                    <path fill="#F59E0B" d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34z"/>
+                    <path fill="#FFFFFF" d="M10.54 16.2L6.8 12.46l1.41-1.42 2.33 2.33 5.25-5.25 1.41 1.42-6.66 6.66z"/>
+                  </svg>
+                </div>
+                <div class="help-status-row" id="helpOnlineStatus">
+                  <span class="online-dot"></span>
+                  <span>Online</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-messages-area" id="chatMessagesArea"></div>
+
+          <div class="chat-input-bar-wrap">
+            <form class="content-max chat-input-bar" id="helpChatForm">
+              <input
+                type="text"
+                id="helpChatInput"
+                class="chat-input-field"
+                placeholder="Type a message..."
+                autocomplete="off"
+              />
+              <button type="submit" id="helpSendBtn" class="chat-send-btn" aria-label="Send Message">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <!-- ==================== INTERFACE #6: PROFILE TAB ==================== -->
+        <section id="tab-profile" class="tab-view hidden">
+          <div class="content-max">
+            <!-- View Mode -->
+            <div id="profileMainView">
+              <h2 class="profile-header-title">Profile</h2>
+              <p class="profile-header-sub">Manage your account</p>
+
+              <div class="avatar-center-box">
+                <div class="letter-avatar-circle" id="profileLetterAvatar">K</div>
+                <div class="profile-email-caption" id="profileTopEmail">user@gmail.com</div>
+              </div>
+
+              <div class="profile-info-card">
+                <div class="profile-row">
+                  <div class="profile-row-label">Email</div>
+                  <div class="profile-row-val" id="profileCardEmail">user@gmail.com</div>
+                </div>
+                <div class="profile-row">
+                  <div class="profile-row-label">Gender</div>
+                  <div class="profile-row-val" id="profileCardGender">Prefer not to say</div>
+                </div>
+                <div class="profile-row">
+                  <div class="profile-row-label">Bio</div>
+                  <div class="profile-row-val" id="profileCardBio">Welcome to Kineo</div>
+                </div>
+              </div>
+
+              <button id="openEditProfileBtn" class="primary-pill-btn" type="button" style="margin-top: 0;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1.003 1.003 0 0 0 0-1.42l-2.34-2.34a1.003 1.003 0 0 0-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z"/></svg>
+                <span>Edit Profile</span>
+              </button>
+
+              <button id="logoutBtn" class="logout-link-btn" type="button">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                  <polyline points="16 17 21 12 16 7"/>
+                  <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+                <span>Log out</span>
+              </button>
+
+              <p class="disclaimer-text">
+                Terms & Conditions: Kineo is an AI cartoon video creation tool. You are solely responsible for any misuse of the platform, and the app developer has no connection or liability for such misuse. If a video fails to generate or any other issue occurs, full responsibility rests with you.
+              </p>
+            </div>
+
+            <!-- Edit Profile Mode -->
+            <div id="profileEditView" class="hidden">
+              <div class="edit-header-row">
+                <button id="backFromEditBtn" class="back-circle-btn" type="button" aria-label="Back">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"/>
+                    <polyline points="12 19 5 12 12 5"/>
+                  </svg>
+                </button>
+                <div>
+                  <h2 class="profile-header-title" style="font-size: 22px;">Edit Profile</h2>
+                  <p class="profile-header-sub" style="margin-bottom: 0;">Update your details</p>
+                </div>
+              </div>
+
+              <div class="edit-form-card">
+                <div class="field-label"><span>Email</span></div>
+                <div class="locked-email-box">
+                  <span id="editLockedEmail">user@gmail.com</span>
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                </div>
+
+                <div class="field-label"><span>Gender</span></div>
+                <div class="gender-pills-row" id="genderOptionsRow">
+                  <button type="button" class="gender-pill" data-gender="Male">Male</button>
+                  <button type="button" class="gender-pill" data-gender="Female">Female</button>
+                  <button type="button" class="gender-pill active" data-gender="Prefer not to say">✓ Prefer not to say</button>
+                </div>
+
+                <div class="field-label">
+                  <span>Bio</span>
+                  <span id="bioCharCount" style="color: var(--text-secondary); font-weight: 500;">16 / 300</span>
+                </div>
+                <textarea id="editBioTextarea" class="bio-textarea" maxlength="300">Welcome to Kineo</textarea>
+              </div>
+
+              <button id="saveProfileBtn" class="primary-pill-btn" type="button" style="margin-top: 0; margin-bottom: 10px;">Save Changes</button>
+              <button id="cancelEditProfileBtn" class="secondary-pill-btn" type="button">Cancel</button>
+
+              <p class="disclaimer-text" style="margin-top: 16px;">
+                Terms & Conditions: Kineo is an AI cartoon video creation tool. You are solely responsible for any misuse of the platform, and the app developer has no connection or liability for such misuse. If a video fails to generate or any other issue occurs, full responsibility rests with you.
+              </p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ==================== BOTTOM NAVIGATION ==================== -->
+      <nav class="bottom-nav" aria-label="Main Navigation">
+        <button type="button" class="nav-item active" data-tab="home">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+          </svg>
+          <span>Home</span>
+        </button>
+
+        <button type="button" class="nav-item" data-tab="subscription">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+          </svg>
+          <span>Subscription</span>
+        </button>
+
+        <div class="nav-create-wrap">
+          <button type="button" class="nav-create-btn" data-tab="create" aria-label="Create Video">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </button>
+        </div>
+
+        <button type="button" class="nav-item" data-tab="help">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          <span>Help</span>
+        </button>
+
+        <button type="button" class="nav-item" data-tab="profile">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span>Profile</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- ==================== MODAL 1: PAYMENT QR & TELEGRAM ==================== -->
+    <div id="paymentModal" class="modal-backdrop hidden">
+      <div class="modal-card">
+        <button type="button" class="modal-close-x" data-close-modal="paymentModal">×</button>
+        <h3 class="modal-title">Lifetime Pro — ₹100</h3>
+        <p class="modal-desc">Scan the QR below or pay directly via any UPI app, then confirm on Telegram for your activation key.</p>
+
+        <div class="qr-preview-box">
+          <img src="qr.png" alt="Paytm UPI QR Code" onerror="this.style.display='none'" />
+          <button type="button" class="upi-copy-pill" id="copyUpiBtn">
+            <span>UPI: paytm.s4eanhy@pty</span>
+            <span>📋</span>
+          </button>
+        </div>
+
+        <a
+          href="upi://pay?pa=paytm.s4eanhy@pty&pn=Akhilesh%20Dwivedi&am=100&cu=INR"
+          class="upi-app-btn"
+          id="upiDirectBtn"
+        >
+          <span>Pay ₹100 via UPI App</span>
+        </a>
+
+        <a
+          href="https://t.me/thekineo?text=I%20have%20purchased%20the%20subscription.%20Please%20activate%20my%20subscription."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tg-confirm-btn"
+        >
+          <span>Confirm Payment on Telegram</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ==================== MODAL 2: ACTIVATION KEY ==================== -->
+    <div id="activationModal" class="modal-backdrop hidden">
+      <div class="modal-card">
+        <button type="button" class="modal-close-x" data-close-modal="activationModal">×</button>
+        <h3 class="modal-title">Enter Activation Key</h3>
+        <p class="modal-desc">Enter your Kineo Lifetime Pro activation key received after payment verification.</p>
+
+        <input
+          type="text"
+          id="activationKeyInput"
+          class="key-input-field"
+          placeholder="••••••••"
+          autocomplete="off"
+        />
+        <div id="activationKeyError" class="auth-status" style="margin-bottom: 10px;"></div>
+
+        <button type="button" id="verifyKeySubmitBtn" class="primary-pill-btn" style="margin-top: 0;">Activate Pro</button>
+      </div>
+    </div>
+
+    <!-- ==================== MODAL 3: SUBSCRIPTION REQUIRED GATE ==================== -->
+    <div id="proRequiredModal" class="modal-backdrop hidden">
+      <div class="modal-card">
+        <button type="button" class="modal-close-x" data-close-modal="proRequiredModal">×</button>
+        <div style="font-size: 34px; margin-bottom: 8px;">👑</div>
+        <h3 class="modal-title">Kineo Pro Required</h3>
+        <p class="modal-desc" id="proRequiredReason">Upgrade to Kineo Lifetime Pro (₹100) to unlock AI cartoon video generation and priority support.</p>
+        <button type="button" id="goToSubFromModalBtn" class="primary-pill-btn" style="margin-top: 0;">Upgrade to Pro — ₹100</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fallback SVG Logos -->
+  <script>
+    window.KINEO_FALLBACK_LOGO = '<svg width="72" height="72" viewBox="0 0 100 100" fill="#0f1115"><circle cx="50" cy="50" r="46" fill="none" stroke="#0f1115" stroke-width="6"/><path d="M50 8a42 42 0 0 1 35 19L58 42zm37 23a42 42 0 0 1-2 41L62 50zm-5 44a42 42 0 0 1-39 16l15-28zm-43 15A42 42 0 0 1 13 62l29-12zM11 58a42 42 0 0 1 18-39l13 29zm22-41A42 42 0 0 1 46 8l4 31z"/></svg>';
+    window.KINEO_FALLBACK_LOGO_SM = '<svg width="28" height="28" viewBox="0 0 100 100" fill="#0f1115"><circle cx="50" cy="50" r="46" fill="none" stroke="#0f1115" stroke-width="7"/><path d="M50 8a42 42 0 0 1 35 19L58 42zm37 23a42 42 0 0 1-2 41L62 50zm-5 44a42 42 0 0 1-39 16l15-28zm-43 15A42 42 0 0 1 13 62l29-12zM11 58a42 42 0 0 1 18-39l13 29zm22-41A42 42 0 0 1 46 8l4 31z"/></svg>';
+  </script>
+
+  <!-- Firebase App & Authentication SDK (Modular v10) -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithPopup,
+      signInWithRedirect,
+      getRedirectResult,
+      onAuthStateChanged,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB7NYHjsWqZW6VNphka69VhuhLF8JCucG8",
+      authDomain: "kineo-680e6.firebaseapp.com",
+      projectId: "kineo-680e6",
+      storageBucket: "kineo-680e6.firebasestorage.app",
+      messagingSenderId: "483117256924",
+      appId: "1:483117256924:web:5f19b883d07cb12f536419",
+      measurementId: "G-3YRP92MKXV"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: "select_account" });
+
+    let currentUser = null;
+    let isProUser = false;
+    let selectedRatio = "16:9";
+    let isGenerating = false;
+    let genTimerInterval = null;
+    let typingTimeout = null;
+
+    const authScreen = document.getElementById("authScreen");
+    const mainApp = document.getElementById("mainApp");
+    const googleSignInBtn = document.getElementById("googleSignInBtn");
+    const authStatusMsg = document.getElementById("authStatusMsg");
+    const toastBanner = document.getElementById("toastBanner");
+
+    function showToast(msg) {
+      toastBanner.textContent = msg;
+      toastBanner.classList.remove("hidden");
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => {
+        toastBanner.classList.add("hidden");
+      }, 2800);
+    }
+
+    function userKey(suffix) {
+      const uid = currentUser ? currentUser.uid : "guest";
+      return `kineo_${uid}_${suffix}`;
+    }
+
+    function getIndianTimeString(timestamp = Date.now()) {
+      return new Intl.DateTimeFormat("en-IN", {
+        timeZone: "Asia/Kolkata",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true
+      }).format(new Date(timestamp)).toUpperCase();
+    }
+
+    getRedirectResult(auth).catch((err) => {
+      if (err && err.code && err.code !== "auth/no-auth-event") {
+        authStatusMsg.textContent = `Sign-in error (${err.code}). Check Firebase Authorized Domains.`;
+      }
+    });
+
+    googleSignInBtn.addEventListener("click", async () => {
+      authStatusMsg.textContent = "";
+      googleSignInBtn.disabled = true;
+      try {
+        await signInWithPopup(auth, provider);
+      } catch (error) {
+        if (error.code === "auth/unauthorized-domain") {
+          authStatusMsg.textContent = `Domain "${window.location.hostname}" is not in Firebase Authorized Domains yet.`;
+        } else if (
+          error.code === "auth/popup-blocked" ||
+          error.code === "auth/operation-not-supported-in-this-environment"
+        ) {
+          await signInWithRedirect(auth, provider);
+        } else if (error.code !== "auth/popup-closed-by-user") {
+          authStatusMsg.textContent = `Sign-in failed (${error.code || "unknown"}). Please try again.`;
+        }
+      } finally {
+        googleSignInBtn.disabled = false;
+      }
+    });
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        currentUser = user;
+        isProUser = localStorage.getItem(userKey("pro")) === "true";
+        initUserProfile();
+        syncProUI();
+        authScreen.classList.add("hidden");
+        mainApp.classList.remove("hidden");
+        switchTab("home");
+      } else {
+        currentUser = null;
+        isProUser = false;
+        mainApp.classList.add("hidden");
+        authScreen.classList.remove("hidden");
+      }
+    });
+
+    // ================= TAB NAVIGATION =================
+    const navItems = document.querySelectorAll("[data-tab]");
+    const tabViews = {
+      home: document.getElementById("tab-home"),
+      subscription: document.getElementById("tab-subscription"),
+      create: document.getElementById("tab-create"),
+      help: document.getElementById("tab-help"),
+      profile: document.getElementById("tab-profile")
+    };
+
+    function switchTab(tabName) {
+      Object.entries(tabViews).forEach(([key, el]) => {
+        if (key === tabName) el.classList.remove("hidden");
+        else el.classList.add("hidden");
+      });
+
+      document.querySelectorAll(".nav-item").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.tab === tabName);
+      });
+
+      document.getElementById("tabScrollContainer").scrollTop = 0;
+
+      if (tabName === "help") {
+        initHelpChat();
+      }
+    }
+
+    navItems.forEach((btn) => {
+      btn.addEventListener("click", () => switchTab(btn.dataset.tab));
+    });
+
+    document.getElementById("homeUpgradeBtn").addEventListener("click", () => switchTab("subscription"));
+    document.getElementById("goToSubFromModalBtn").addEventListener("click", () => {
+      closeModal("proRequiredModal");
+      switchTab("subscription");
+    });
+
+    function syncProUI() {
+      const homeHeading = document.getElementById("homeBenefitsHeading");
+      const homeUpgradeBtn = document.getElementById("homeUpgradeBtn");
+      const subFreeView = document.getElementById("subFreeView");
+      const subProView = document.getElementById("subProView");
+
+      if (isProUser) {
+        homeHeading.textContent = "YOUR PREMIUM BENEFITS";
+        homeUpgradeBtn.classList.add("hidden");
+        subFreeView.classList.add("hidden");
+        subProView.classList.remove("hidden");
+      } else {
+        homeHeading.textContent = "GO PRO / PREMIUM";
+        homeUpgradeBtn.classList.remove("hidden");
+        subFreeView.classList.remove("hidden");
+        subProView.classList.add("hidden");
+      }
+    }
+
+    // ================= #2 CLEAN YOUTUBE VIDEO EMBED =================
+    const tutorialVideoCard = document.getElementById("tutorialVideoCard");
+    tutorialVideoCard.addEventListener("click", () => {
+      if (tutorialVideoCard.dataset.playing === "true") return;
+      tutorialVideoCard.dataset.playing = "true";
+      tutorialVideoCard.innerHTML = `
+        <iframe
+          class="video-iframe-frame"
+          src="https://www.youtube.com/embed/IU2V7rVs0ig?autoplay=1&rel=0&modestbranding=1&playsinline=1"
+          title="Kineo Tutorial"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      `;
+    });
+
+    // ================= #3 24-HOUR LOOPING COUNTDOWN TIMER =================
+    const loopTimerDisplay = document.getElementById("loopTimerDisplay");
+    const TWENTY_FOUR_HOURS_SEC = 24 * 60 * 60;
+
+    function updateLoopTimer() {
+      let endTimestamp = Number(localStorage.getItem("kineo_offer_loop_end"));
+      const now = Date.now();
+      if (!endTimestamp || endTimestamp <= now) {
+        endTimestamp = now + TWENTY_FOUR_HOURS_SEC * 1000;
+        localStorage.setItem("kineo_offer_loop_end", String(endTimestamp));
+      }
+      const remainingSec = Math.max(0, Math.floor((endTimestamp - now) / 1000));
+      const hrs = String(Math.floor(remainingSec / 3600)).padStart(2, "0");
+      const mins = String(Math.floor((remainingSec % 3600) / 60)).padStart(2, "0");
+      const secs = String(remainingSec % 60).padStart(2, "0");
+      loopTimerDisplay.textContent = `${hrs} : ${mins} : ${secs}`;
+    }
+    updateLoopTimer();
+    setInterval(updateLoopTimer, 1000);
+
+    function openModal(id) {
+      document.getElementById(id).classList.remove("hidden");
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.add("hidden");
+    }
+    document.querySelectorAll("[data-close-modal]").forEach((btn) => {
+      btn.addEventListener("click", () => closeModal(btn.dataset.closeModal));
+    });
+
+    document.getElementById("openPaymentModalBtn").addEventListener("click", () => openModal("paymentModal"));
+    document.getElementById("openActivationModalBtn").addEventListener("click", () => {
+      document.getElementById("activationKeyInput").value = "";
+      document.getElementById("activationKeyError").textContent = "";
+      openModal("activationModal");
+    });
+
+    document.getElementById("copyUpiBtn").addEventListener("click", () => {
+      navigator.clipboard?.writeText("paytm.s4eanhy@pty");
+      showToast("UPI ID copied: paytm.s4eanhy@pty");
+    });
+
+    document.getElementById("verifyKeySubmitBtn").addEventListener("click", () => {
+      const enteredKey = document.getElementById("activationKeyInput").value.trim();
+      const errEl = document.getElementById("activationKeyError");
+      if (enteredKey === "25032023") {
+        isProUser = true;
+        localStorage.setItem(userKey("pro"), "true");
+        syncProUI();
+        closeModal("activationModal");
+        showToast("🎉 Kineo Lifetime Pro Activated!");
+      } else {
+        errEl.textContent = "Invalid activation key. Please check and try again.";
+      }
+    });
+
+    // ================= #4 VIDEO GENERATION STUDIO (+) =================
+    const videoPromptInput = document.getElementById("videoPromptInput");
+    const promptCharCount = document.getElementById("promptCharCount");
+    const promptErrorMsg = document.getElementById("promptErrorMsg");
+    const generateVideoBtn = document.getElementById("generateVideoBtn");
+    const genProgressBox = document.getElementById("genProgressBox");
+    const genPercentText = document.getElementById("genPercentText");
+    const genStageText = document.getElementById("genStageText");
+    const genProgressFill = document.getElementById("genProgressFill");
+
+    videoPromptInput.addEventListener("input", () => {
+      const len = videoPromptInput.value.length;
+      promptCharCount.textContent = `${len.toLocaleString()} / 10,000`;
+      if (len >= 10) {
+        promptErrorMsg.classList.add("hidden");
+      }
+    });
+
+    document.querySelectorAll("#aspectRatioGrid .ratio-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("#aspectRatioGrid .ratio-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        selectedRatio = btn.dataset.ratio;
+      });
+    });
+
+    document.querySelectorAll(".demo-chip").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        videoPromptInput.value = chip.textContent.trim();
+        videoPromptInput.dispatchEvent(new Event("input"));
+      });
+    });
+
+    function triggerNextVideoDownload() {
+      let currentIdx = Number(localStorage.getItem(userKey("video_loop_idx")) || "0");
+      const videoNumber = (currentIdx % 5) + 1;
+      const fileName = `video${videoNumber}.mp4`;
+
+      localStorage.setItem(userKey("video_loop_idx"), String(videoNumber));
+
+      const a = document.createElement("a");
+      a.href = fileName;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      showToast(`Video ready! Downloading ${fileName}...`);
+    }
+
+    generateVideoBtn.addEventListener("click", () => {
+      if (isGenerating) return;
+
+      const text = videoPromptInput.value.trim();
+      if (text.length < 10) {
+        promptErrorMsg.textContent = "Please enter at least 10 characters to generate a cartoon video.";
+        promptErrorMsg.classList.remove("hidden");
+        return;
+      }
+      promptErrorMsg.classList.add("hidden");
+
+      if (!isProUser) {
+        document.getElementById("proRequiredReason").textContent =
+          "Video generation requires Kineo Lifetime Pro. Upgrade once for ₹100 to create unlimited 8K cartoon videos.";
+        openModal("proRequiredModal");
+        return;
+      }
+
+      isGenerating = true;
+      generateVideoBtn.disabled = true;
+      generateVideoBtn.style.opacity = "0.6";
+      genProgressBox.classList.remove("hidden");
+
+      let percent = 0;
+      genPercentText.textContent = "0%";
+      genProgressFill.style.width = "0%";
+      genStageText.textContent = `Rendering ${selectedRatio} cartoon frames...`;
+
+      const stages = [
+        "Analyzing story script & character scenes...",
+        "Generating 2D/3D cartoon keyframes...",
+        "Synthesizing multi-language AI voiceover...",
+        "Upscaling to 8K Ultra 60fps master...",
+        "Finalizing & packaging MP4 export..."
+      ];
+
+      clearInterval(genTimerInterval);
+      genTimerInterval = setInterval(() => {
+        percent += 1;
+        genPercentText.textContent = `${percent}%`;
+        genProgressFill.style.width = `${percent}%`;
+
+        const stageIdx = Math.min(stages.length - 1, Math.floor((percent / 100) * stages.length));
+        genStageText.textContent = `${stages[stageIdx]} (${selectedRatio})`;
+
+        if (percent >= 100) {
+          clearInterval(genTimerInterval);
+          isGenerating = false;
+          generateVideoBtn.disabled = false;
+          generateVideoBtn.style.opacity = "1";
+          genStageText.textContent = "Completed! Starting automatic download...";
+          triggerNextVideoDownload();
+        }
+      }, 3000);
+    });
+
+    // ================= #5 HELP CHAT TAB =================
+    const chatMessagesArea = document.getElementById("chatMessagesArea");
+    const helpChatForm = document.getElementById("helpChatForm");
+    const helpChatInput = document.getElementById("helpChatInput");
+    const helpSendBtn = document.getElementById("helpSendBtn");
+    const helpOnlineStatus = document.getElementById("helpOnlineStatus");
+
+    const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000;
+
+    function initHelpChat() {
+      let firstWelcomeTime = localStorage.getItem(userKey("help_first_time"));
+      if (!firstWelcomeTime) {
+        firstWelcomeTime = getIndianTimeString();
+        localStorage.setItem(userKey("help_first_time"), firstWelcomeTime);
+      }
+
+      let history = [];
+      try {
+        history = JSON.parse(localStorage.getItem(userKey("help_chat_history")) || "[]");
+      } catch (e) {
+        history = [];
+      }
+
+      const now = Date.now();
+      history = history.filter((m) => now - m.ts < TWENTY_FOUR_HOURS_MS);
+      localStorage.setItem(userKey("help_chat_history"), JSON.stringify(history));
+
+      chatMessagesArea.innerHTML = "";
+      appendBubbleDOM("ai", "How may I assist you today?", firstWelcomeTime);
+
+      history.forEach((msg) => {
+        appendBubbleDOM(msg.sender, msg.text, msg.timeStr);
+      });
+    }
+
+    function appendBubbleDOM(sender, text, timeStr) {
+      const bubble = document.createElement("div");
+      bubble.className = `chat-bubble ${sender}`;
+      bubble.innerHTML = `
+        <div>${escapeHtml(text)}</div>
+        <span class="chat-time">${timeStr}</span>
+      `;
+      chatMessagesArea.appendChild(bubble);
+      chatMessagesArea.scrollTop = chatMessagesArea.scrollHeight;
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement("div");
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    helpChatInput.addEventListener("focus", (e) => {
+      if (!isProUser) {
+        e.target.blur();
+        document.getElementById("proRequiredReason").textContent =
+          "Direct AI support chat is available exclusively for Kineo Pro members. Upgrade once for ₹100.";
+        openModal("proRequiredModal");
+      }
+    });
+
+    helpChatInput.addEventListener("input", () => {
+      helpSendBtn.classList.toggle("ready", helpChatInput.value.trim().length > 0);
+    });
+
+    helpChatForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!isProUser) {
+        document.getElementById("proRequiredReason").textContent =
+          "Direct AI support chat is available exclusively for Kineo Pro members. Upgrade once for ₹100.";
+        openModal("proRequiredModal");
+        return;
+      }
+
+      const msgText = helpChatInput.value.trim();
+      if (!msgText) return;
+
+      const userTimeStr = getIndianTimeString();
+      const userEntry = { sender: "user", text: msgText, timeStr: userTimeStr, ts: Date.now() };
+
+      let history = JSON.parse(localStorage.getItem(userKey("help_chat_history")) || "[]");
+      history.push(userEntry);
+      localStorage.setItem(userKey("help_chat_history"), JSON.stringify(history));
+
+      appendBubbleDOM("user", msgText, userTimeStr);
+      helpChatInput.value = "";
+      helpSendBtn.classList.remove("ready");
+
+      helpOnlineStatus.innerHTML = `<span class="typing-text">typing...</span>`;
+      clearTimeout(typingTimeout);
+      typingTimeout = setTimeout(() => {
+        helpOnlineStatus.innerHTML = `<span class="online-dot"></span><span>Online</span>`;
+        const replyText =
+          "Live chat support is currently unavailable. We apologize for the inconvenience—please try again later.";
+        const aiTimeStr = getIndianTimeString();
+        const aiEntry = { sender: "ai", text: replyText, timeStr: aiTimeStr, ts: Date.now() };
+
+        const updatedHistory = JSON.parse(localStorage.getItem(userKey("help_chat_history")) || "[]");
+        updatedHistory.push(aiEntry);
+        localStorage.setItem(userKey("help_chat_history"), JSON.stringify(updatedHistory));
+
+        appendBubbleDOM("ai", replyText, aiTimeStr);
+      }, 5000);
+    });
+
+    // ================= #6 PROFILE & EDIT PROFILE =================
+    const profileLetterAvatar = document.getElementById("profileLetterAvatar");
+    const profileTopEmail = document.getElementById("profileTopEmail");
+    const profileCardEmail = document.getElementById("profileCardEmail");
+    const profileCardGender = document.getElementById("profileCardGender");
+    const profileCardBio = document.getElementById("profileCardBio");
+    const editLockedEmail = document.getElementById("editLockedEmail");
+    const editBioTextarea = document.getElementById("editBioTextarea");
+    const bioCharCount = document.getElementById("bioCharCount");
+
+    let selectedGender = "Prefer not to say";
+
+    function getAvatarColor(letter) {
+      const palette = [
+        "#659b38", "#2563eb", "#7c3aed", "#db2777", "#d97706",
+        "#059669", "#0891b2", "#4f46e5", "#dc2626", "#0d9488"
+      ];
+      const code = letter.charCodeAt(0) || 65;
+      return palette[code % palette.length];
+    }
+
+    function initUserProfile() {
+      const email = currentUser?.email || "user@gmail.com";
+      const cleanMatch = email.match(/[a-zA-Z]/);
+      const firstLetter = cleanMatch ? cleanMatch[0].toUpperCase() : "K";
+
+      profileLetterAvatar.textContent = firstLetter;
+      profileLetterAvatar.style.backgroundColor = getAvatarColor(firstLetter);
+
+      profileTopEmail.textContent = email;
+      profileCardEmail.textContent = email;
+      editLockedEmail.textContent = email;
+
+      const savedGender = localStorage.getItem(userKey("gender")) || "Prefer not to say";
+      const savedBio = localStorage.getItem(userKey("bio")) || "Welcome to Kineo";
+
+      selectedGender = savedGender;
+      profileCardGender.textContent = savedGender;
+      profileCardBio.textContent = savedBio;
+      editBioTextarea.value = savedBio;
+      bioCharCount.textContent = `${savedBio.length} / 300`;
+      syncGenderPills();
+    }
+
+    function syncGenderPills() {
+      document.querySelectorAll("#genderOptionsRow .gender-pill").forEach((pill) => {
+        const g = pill.dataset.gender;
+        const active = g === selectedGender;
+        pill.classList.toggle("active", active);
+        pill.textContent = active ? `✓ ${g}` : g;
+      });
+    }
+
+    document.querySelectorAll("#genderOptionsRow .gender-pill").forEach((pill) => {
+      pill.addEventListener("click", () => {
+        selectedGender = pill.dataset.gender;
+        syncGenderPills();
+      });
+    });
+
+    editBioTextarea.addEventListener("input", () => {
+      bioCharCount.textContent = `${editBioTextarea.value.length} / 300`;
+    });
+
+    document.getElementById("openEditProfileBtn").addEventListener("click", () => {
+      document.getElementById("profileMainView").classList.add("hidden");
+      document.getElementById("profileEditView").classList.remove("hidden");
+    });
+
+    function closeEditProfile() {
+      document.getElementById("profileEditView").classList.add("hidden");
+      document.getElementById("profileMainView").classList.remove("hidden");
+    }
+
+    document.getElementById("backFromEditBtn").addEventListener("click", closeEditProfile);
+    document.getElementById("cancelEditProfileBtn").addEventListener("click", () => {
+      initUserProfile();
+      closeEditProfile();
+    });
+
+    document.getElementById("saveProfileBtn").addEventListener("click", () => {
+      const updatedBio = editBioTextarea.value.trim() || "Welcome to Kineo";
+      localStorage.setItem(userKey("gender"), selectedGender);
+      localStorage.setItem(userKey("bio"), updatedBio);
+      profileCardGender.textContent = selectedGender;
+      profileCardBio.textContent = updatedBio;
+      closeEditProfile();
+      showToast("Profile updated");
+    });
+
+    document.getElementById("logoutBtn").addEventListener("click", async () => {
+      clearInterval(genTimerInterval);
+      isGenerating = false;
+      await signOut(auth);
+    });
+  </script>
+</body>
+</html>
