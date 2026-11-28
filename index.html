@@ -96,14 +96,6 @@
       border: 0;
     }
 
-    .app-shell {
-      width: 100%;
-      min-height: 100dvh;
-      background: var(--bg-page);
-      display: flex;
-      flex-direction: column;
-    }
-
     /* ==================== #1 LOGIN SCREEN ==================== */
     .login-screen {
       width: 100%;
@@ -337,6 +329,8 @@
     }
 
     .video-poster-img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -348,26 +342,22 @@
       transform: scale(1.02);
     }
 
-    .center-video-icon-btn {
+    .yt-center-play-btn {
       position: relative;
       z-index: 2;
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: rgba(15, 17, 21, 0.86);
-      border: 2px solid rgba(255, 255, 255, 0.94);
-      color: #ffffff;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
-      transition: transform 0.16s ease, background-color 0.16s ease;
+      filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.42));
+      transition: transform 0.16s ease, opacity 0.16s ease;
     }
 
-    .video-poster-layer:hover .center-video-icon-btn {
+    .video-poster-layer:hover .yt-center-play-btn {
       transform: scale(1.08);
-      background: #0f1115;
     }
 
     .video-player-frame {
@@ -466,7 +456,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 9px;
       transition: background-color 0.15s ease, transform 0.15s ease;
     }
 
@@ -514,6 +504,10 @@
       font-weight: 600;
       color: var(--text-primary);
       margin-bottom: 20px;
+    }
+
+    .loop-timer-banner.hidden {
+      display: none;
     }
 
     .timer-digits {
@@ -1465,11 +1459,11 @@
             alt="Kineo Tutorial Video Thumbnail"
             class="video-poster-img"
           />
-          <button type="button" class="center-video-icon-btn" aria-label="Play Tutorial Video">
-            <!-- Clean Video / Play Icon centered on thumbnail -->
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="15" height="16" rx="3"></rect>
-              <polygon points="17 9 22 6 22 18 17 15 17 9" fill="currentColor" stroke="none"></polygon>
+          <button type="button" class="yt-center-play-btn" aria-label="Play YouTube Tutorial Video">
+            <!-- Official Signature Red YouTube Play Icon -->
+            <svg width="68" height="48" viewBox="0 0 68 48" aria-hidden="true">
+              <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#FF0000"/>
+              <path d="M 45,24 27,14 27,34" fill="#FFFFFF"/>
             </svg>
           </button>
         </div>
@@ -1576,7 +1570,7 @@
 
     <!-- ==================== #3 SUBSCRIPTION TAB ==================== -->
     <section id="tabSubscription" class="tab-container" role="tabpanel">
-      <div class="loop-timer-banner">
+      <div id="offerLoopBanner" class="loop-timer-banner">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
           <circle cx="12" cy="12" r="9"></circle>
           <polyline points="12 7 12 12 15.5 14"></polyline>
@@ -1865,7 +1859,6 @@
         </div>
 
         <button type="button" class="btn-primary-pill" onclick="openEditProfileView()">
-          <!-- Clean Edit Icon -->
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 20h9"></path>
             <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
@@ -1874,7 +1867,6 @@
         </button>
 
         <button type="button" class="logout-action-btn" onclick="logoutCurrentUser()">
-          <!-- Clean Logout Icon -->
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
             <polyline points="16 17 21 12 16 7"></polyline>
@@ -2085,7 +2077,6 @@
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
 
-    // Ensure auth persistence stays active across reloads/redirects
     auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(() => {});
 
     // ==================== CONSTANTS & STATE ====================
@@ -2134,13 +2125,9 @@
       }).toUpperCase();
     }
 
-    // ==================== AUTHENTICATION (#1) ====================
+    // ==================== AUTHENTICATION (#1 - Popup first across all devices) ====================
     const googleSignInBtn = document.getElementById("googleSignInBtn");
     const authStatusMsg = document.getElementById("authStatusMsg");
-
-    function isMobileDevice() {
-      return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || "");
-    }
 
     googleSignInBtn.addEventListener("click", async () => {
       authStatusMsg.textContent = "";
@@ -2150,23 +2137,21 @@
 
       try {
         await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-        if (isMobileDevice()) {
-          await auth.signInWithRedirect(provider);
-        } else {
-          await auth.signInWithPopup(provider);
+        const result = await auth.signInWithPopup(provider);
+        if (result && result.user) {
+          enterAuthenticatedApp(result.user);
         }
       } catch (err) {
         const code = err && err.code ? err.code : "";
         if (
           code === "auth/popup-blocked" ||
-          code === "auth/operation-not-supported-in-this-environment" ||
-          code === "auth/web-storage-unsupported"
+          code === "auth/operation-not-supported-in-this-environment"
         ) {
           try {
             await auth.signInWithRedirect(provider);
             return;
           } catch (redirectErr) {
-            authStatusMsg.textContent = "Login redirect failed. Check Firebase Authorized Domains for kineo.live.";
+            authStatusMsg.textContent = "Sign-in blocked. Please allow pop-ups in browser settings and try again.";
           }
         } else if (code !== "auth/popup-closed-by-user" && code !== "auth/cancelled-popup-request") {
           authStatusMsg.textContent = (err && err.message) ? err.message : "Unable to sign in with Google.";
@@ -2181,10 +2166,7 @@
           enterAuthenticatedApp(result.user);
         }
       })
-      .catch((err) => {
-        if (err && err.message) {
-          authStatusMsg.textContent = err.message;
-        }
+      .catch(() => {
         googleSignInBtn.disabled = false;
       });
 
@@ -2279,11 +2261,15 @@
         homeUpgradeWrap.classList.toggle("hidden", active);
       }
 
+      const offerLoopBanner = document.getElementById("offerLoopBanner");
       const activeBanner = document.getElementById("activePlanBanner");
       const offerCard = document.getElementById("pricingOfferCard");
       const subHeading = document.getElementById("subSectionHeading");
       const subSubheading = document.getElementById("subSectionSubheading");
 
+      if (offerLoopBanner) {
+        offerLoopBanner.classList.toggle("hidden", active);
+      }
       if (activeBanner) {
         activeBanner.classList.toggle("visible", active);
       }
