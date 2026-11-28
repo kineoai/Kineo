@@ -83,7 +83,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Hidden SEO keyword index block (visually invisible to users, indexed by search engines) */
+    /* Hidden SEO keyword vault (invisible to users, indexed by search engines) */
     .seo-keyword-vault {
       position: absolute;
       width: 1px;
@@ -162,7 +162,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 20px;
+      gap: 18px;
       margin-top: 32px;
     }
 
@@ -203,7 +203,7 @@
     }
 
     .google-signin-btn:disabled {
-      opacity: 0.7;
+      opacity: 0.72;
       cursor: not-allowed;
     }
 
@@ -212,6 +212,7 @@
       font-size: 13px;
       font-weight: 500;
       color: var(--danger-red);
+      max-width: 400px;
     }
 
     /* ==================== MAIN WORKSPACE (TABS #2 - #6) ==================== */
@@ -347,34 +348,26 @@
       transform: scale(1.02);
     }
 
-    .clean-play-btn {
+    .center-video-icon-btn {
       position: relative;
       z-index: 2;
-      width: 68px;
-      height: 68px;
+      width: 72px;
+      height: 72px;
       border-radius: 50%;
-      background: rgba(17, 19, 23, 0.86);
-      border: 2px solid rgba(255, 255, 255, 0.92);
+      background: rgba(15, 17, 21, 0.86);
+      border: 2px solid rgba(255, 255, 255, 0.94);
+      color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
       transition: transform 0.16s ease, background-color 0.16s ease;
     }
 
-    .video-poster-layer:hover .clean-play-btn {
-      transform: scale(1.07);
+    .video-poster-layer:hover .center-video-icon-btn {
+      transform: scale(1.08);
       background: #0f1115;
-    }
-
-    .clean-play-triangle {
-      width: 0;
-      height: 0;
-      margin-left: 4px;
-      border-style: solid;
-      border-width: 11px 0 11px 20px;
-      border-color: transparent transparent transparent #ffffff;
     }
 
     .video-player-frame {
@@ -1469,11 +1462,15 @@
           <img
             src="https://img.youtube.com/vi/IU2V7rVs0ig/maxresdefault.jpg"
             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/IU2V7rVs0ig/hqdefault.jpg';"
-            alt="Kineo Tutorial Video"
+            alt="Kineo Tutorial Video Thumbnail"
             class="video-poster-img"
           />
-          <button type="button" class="clean-play-btn" aria-label="Play Tutorial Video">
-            <span class="clean-play-triangle"></span>
+          <button type="button" class="center-video-icon-btn" aria-label="Play Tutorial Video">
+            <!-- Clean Video / Play Icon centered on thumbnail -->
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="15" height="16" rx="3"></rect>
+              <polygon points="17 9 22 6 22 18 17 15 17 9" fill="currentColor" stroke="none"></polygon>
+            </svg>
           </button>
         </div>
         <iframe
@@ -1596,8 +1593,8 @@
         <div style="font-size:13.5px;color:var(--text-secondary);margin-top:2px;">Lifetime access to all cartoon video & AI tools is unlocked.</div>
       </div>
 
-      <h2 class="sub-hero-title">Become a Lifetime Member</h2>
-      <p class="sub-hero-sub">Everything included in Kineo Lifetime Subscription:</p>
+      <h2 id="subSectionHeading" class="sub-hero-title">Become a Lifetime Member</h2>
+      <p id="subSectionSubheading" class="sub-hero-sub">Everything included in Kineo Lifetime Subscription:</p>
 
       <div class="benefits-list">
         <div class="benefit-row-card">
@@ -1868,12 +1865,21 @@
         </div>
 
         <button type="button" class="btn-primary-pill" onclick="openEditProfileView()">
-          <span>✏️</span>
+          <!-- Clean Edit Icon -->
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
           <span>Edit Profile</span>
         </button>
 
         <button type="button" class="logout-action-btn" onclick="logoutCurrentUser()">
-          <span>[→</span>
+          <!-- Clean Logout Icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
           <span>Log out</span>
         </button>
 
@@ -1991,13 +1997,13 @@
       </p>
 
       <div class="modal-actions-stack">
-        <a
-          href="upi://pay?pa=paytm.s4eanhy@pty&pn=Akhilesh%20Dwivedi&am=100&cu=INR"
+        <button
+          type="button"
           class="btn-primary-pill"
-          style="text-decoration:none;"
+          onclick="redirectToUpiApp()"
         >
           Pay ₹100 via UPI App
-        </a>
+        </button>
 
         <a
           href="https://t.me/thekineo?text=I%20have%20purchased%20the%20subscription.%20Please%20activate%20my%20subscription."
@@ -2060,7 +2066,7 @@
     </div>
   </div>
 
-  <!-- Firebase Compat SDKs (reliable across browsers, mobile & desktop) -->
+  <!-- Firebase Compat SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 
@@ -2079,8 +2085,12 @@
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
 
+    // Ensure auth persistence stays active across reloads/redirects
+    auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(() => {});
+
     // ==================== CONSTANTS & STATE ====================
     const ACTIVATION_KEY_SECRET = "25032023";
+    const UPI_PAYMENT_URL = "upi://pay?pa=paytm.s4eanhy@pty&pn=Akhilesh%20Dwivedi&am=100&cu=INR";
     const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000;
     const VIDEO_FILES = [
       "video1.mp4",
@@ -2128,9 +2138,8 @@
     const googleSignInBtn = document.getElementById("googleSignInBtn");
     const authStatusMsg = document.getElementById("authStatusMsg");
 
-    function isMobileOrWebView() {
-      const ua = navigator.userAgent || "";
-      return /Android|iPhone|iPad|iPod|Mobile|CriOS|FxiOS|wv/i.test(ua);
+    function isMobileDevice() {
+      return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || "");
     }
 
     googleSignInBtn.addEventListener("click", async () => {
@@ -2140,45 +2149,63 @@
       provider.setCustomParameters({ prompt: "select_account" });
 
       try {
-        if (isMobileOrWebView()) {
+        await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+        if (isMobileDevice()) {
           await auth.signInWithRedirect(provider);
         } else {
           await auth.signInWithPopup(provider);
         }
       } catch (err) {
-        if (err && (err.code === "auth/popup-blocked" || err.code === "auth/operation-not-supported-in-this-environment")) {
+        const code = err && err.code ? err.code : "";
+        if (
+          code === "auth/popup-blocked" ||
+          code === "auth/operation-not-supported-in-this-environment" ||
+          code === "auth/web-storage-unsupported"
+        ) {
           try {
             await auth.signInWithRedirect(provider);
             return;
           } catch (redirectErr) {
-            authStatusMsg.textContent = redirectErr.message || "Sign-in failed. Please try again.";
+            authStatusMsg.textContent = "Login redirect failed. Check Firebase Authorized Domains for kineo.live.";
           }
-        } else if (err && err.code !== "auth/popup-closed-by-user") {
-          authStatusMsg.textContent = err.message || "Unable to sign in with Google.";
+        } else if (code !== "auth/popup-closed-by-user" && code !== "auth/cancelled-popup-request") {
+          authStatusMsg.textContent = (err && err.message) ? err.message : "Unable to sign in with Google.";
         }
         googleSignInBtn.disabled = false;
       }
     });
 
-    auth.getRedirectResult().catch((err) => {
-      if (err && err.message) {
-        authStatusMsg.textContent = err.message;
-      }
+    auth.getRedirectResult()
+      .then((result) => {
+        if (result && result.user) {
+          enterAuthenticatedApp(result.user);
+        }
+      })
+      .catch((err) => {
+        if (err && err.message) {
+          authStatusMsg.textContent = err.message;
+        }
+        googleSignInBtn.disabled = false;
+      });
+
+    function enterAuthenticatedApp(user) {
+      currentUser = user;
+      authStatusMsg.textContent = "";
       googleSignInBtn.disabled = false;
-    });
+      document.getElementById("loginScreen").style.display = "none";
+      document.getElementById("mainApp").classList.add("active");
+      syncSubscriptionUI();
+      renderProfileData();
+      initHelpChat();
+      switchTab("home");
+    }
 
     auth.onAuthStateChanged((user) => {
-      googleSignInBtn.disabled = false;
       if (user) {
-        currentUser = user;
-        document.getElementById("loginScreen").style.display = "none";
-        document.getElementById("mainApp").classList.add("active");
-        syncSubscriptionUI();
-        renderProfileData();
-        initHelpChat();
-        switchTab("home");
+        enterAuthenticatedApp(user);
       } else {
         currentUser = null;
+        googleSignInBtn.disabled = false;
         document.getElementById("mainApp").classList.remove("active");
         document.getElementById("loginScreen").style.display = "flex";
       }
@@ -2254,11 +2281,22 @@
 
       const activeBanner = document.getElementById("activePlanBanner");
       const offerCard = document.getElementById("pricingOfferCard");
+      const subHeading = document.getElementById("subSectionHeading");
+      const subSubheading = document.getElementById("subSectionSubheading");
+
       if (activeBanner) {
         activeBanner.classList.toggle("visible", active);
       }
       if (offerCard) {
         offerCard.classList.toggle("hidden", active);
+      }
+      if (subHeading) {
+        subHeading.textContent = active ? "Your Premium Benefits" : "Become a Lifetime Member";
+      }
+      if (subSubheading) {
+        subSubheading.textContent = active
+          ? "Active benefits unlocked with your Kineo Lifetime Plan:"
+          : "Everything included in Kineo Lifetime Subscription:";
       }
     }
 
@@ -2283,9 +2321,13 @@
     }
     startOfferLoopTimer();
 
-    // ==================== MODALS ====================
+    // ==================== MODALS & DIRECT UPI REDIRECT ====================
     function openPaymentModal() {
       document.getElementById("paymentModal").classList.add("open");
+    }
+
+    function redirectToUpiApp() {
+      window.location.href = UPI_PAYMENT_URL;
     }
 
     function openActivationModal() {
@@ -2391,7 +2433,6 @@
       progressStatusLabel.textContent = `Rendering cartoon video (${selectedRatio})...`;
       progressSubNote.textContent = "Progress increases by 1% every 3 seconds.";
 
-      // Increases by 1% every 3 seconds
       generationInterval = setInterval(() => {
         percent += 1;
         progressFill.style.width = `${percent}%`;
@@ -2453,7 +2494,6 @@
 
       if (!data) return [];
 
-      // Auto-delete user chat messages after 24 hours
       if (Date.now() - (data.createdAt || 0) >= TWENTY_FOUR_HOURS_MS) {
         localStorage.removeItem(historyKey);
         return [];
@@ -2545,7 +2585,6 @@
       setHelpTypingState(true);
       if (helpReplyTimer) clearTimeout(helpReplyTimer);
 
-      // Reply after 5 seconds in professional English
       helpReplyTimer = setTimeout(() => {
         const replyMsg = {
           sender: "ai",
